@@ -1,0 +1,13 @@
+routes:
+  
+collections:
+  /en/:
+    permalink: /en/{slug}/
+    filter: tag:-german+tag:english
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
