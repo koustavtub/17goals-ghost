@@ -1,91 +1,95 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
   into the {body} of the default.hbs template --}}
-  {{#contentFor "extraheads"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "built/my.css"}}" />
-  {{/contentFor}}
-  
-  <header class="site-home-header">
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/my.css"}}"/>
+{{/contentFor}}
+
+<header class="site-home-header">
 
     {{!--Special header-image.hbs partial to generate the background image--}}
     {{> header-background}}
-        {{> "site-nav"}}
-   </div>
+    {{> "en-site-nav"}}
+    </div>
 
- 
 
- <!-- Slideshow container -->
- <div class="slideshow-container">
-  {{#get "posts" filter="tags:-english+tag:german" limit="5"}}
-  {{#foreach posts}}
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+        {{#get "posts" filter="tags:-german+tag:english" limit="5"}}
+            {{#foreach posts}}
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
 
-    <a href="{{url}}" >
-      <img class="post-card-image header-img"
-      srcset="{{img_url feature_image size="s"}} 300w,
+                    <a href="{{url}}">
+                        {{#if feature_image}}
+                        <img class="post-card-image header-img"
+                             srcset="{{img_url feature_image size="s"}} 300w,
       {{img_url feature_image size="m"}} 600w,
       {{img_url feature_image size="xl"}} 2000w"
-      sizes="(max-width: 1000px) 400px, 700px"
-      src="{{img_url feature_image size="xl"}}"
-      alt="{{title}}"
-      />
+                             sizes="(max-width: 1000px) 400px, 700px"
+                             src="{{img_url feature_image size="xl"}}"
+                             alt="{{title}}"
+                        />
+                            {{else}}
+                            <img class="post-card-image header-img" src="{{asset "images/bokeh.jpeg"}}" />
+                        {{/if}}
 
-      <div class="text yaku">
+                        <div class="text yaku">
 
-        <h1>{{title}}</h1>
-        <p>{{excerpt words="30"}} ... </p>
+                            <h1>{{title}}</h1>
+                            <p>{{excerpt words="30"}} ... </p>
 
-      </div>
-    </a>
-  </div>
-  {{/foreach}}
-  {{/get}}
+                        </div>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/get}}
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
- 
-<input type="hidden" id="slideChange" />
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
+    <input type="hidden" id="slideChange"/>
 
 
 </header>
 {{!-- The main content area --}}
 
 <section class="blockquote">
-  <center>{{t "front caption text"}}</center>
-  <hr />
+    <center>{{t "front caption text"}}</center>
+    <hr/>
 </section>
-<section >
- {{> "ribbon"}}
-  <center class="blockquote">{{t "ribbon caption"}} <hr /></center>
-  
- 
+<section>
+    {{> "ribbon" en="en"}}
+    <center class="blockquote">{{t "ribbon caption"}}
+        <hr/>
+    </center>
+
+
 </section>
 <main id="site-main" class="site-main outer">
-  <div class="inner posts">
+    <div class="inner posts">
 
-    <div class="post-feed">
-      {{#foreach posts}}
+        <div class="post-feed">
+            {{#foreach posts}}
 
-      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-      {{> "post-card"}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
 
-      {{/foreach}}
+            {{/foreach}}
+        </div>
+
     </div>
-
-  </div>
 </main>
 
-{{> site-header}}
+{{> site-header en="en"}}
 
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-<script>
+    <script>
 
   var slideIndex = 1;
   showSlides(slideIndex);
@@ -136,8 +140,9 @@ function showSlides(n) {
   });
 })();
 
-</script>
-<script>
+
+    </script>
+    <script>
     // NOTE: Scroll performance is poor in Safari
     // - this appears to be due to the events firing much more slowly in Safari.
     //   Dropping the scroll event and using only a raf loop results in smoother
@@ -192,6 +197,7 @@ function showSlides(n) {
           update();
 
     });
-</script>
+
+    </script>
 
 {{/contentFor}}

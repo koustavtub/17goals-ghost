@@ -11,6 +11,7 @@
     "Back": "Zurück",
     "Back to home": "Zurück zur Startseite",
     "Get the latest posts delivered right to your inbox": "Lassen Sie sich die neuesten Beiträge direkt in Ihren Posteingang liefern",
+    "Know More": "Mehr Wissen",
     "Latest Posts": "Neueste Beiträge",
     "Newer Posts": "Neuere Beiträge",
     "No posts": "Keine Beiträge",
@@ -29,5 +30,7 @@
     "You've successfully subscribed to": "Sie haben erfolgreich abonniert",
     "Your email address": "Ihre E-Mail Adresse",
     "with the email address": "mit der E-Mail-Adresse",
-    "youremail@example.com": "ihremail@example.com"
+    "youremail@example.com": "ihremail@example.com",
+    "front caption text":"Große und kleine Geschichten von Menschen, Organisationen, Social Entrepreneurs, wissenschaftlichen Errungenschaften und Unternehmen, die den Wandel der 17 Nachhaltigkeitsziele vorantreiben",
+    "ribbon caption":"Lasst uns die Ziele bekannter machen. Klick dich durch und entdecke Geschichten zu jedem der 17 Nachhaltigkeitsziele"
 }

@@ -4,6 +4,15 @@ collections:
   /en/:
     permalink: /en/{slug}/
     filter: tag:-german+tag:english
+    template: index-en
+  /en/sustainability-goals/:
+    permalink: /en/sustainability-goals/{slug}/
+    filter: tag:-hash-nachhaltigkeitsziele+tag:hash-sustainabilty-goals
+    template: custom-en-tag
+  /nachhaltigkeitsziele/:
+    permalink: /nachhaltigkeitsziele/{slug}/
+    filter: tag:-hash-sustainabilty-goals+tag:hash-nachhaltigkeitsziele
+    template: custom-tag
   /:
     permalink: /{slug}/
     template: index

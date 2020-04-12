@@ -2,13 +2,13 @@
     <div class="site-nav-left-wrapper">
         <div class="site-nav-left">
             {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                <a class="site-nav-logo" href="{{@site.url}}/en"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+                <a class="site-nav-logo" href="{{@site.url}}/en">{{@site.title}}</a>
             {{/if}}
             <div class="site-nav-content">
                 {{#if @site.navigation}}
-                    {{navigation}}
+                    {{> "en-navigation"}}
                 {{/if}}
                 {{#is "post"}}
                     <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
@@ -34,7 +34,7 @@
         {{/if}}
 
         {{#if @labs.members}}
-            <a class="subscribe-button" href="#subscribe">{{t "Subscribe"}}</a>
+            <a class="subscribe-button" href="#subscribe">{{"Subscribe"}}</a>
         {{/if}}
     </div>
 </nav>

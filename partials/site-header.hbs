@@ -1,5 +1,9 @@
 <div class="outer site-nav-main">
     <div class="inner">
+{{#if en}}
+        {{> "en-site-nav"}}
+{{else}}
         {{> "site-nav"}}
+{{/if}}
     </div>
 </div>

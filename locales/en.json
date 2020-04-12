@@ -11,6 +11,7 @@
     "Back": "Back",
     "Back to home": "Back To The Home Page",
     "Get the latest posts delivered right to your inbox": "Get the latest posts delivered right to your inbox",
+    "Know More": "Know More",
     "Latest Posts": "Latest Posts",
     "Newer Posts": "Newer Posts",
     "No posts": "No posts",
@@ -29,5 +30,8 @@
     "You've successfully subscribed to": "You've successfully subscribed to",
     "Your email address": "Your email address",
     "with the email address": "with the email address",
-    "youremail@example.com": "youremail@example.com"
+    "youremail@example.com": "youremail@example.com",
+    "front caption text":"Large and small stories of people, organisations, social entrepreneurs, scientific achievements and companies driving the transformation of the 17 sustainability goals",
+    "ribbon caption":"Let's make the goals better known. Click through and discover stories about each of the 17 Sustainability Goals"
+
   }
