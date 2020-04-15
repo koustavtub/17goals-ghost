@@ -1,9 +1,14 @@
-<div class="outer site-nav-main">
-    <div class="inner">
-{{#if en}}
+<header class="header transparent">
+    {{#if @site.logo}}
+        <a class="logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+    {{else}}
+        <a class="logo" href="{{@site.url}}">{{@site.title}}</a>
+    {{/if}}
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    {{#if en}}
         {{> "en-site-nav"}}
-{{else}}
+    {{else}}
         {{> "site-nav"}}
-{{/if}}
-    </div>
-</div>
+    {{/if}}
+</header>

@@ -14,7 +14,7 @@
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
-    --whoblue: #00acd8;
+    --whoblue: #00adef;
     --darkmode: color(var(--darkgrey) l(+2%));
 }
 
@@ -133,7 +133,6 @@ img {
 html {
     box-sizing: border-box;
     font-family: sans-serif;
-
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }

@@ -28,7 +28,6 @@
   .allSlides
   {
     height:75vh;
-    background:#333;
   }
 
   /* Slideshow container */
@@ -95,77 +94,20 @@
 
  /* Fading animation */
  .fade {
-  -webkit-animation-name: slideInLeft;
-  -webkit-animation-duration: 1.5s;
-  animation-name: slideInLeft;
-  animation-duration: 1.5s;
+  -webkit-animation-name: slideInRight;
+  -webkit-animation-duration: 1s;
+  animation-name: slideInRight;
+  animation-duration: 1s;
 }
 
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/*  Ribbon */
-
-.ribbon{
-  margin: 25px 5%;
-}
-.ribbon-row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-.ribbon-column {
-  -ms-flex: 5.88%; /* IE10 */
-  flex: 5.88%;
-  max-width: 5.88%;
-  padding: 0 2px;
-  height: 100%;
-  width: 100%;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.ribbon-column a{
-  text-decoration:none;
-}
-.ribbon-column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-
-}
 .middle{
   display: none;
   font-size: 7pt;
   font-weight: 600;
 }
-.ribbon-column:hover {
-  z-index:2;
-  transform: scale(1.5, 1.5);
-  cursor: pointer;
-}
-.ribbon-column:hover .middle{
-  display:block;
-}
-
-
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-  .ribbon-column {
-    -ms-flex: 11%;
-    flex: 11%;
-    max-width: 11%;
-  }
   .blockquote{
     padding: 20px 50px 0px 50px;
     line-height:30pt;
@@ -179,15 +121,16 @@
   .yaku p{
     line-height: 1.5;
   }
+  .fade {
+    -webkit-animation-name: slideInDown;
+    -webkit-animation-duration: 1s;
+    animation-name: slideInDown;
+    animation-duration: 1s;
+  }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .ribbon-column {
-    -ms-flex: 33%;
-    flex: 33%;
-    max-width: 33%;
-  }
   .blockquote{
     padding: 25px;
     line-height:20pt;
@@ -203,8 +146,13 @@
     font-size: 1.2rem;
     line-height: 1.2;
   }
+  .fade {
+    -webkit-animation-name: flipInY;
+    -webkit-animation-duration: 1s;
+    animation-name: flipInY;
+    animation-duration: 1s;
+  }
 }
-
 
 
 

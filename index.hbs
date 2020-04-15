@@ -6,67 +6,64 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
 {{/contentFor}}
 
-<header class="site-home-header">
+{{> site-header}}
 
-    {{!--Special header-image.hbs partial to generate the background image--}}
-    {{> header-background}}
-    {{> "site-nav"}}
-    </div>
+{{!--Special header-image.hbs partial to generate the background image--}}
 
-    <!-- Slideshow container -->
-    <div class="allSlides">
-        <ul class="slideshow-container">
-            {{#get "posts" filter="tags:-english+tag:german" limit="5"}}
-                {{#foreach posts}}
 
-                    <!-- Full-width images with number and caption text -->
-                    <li class="mySlides animated slideInLeft">
+<!-- Slideshow container -->
+<div class="allSlides">
+    <div class="slideshow-container">
+        {{#get "posts" filter="tags:-english+tag:german" limit="5"}}
+            {{#foreach posts}}
 
-                        <a href="{{url}}">
-                            <img class="post-card-image header-img"
-                                 srcset="{{img_url feature_image size="s"}} 300w,
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+
+                    <a href="{{url}}">
+                        <img class="post-card-image header-img"
+                             srcset="{{img_url feature_image size="s"}} 300w,
       {{img_url feature_image size="m"}} 600w,
       {{img_url feature_image size="xl"}} 2000w"
-                                 sizes="(max-width: 1000px) 400px, 700px"
-                                 src="{{img_url feature_image size="xl"}}"
-                                 alt="{{title}}"
-                            />
+                             sizes="(max-width: 1000px) 400px, 700px"
+                             src="{{img_url feature_image size="xl"}}"
+                             alt="{{title}}"
+                        />
 
-                            <div class="text yaku">
+                        <div class="text yaku">
 
-                                <h1>{{title}}</h1>
-                                <p>{{excerpt words="30"}} ... </p>
+                            <h1>{{title}}</h1>
+                            <p>{{excerpt words="30"}} ... </p>
 
-                            </div>
-                        </a>
-                    </li>
-                {{/foreach}}
-            {{/get}}
+                        </div>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/get}}
 
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </ul>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+</div>
 
-    <input type="hidden" id="slideChange"/>
+<input type="hidden" id="slideChange"/>
 
 
-</header>
 {{!-- The main content area --}}
 
-<section class="blockquote">
+<section id="caption" class="blockquote">
     <center>{{t "front caption text"}}</center>
     <hr/>
 </section>
+
 <section>
     {{> "ribbon"}}
     <center class="blockquote">{{t "ribbon caption"}}
         <hr/>
     </center>
-
-
 </section>
+
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
@@ -82,7 +79,6 @@
     </div>
 </main>
 
-{{> site-header}}
 
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
@@ -144,6 +140,8 @@ function showSlides(n) {
 })();
 
 
+
+
     </script>
     <script>
     // NOTE: Scroll performance is poor in Safari
@@ -152,8 +150,8 @@ function showSlides(n) {
     //   scrolling but continuous processing even when not scrolling
     $(document).ready(function () {
 
-      var nav = document.querySelector('.site-nav-main .site-nav');
-      var feed = document.querySelector('.post-feed');
+      var nav = document.querySelector('.header');
+      var feed = document.querySelector('#caption');
 
       var lastScrollY = window.scrollY;
       var lastWindowHeight = window.innerHeight;
@@ -184,9 +182,9 @@ function showSlides(n) {
 
             // show/hide nav
             if (lastScrollY >= trigger - 20) {
-              nav.classList.add('fixed-nav-active');
+              nav.classList.remove('transparent');
             } else {
-              nav.classList.remove('fixed-nav-active');
+              nav.classList.add('transparent');
             }
 
             ticking = false;
@@ -200,6 +198,8 @@ function showSlides(n) {
           update();
 
     });
+
+
 
     </script>
 
