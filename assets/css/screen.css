@@ -187,11 +187,11 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-home-header {
-    z-index: 1000;
+    z-index: 2;
 }
 
 .site-home-header .site-header-background {
-    margin-top: 0;
+    margin-top: 64px;
 }
 
 .site-home-header .site-header-content {
@@ -1861,7 +1861,6 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background: color(var(--darkgrey) l(-5%));
 }
 
@@ -2800,6 +2799,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
+    border-top:color(var(--whoblue)) 1px solid;
     background: color(var(--darkgrey) l(-5%));
 }
 
@@ -2985,7 +2985,7 @@ background-color: color(var(--whoblue));
   top: 0;
 }
 .transparent{
-    background:transparent;
+    background:rgba(0,0,0,0.7);
     box-shadow:none;
 }
 /* 48em = 768px */
@@ -3011,7 +3011,6 @@ background-color: color(var(--whoblue));
 
 
 /*  Ribbon */
-
 .ribbon{
   margin: 25px 5%;
 }
@@ -3047,10 +3046,19 @@ background-color: color(var(--whoblue));
   cursor: pointer;
 }
 .ribbon-column:hover .middle{
-  display:block;
+   opacity:1;
+}
+.ribbon-caption{
+    margin-bottom:15px;
+
 }
 
-
+.middle{
+  display: block;
+  opacity:0;
+  font-size: 7pt;
+  font-weight: 600;
+}
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {

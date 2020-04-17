@@ -26,6 +26,12 @@
         return;
     }
 
+    var isNoLoad=document.querySelector('.no-load')
+    if(isNoLoad)
+    {
+        return;
+    }
+
     var buffer = 300;
 
     var ticking = false;

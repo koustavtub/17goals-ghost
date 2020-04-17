@@ -1,0 +1,24 @@
+{{#if isSecondary}}
+    {{> "icons/spriteicons"}}
+    <!-- secondary navigation -->
+    <ul  role="menu">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}" role="menuitem">
+                <a href="{{url}}" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="{{slug}}icon">
+                        <use xlink:href="#{{slug}}"></use>
+                    </svg>
+
+                </a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{else}}
+    <!-- primary navigation -->
+    <ul role="menu">
+        <li class="nav-good-news" role="menuitem"><a href="/tag/news/">Good News</a></li>
+        <li class="nav-17-goals" role="menuitem"><a href="/17ziele_17sdg/">17 Goals</a></li>
+        <li class="nav-editorial" role="menuitem"><a href="/editorial/">Editorial</a></li>
+        <li class="nav-newsletter-abo" role="menuitem"><a href="/newsletter-abo/">Subscribe To Newsletter</a></li>
+    </ul>
+{{/if}}

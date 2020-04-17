@@ -57,9 +57,8 @@
     margin-top: -22px;
     padding: 16px;
     color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
+    font-size: 45px;
+    transition: 0.3s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
@@ -73,13 +72,14 @@
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
+    text-decoration:none;
   }
 
   /* Caption text */
   .text {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+
     padding: 8px 50px;
     position: absolute;
     bottom: 0;
@@ -91,7 +91,45 @@
    color:#1affa3;
    transition: 0.3s;
  }
-
+ .head-title{
+     border-left: 3px solid #00adef;
+     padding: 0 0 0 1.875rem;
+     color: #fff;
+     letter-spacing: 1px;
+     font-weight: 600;
+     margin: 0 0 .625rem;
+     text-transform: uppercase;
+     animation-delay:1.2s;
+ }
+ .head-desc{
+     font-weight: 400;
+     max-width :60%;
+     overflow: hidden;
+     margin-bottom:2px;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     animation-delay:2s;
+ }
+.caps{
+ border-bottom:1px solid transparent;
+ text-transform: uppercase;
+ margin:0;
+ float:right;
+ font-weight: 600;
+ animation-delay:2.5s;
+}
+.caps:hover{
+    border-bottom:1px solid #00adef;;
+    transition: 0.3s;
+}
+.mySlides:hover .head-title{
+    border-left: 3px solid #1affa3;
+    transition: 0.3s;
+}
+.mySlides:hover .head-desc{
+    color:#1affa3;
+    transition: 0.3s;
+}
  /* Fading animation */
  .fade {
   -webkit-animation-name: slideInRight;
@@ -100,11 +138,16 @@
   animation-duration: 1s;
 }
 
-.middle{
-  display: none;
-  font-size: 7pt;
-  font-weight: 600;
+.highlighter{
+    text-transform: uppercase;
+    position: relative;
 }
+
+.gradblue{
+background: rgb(0,136,204);
+background: linear-gradient(0deg, rgba(0,136,204,1) 0%, rgba(0,173,239,1) 37%, rgba(0,173,239,1) 100%);
+}
+
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
@@ -118,9 +161,7 @@
   hr{
     margin: 2rem;
   }
-  .yaku p{
-    line-height: 1.5;
-  }
+
   .fade {
     -webkit-animation-name: slideInDown;
     -webkit-animation-duration: 1s;
@@ -138,14 +179,9 @@
   .text{
     padding: 8px 20px;
   }
-  .yaku h1{
-    font-size:3rem;
-    font-weight:800;
-  }
-  .yaku p{
-    font-size: 1.2rem;
-    line-height: 1.2;
-  }
+   .head-desc{
+       max-width :90%;
+   }
   .fade {
     -webkit-animation-name: flipInY;
     -webkit-animation-duration: 1s;

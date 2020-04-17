@@ -1,9 +1,12 @@
 <ul class="menu">
     {{#if @site.navigation}}
-        {{navigation}}
+        {{#if en}}
+            {{> "navigation-en"}}
+        {{else}}
+            {{navigation}}
+        {{/if}}
     {{/if}}
     {{#is "post"}}
         <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
     {{/is}}
 </ul>
-

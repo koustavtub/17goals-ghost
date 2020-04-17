@@ -1,0 +1,132 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+  into the {body} of the default.hbs template --}}
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/my.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
+{{/contentFor}}
+
+    {{> site-header}}
+<header class="site-home-header">
+    {{> header-background }} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="inner site-header-content ">
+        <h1 class="site-title">{{@site.title}}</h1>
+        <h2 class="site-description">
+            A collection of all our Posts.
+        </h2>
+    </div>
+    </div>
+</header>
+
+
+{{!-- The main content area --}}
+
+<section id="caption" class="blockquote">
+    <center>{{t "front caption text"}}</center>
+</section>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner posts">
+
+        <div class="post-feed">
+            {{#foreach posts}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+
+        </div>
+
+    </div>
+</main>
+
+{{!-- Ribbon --}}
+<section>
+    {{> "ribbon"}}
+    <center class="ribbon-caption">{{t "ribbon caption"}}</center>
+</section>
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+    <script>
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  
+  if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+      $('#slideChange').trigger("change");
+    }
+
+
+
+
+
+    (function(){
+      var wallopEl = document.querySelector('.slideshow-container'),
+      autoPlayMs = 5000,
+      nextTimeout;
+      nextTimeout = setTimeout(function() {
+        plusSlides(1);
+      }, autoPlayMs);
+      $('#slideChange').on('change', function() {
+        clearTimeout(nextTimeout);
+        nextTimeout = setTimeout(function() {
+          plusSlides(1);
+        }, autoPlayMs);
+      });
+
+  wallopEl.addEventListener('mouseenter', function() {
+    clearTimeout(nextTimeout);
+  });
+  wallopEl.addEventListener('mouseleave', function() {
+    nextTimeout = setTimeout(function() {
+      plusSlides(1);
+    }, autoPlayMs);
+  });
+})();
+
+
+
+
+
+    </script>
+    <script>
+    // NOTE: Scroll performance is poor in Safari
+    // - this appears to be due to the events firing much more slowly in Safari.
+    //   Dropping the scroll event and using only a raf loop results in smoother
+    //   scrolling but continuous processing even when not scrolling
+    $(document).ready(function () {
+
+      var nav = document.querySelector('.header');
+      nav.classList.remove('transparent');
+      var nav = document.querySelector('.site-header-background');
+      nav.classList.add('gradblue');
+
+
+    });
+
+
+
+
+    </script>
+
+{{/contentFor}}

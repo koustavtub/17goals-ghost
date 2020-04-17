@@ -3,26 +3,24 @@
   into the {body} of the default.hbs template --}}
 {{#contentFor "extraheads"}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/my.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
 {{/contentFor}}
 
-<header class="site-home-header">
+{{> site-header en="en"}}
 
-    {{!--Special header-image.hbs partial to generate the background image--}}
-    {{> header-background}}
-    {{> "en-site-nav"}}
-    </div>
+{{!--Special header-image.hbs partial to generate the background image--}}
 
 
-    <!-- Slideshow container -->
+<!-- Slideshow container -->
+<div class="allSlides">
     <div class="slideshow-container">
-        {{#get "posts" filter="tags:-german+tag:english" limit="5"}}
+        {{#get "posts" filter="tag:-german+tag:english" limit="5"}}
             {{#foreach posts}}
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
 
                     <a href="{{url}}">
-                        {{#if feature_image}}
                         <img class="post-card-image header-img"
                              srcset="{{img_url feature_image size="s"}} 300w,
       {{img_url feature_image size="m"}} 600w,
@@ -31,14 +29,12 @@
                              src="{{img_url feature_image size="xl"}}"
                              alt="{{title}}"
                         />
-                            {{else}}
-                            <img class="post-card-image header-img" src="{{asset "images/bokeh.jpeg"}}" />
-                        {{/if}}
 
-                        <div class="text yaku">
+                        <div class="text">
 
-                            <h1>{{title}}</h1>
-                            <p>{{excerpt words="30"}} ... </p>
+                            <h1 class="head-title animated fadeInDown faster">{{title}}</h1>
+                            <p class="head-desc animated fadeInUp">{{excerpt words="20"}} </p>
+                            <p class="head-desc animated fadeInLeft caps">Read More</p>
 
                         </div>
                     </a>
@@ -50,154 +46,174 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+</div>
 
-    <input type="hidden" id="slideChange"/>
+<input type="hidden" id="slideChange"/>
 
 
-</header>
 {{!-- The main content area --}}
 
-<section class="blockquote">
-    <center>{{t "front caption text"}}</center>
+<section id="caption" class="blockquote">
+    <center>Seventeen Goals tells positive, inspiring stories of change and shows how we can all contribute to the success of the 17 sustainability goals.</center>
     <hr/>
 </section>
-<section>
-    {{> "ribbon" en="en"}}
-    <center class="blockquote">{{t "ribbon caption"}}
-        <hr/>
-    </center>
 
 
-</section>
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
-        <div class="post-feed">
-            {{#foreach posts}}
+        <div class="post-feed no-load">
+            {{#get "posts" filter="tag:hash-featured" limit="1"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+            {{#get "posts" filter="tag:hash-editors-choice" limit="1"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+            {{#get "posts" filter="tag:hash-sdg-of-the-month" limit="1"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+            {{#get "posts" filter="tag:hash-in-a-nutshell" limit="1"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}
+            {{> "news-and-events" en="en"}}
 
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
         </div>
 
     </div>
 </main>
 
-{{> site-header en="en"}}
-
+{{!-- Ribbon --}}
+<section>
+    {{> "ribbon" en="en"}}
+    <center class="ribbon-caption">
+        Let's make the goals better known. Click through and discover stories about each of the 17 Sustainability Goals
+    </center>
+</section>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
     <script>
 
-  var slideIndex = 1;
-  showSlides(slideIndex);
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  
-  if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex-1].style.display = "block";
-      $('#slideChange').trigger("change");
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
     }
-    (function(){
-      var wallopEl = document.querySelector('.slideshow-container'),
-      autoPlayMs = 3500,
-      nextTimeout;
-      nextTimeout = setTimeout(function() {
-        plusSlides(1);
-      }, autoPlayMs);
-      $('#slideChange').on('change', function() {
-        clearTimeout(nextTimeout);
-        nextTimeout = setTimeout(function() {
-          plusSlides(1);
-        }, autoPlayMs);
-      });
-  // the code you asked for:
-  wallopEl.addEventListener('mouseenter', function() {
-    clearTimeout(nextTimeout);
-  });
-  wallopEl.addEventListener('mouseleave', function() {
-    nextTimeout = setTimeout(function() {
-      plusSlides(1);
-    }, autoPlayMs);
-  });
-})();
 
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-    </script>
-    <script>
-    // NOTE: Scroll performance is poor in Safari
-    // - this appears to be due to the events firing much more slowly in Safari.
-    //   Dropping the scroll event and using only a raf loop results in smoother
-    //   scrolling but continuous processing even when not scrolling
-    $(document).ready(function () {
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
 
-      var nav = document.querySelector('.site-nav-main .site-nav');
-      var feed = document.querySelector('.post-feed');
-
-      var lastScrollY = window.scrollY;
-      var lastWindowHeight = window.innerHeight;
-      var lastDocumentHeight = $(document).height();
-      var ticking = false;
-
-      function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-      }
-
-      function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-        requestTick();
-      }
-
-      function requestTick() {
-        if (!ticking) {
-          requestAnimationFrame(update);
-        }
-        ticking = true;
-      }
-
-      function update() {
-        var trigger = feed.getBoundingClientRect().top + window.scrollY;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-            // show/hide nav
-            if (lastScrollY >= trigger - 20) {
-              nav.classList.add('fixed-nav-active');
-            } else {
-              nav.classList.remove('fixed-nav-active');
+        if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex-1].style.display = "block";
+                $('#slideChange').trigger("change");
             }
 
-            ticking = false;
-          }
 
-          window.addEventListener('scroll', onScroll, {
-            passive: true
-          });
-          window.addEventListener('resize', onResize, false);
+            (function(){
+                var wallopEl = document.querySelector('.slideshow-container'),
+                autoPlayMs = 5000,
+                nextTimeout;
+                nextTimeout = setTimeout(function() {
+                    plusSlides(1);
+                }, autoPlayMs);
+                $('#slideChange').on('change', function() {
+                    clearTimeout(nextTimeout);
+                    nextTimeout = setTimeout(function() {
+                        plusSlides(1);
+                    }, autoPlayMs);
+                });
 
-          update();
+                wallopEl.addEventListener('mouseenter', function() {
+                    clearTimeout(nextTimeout);
+                });
+                wallopEl.addEventListener('mouseleave', function() {
+                    nextTimeout = setTimeout(function() {
+                        plusSlides(1);
+                    }, autoPlayMs);
+                });
+            })();
 
-    });
 
+
+
+        // NOTE: Scroll performance is poor in Safari
+        // - this appears to be due to the events firing much more slowly in Safari.
+        //   Dropping the scroll event and using only a raf loop results in smoother
+        //   scrolling but continuous processing even when not scrolling
+        $(document).ready(function () {
+
+            var nav = document.querySelector('.header');
+            var feed = document.querySelector('#caption');
+
+            var lastScrollY = window.scrollY;
+            var lastWindowHeight = window.innerHeight;
+            var lastDocumentHeight = $(document).height();
+            var ticking = false;
+
+            function onScroll() {
+                lastScrollY = window.scrollY;
+                requestTick();
+            }
+
+            function onResize() {
+                lastWindowHeight = window.innerHeight;
+                lastDocumentHeight = $(document).height();
+                requestTick();
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                }
+                ticking = true;
+            }
+
+            function update() {
+                var trigger = feed.getBoundingClientRect().top + window.scrollY;
+                var progressMax = lastDocumentHeight - lastWindowHeight;
+
+                // show/hide nav
+                if (lastScrollY >= trigger - 20) {
+                    nav.classList.remove('transparent');
+                } else {
+                    nav.classList.add('transparent');
+                }
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', onScroll, {
+                passive: true
+            });
+            window.addEventListener('resize', onResize, false);
+
+            update();
+
+        });
     </script>
 
 {{/contentFor}}
