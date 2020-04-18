@@ -1,4 +1,4 @@
-{{!< default}}
+{{!< default-en}}
 {{!-- The tag above means: insert everything in this file
   into the {body} of the default.hbs template --}}
 {{#contentFor "extraheads"}}
@@ -21,14 +21,19 @@
                 <div class="mySlides fade">
 
                     <a href="{{url}}">
-                        <img class="post-card-image header-img"
-                             srcset="{{img_url feature_image size="s"}} 300w,
+                        {{#if feature_image}}
+                            <img class="post-card-image header-img"
+                                 srcset="{{img_url feature_image size="s"}} 300w,
       {{img_url feature_image size="m"}} 600w,
       {{img_url feature_image size="xl"}} 2000w"
-                             sizes="(max-width: 1000px) 400px, 700px"
-                             src="{{img_url feature_image size="xl"}}"
-                             alt="{{title}}"
-                        />
+                                 sizes="(max-width: 1000px) 400px, 700px"
+                                 src="{{img_url feature_image size="xl"}}"
+                                 alt="{{title}}"
+                            />
+
+                        {{else}}
+                            <img class="post-card-image header-img" src="{{asset "images/bokeh.jpeg"}}" alt="{{title}}"/>
+                        {{/if}}
 
                         <div class="text">
 
@@ -53,9 +58,8 @@
 
 {{!-- The main content area --}}
 
-<section id="caption" class="blockquote">
-    <center>Seventeen Goals tells positive, inspiring stories of change and shows how we can all contribute to the success of the 17 sustainability goals.</center>
-    <hr/>
+<section id="caption" class="blockquote animated fadeIn">
+    <center><span class="blockquote-title">Seventeen Goals</span> tells positive, inspiring stories of change and shows how we can all contribute to the success of the 17 sustainability goals.</center>
 </section>
 
 
@@ -63,28 +67,28 @@
     <div class="inner posts">
 
         <div class="post-feed no-load">
-            {{#get "posts" filter="tag:hash-featured" limit="1"}}
+            {{#get "posts" filter="tag:hash-featured" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="Featured"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-editors-choice" limit="1"}}
+            {{#get "posts" filter="tag:hash-editors-choice" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="Editors Choice"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-sdg-of-the-month" limit="1"}}
+            {{#get "posts" filter="tag:hash-sdg-of-the-month" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="SDG Of The Month"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-in-a-nutshell" limit="1"}}
+            {{#get "posts" filter="tag:hash-in-a-nutshell" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="In A Nut Shell"}}
                 {{/foreach}}
             {{/get}}
             {{> "news-and-events" en="en"}}
@@ -135,7 +139,7 @@
 
             (function(){
                 var wallopEl = document.querySelector('.slideshow-container'),
-                autoPlayMs = 5000,
+                autoPlayMs = 8000,
                 nextTimeout;
                 nextTimeout = setTimeout(function() {
                     plusSlides(1);
@@ -166,7 +170,16 @@
         //   scrolling but continuous processing even when not scrolling
         $(document).ready(function () {
 
+        var postCards = document.getElementsByClassName('post-card');
+        if(postCards[0]){
+            postCards[0].classList.add('post-card-large')
+        }
+        if(postCards[4]){
+            postCards[4].classList.add('post-card-large')
+        }
+
             var nav = document.querySelector('.header');
+            var bq = document.querySelector('.blockquote');
             var feed = document.querySelector('#caption');
 
             var lastScrollY = window.scrollY;
@@ -196,12 +209,16 @@
                 var trigger = feed.getBoundingClientRect().top + window.scrollY;
                 var progressMax = lastDocumentHeight - lastWindowHeight;
 
-                // show/hide nav
-                if (lastScrollY >= trigger - 20) {
+                if (lastScrollY >= trigger - 70) {
+                    bq.classList.add('fadeOut')
+                    bq.classList.remove('fadeIn')
                     nav.classList.remove('transparent');
                 } else {
+                    bq.classList.add('fadeIn')
+                    bq.classList.remove('fadeOut')
                     nav.classList.add('transparent');
                 }
+
 
                 ticking = false;
             }
@@ -214,6 +231,7 @@
             update();
 
         });
+
     </script>
 
 {{/contentFor}}

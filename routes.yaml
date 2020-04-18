@@ -1,4 +1,6 @@
 routes:
+  /de/alle-geschichten/: all
+  /en/all-stories/: all-en
 
 collections:
   /en/:
@@ -13,10 +15,6 @@ collections:
     permalink: /nachhaltigkeitsziele/{slug}/
     filter: tag:-hash-sustainabilty-goals+tag:hash-nachhaltigkeitsziele
     template: custom-tag
-  /alle-beitrage/:
-    permalink: /alle/{slug}/
-    filter: tag:german
-    template: all
   /:
     permalink: /{slug}/
     filter: tag:-english+tag:german

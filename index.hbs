@@ -21,14 +21,19 @@
                 <div class="mySlides fade">
 
                     <a href="{{url}}">
-                        <img class="post-card-image header-img"
-                             srcset="{{img_url feature_image size="s"}} 300w,
+                        {{#if feature_image}}
+                            <img class="post-card-image header-img"
+                                 srcset="{{img_url feature_image size="s"}} 300w,
       {{img_url feature_image size="m"}} 600w,
       {{img_url feature_image size="xl"}} 2000w"
-                             sizes="(max-width: 1000px) 400px, 700px"
-                             src="{{img_url feature_image size="xl"}}"
-                             alt="{{title}}"
-                        />
+                                 sizes="(max-width: 1000px) 400px, 700px"
+                                 src="{{img_url feature_image size="xl"}}"
+                                 alt="{{title}}"
+                            />
+
+                        {{else}}
+                            <img class="post-card-image header-img" src="{{asset "images/bokeh.jpeg"}}" alt="{{title}}"/>
+                        {{/if}}
 
                         <div class="text">
 
@@ -53,39 +58,37 @@
 
 {{!-- The main content area --}}
 
-<section id="caption" class="blockquote">
-    <center>{{t "front caption text"}}</center>
-    <hr/>
+<section id="caption" class="blockquote animated fadeIn">
+    <center><span class="blockquote-title">Seventeen Goals</span> {{t "front caption text"}}</center>
 </section>
-
 
 
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
         <div class="post-feed no-load">
-            {{#get "posts" filter="tag:hash-vorgestellte" limit="1"}}
+            {{#get "posts" filter="tag:hash-vorgestellte" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="Vorgestellte"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-empfehlung-der-redaktion" limit="1"}}
+            {{#get "posts" filter="tag:hash-empfehlung-der-redaktion" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="Empfehlung der redaktion"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-nachaltigskeitsziel-des-monats" limit="1"}}
+            {{#get "posts" filter="tag:hash-nachaltigskeitsziel-des-monats" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="Nachaltigskeitsziel Des Monats"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-kurt-and-gut" limit="1"}}
+            {{#get "posts" filter="tag:hash-kurz-and-gut" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card-home" feature="Kurz and Gut"}}
                 {{/foreach}}
             {{/get}}
             {{> "news-and-events"}}
@@ -134,7 +137,7 @@
 
             (function(){
                 var wallopEl = document.querySelector('.slideshow-container'),
-                autoPlayMs = 6000,
+                autoPlayMs = 8000,
                 nextTimeout;
                 nextTimeout = setTimeout(function() {
                     plusSlides(1);
@@ -165,7 +168,16 @@
         //   scrolling but continuous processing even when not scrolling
         $(document).ready(function () {
 
+        var postCards = document.getElementsByClassName('post-card');
+        if(postCards[0]){
+            postCards[0].classList.add('post-card-large')
+        }
+        if(postCards[4]){
+            postCards[4].classList.add('post-card-large')
+        }
+
             var nav = document.querySelector('.header');
+            var bq = document.querySelector('.blockquote');
             var feed = document.querySelector('#caption');
 
             var lastScrollY = window.scrollY;
@@ -195,12 +207,16 @@
                 var trigger = feed.getBoundingClientRect().top + window.scrollY;
                 var progressMax = lastDocumentHeight - lastWindowHeight;
 
-                // show/hide nav
-                if (lastScrollY >= trigger - 20) {
+                if (lastScrollY >= trigger - 70) {
+                    bq.classList.add('fadeOut')
+                    bq.classList.remove('fadeIn')
                     nav.classList.remove('transparent');
                 } else {
+                    bq.classList.add('fadeIn')
+                    bq.classList.remove('fadeOut')
                     nav.classList.add('transparent');
                 }
+
 
                 ticking = false;
             }
@@ -213,6 +229,7 @@
             update();
 
         });
+
     </script>
 
 {{/contentFor}}

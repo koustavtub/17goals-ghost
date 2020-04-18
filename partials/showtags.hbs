@@ -1,0 +1,69 @@
+<div>
+    <div class="ribbon-sm" id="smallRibbon">
+    </div>
+</div>
+        <script>
+       var tagsArray = new Array(),engImg = new Array(),deImg = new Array();
+        {{#foreach tags}}
+            tagsArray.push('{{slug}}');
+        {{/foreach}}
+
+        var lang = document.querySelector('html').lang;
+
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-1-no-poverty"> <img src={{asset "images/en/sm-sdg-1.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-2-zero-hunger"> <img src={{asset "images/en/sm-sdg-2.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-3-good-health-and-well-being"> <img src={{asset "images/en/sm-sdg-3.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-4-quality-education"> <img src={{asset "images/en/sm-sdg-4.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-5-gender-equality"> <img src={{asset "images/en/sm-sdg-5.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-6-claen-water-and-sanitation"> <img src={{asset "images/en/sm-sdg-6.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-7-affordable-and-clean-energy"> <img src={{asset "images/en/sm-sdg-7.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-8-decent-work-and-economic-growth"> <img src={{asset "images/en/sm-sdg-8.png"}}/></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-9-industry-innovation-and-infrastructure"> <img src={{asset "images/en/sm-sdg-9.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-10-reduced-inequalities"> <img src={{asset "images/en/sm-sdg-10.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-11-sustainable-cities-and-communities"> <img src={{asset "images/en/sm-sdg-11.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-12-responsible-consumption-and-production"> <img src={{asset "images/en/sm-sdg-12.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-13-climate-action"> <img src={{asset "images/en/sm-sdg-13.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-14-life-below-water"> <img src={{asset "images/en/sm-sdg-14.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-15-life-on-land"> <img src={{asset "images/en/sm-sdg-15.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-16-peace-justice-and-strong-institutions"> <img src={{asset "images/en/sm-sdg-16.png"}}/></a></div>')
+        engImg.push('<div class="ribbon-column-sm"><a href="/sustainability-goals/goal-17-partnerships-for-the-goals"> <img src={{asset "images/en/sm-sdg-17.png"}}/></a></div>')
+
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-1-keine-armut"> <img src={{asset "images/de/sm-sdg-1.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-2-kein-hunger"> <img src={{asset "images/de/sm-sdg-2.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-3-gesundheit-und-wohlergehen"> <img src={{asset "images/de/sm-sdg-3.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-4-hochwertige-bildung"> <img src={{asset "images/de/sm-sdg-4.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-5-geschlechtergleicheit"> <img src={{asset "images/de/sm-sdg-5.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-6-sauberes-wasser-u-sanitaeranlagen"> <img src={{asset "images/de/sm-sdg-6.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-7-bezahlbare-u-saubere-energie"> <img src={{asset "images/de/sm-sdg-7.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-8-menschenwuerdige-arbeit-u-wirtschaftswachstum"> <img src={{asset "images/de/sm-sdg-8.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-9-industrie-innovation-infrastruktur"> <img src={{asset "images/de/sm-sdg-9.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-10-weniger-ungleichheiten"> <img src={{asset "images/de/sm-sdg-10.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-11-nachhaltige-staedte-u-gemeinden"> <img src={{asset "images/de/sm-sdg-11.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-12-nachhaltiger-konsum-u-produktion"> <img src={{asset "images/de/sm-sdg-12.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-13-massnahmen-zum-klimaschutz"> <img src={{asset "images/de/sm-sdg-13.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-14-leben-unter-wasser"> <img src={{asset "images/de/sm-sdg-14.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-15-leben-an-land"> <img src={{asset "images/de/sm-sdg-15.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-16-fireden-gerechtigekeit-starke-institutionen"> <img src={{asset "images/de/sm-sdg-16.jpg"}}/></a></div>')
+        deImg.push('<div class="ribbon-column-sm"><a href="/nachhaltigkeitsziele/ziel-17-partnerschaften-zur-erreichung-der-ziele"> <img src={{asset "images/de/sm-sdg-17.jpg"}}/></a></div>')
+
+
+        if (lang && lang == 'de') {
+           showTagImg(deImg)
+        } else {
+           showTagImg(deImg)
+        }
+
+        function showTagImg(imgLangArr){
+            var smallRibbon = document.getElementById('smallRibbon');
+            var htmlToAppend='';
+            tagsArray.forEach(tag=>{
+                var index=Number(tag);
+                if(index && imgLangArr[index-1])
+                {
+                htmlToAppend+= imgLangArr[index-1];
+                }
+            })
+            smallRibbon.innerHTML=htmlToAppend;
+        }
+        </script>
+
