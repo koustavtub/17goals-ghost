@@ -1,3 +1,10 @@
+<a class="lang-switch" href="{{@site.url}}{{#unless en}}/en{{/unless}}">
+    {{#if en}}
+        de</a><div id="language-tooltip">{{t "Change The Language"}}</div>
+    {{else}}
+        en</a><div id="language-tooltip">Switch To English</div>
+    {{/if}}
+
 <ul class="menu">
     {{#if @site.navigation}}
         {{#if en}}

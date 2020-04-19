@@ -1,0 +1,1 @@
+{"version":3,"sources":["17goals.css"],"names":[],"mappings":"AAOA,sBACI,YAAa,CACb,gBAAgB,CAChB,gBAAgB,CAChB,SACJ","file":"17goals.css","sourcesContent":["section-17{\n    height: 100vh;\n    min-height:100vh;\n    max-height:100vh;\n    z-index:2;\n\n}\narticle-17{\n    height: 100vh;\n    min-height:100vh;\n    max-height:100vh;\n    z-index:2;\n}"]}

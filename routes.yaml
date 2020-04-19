@@ -15,11 +15,12 @@ collections:
     permalink: /nachhaltigkeitsziele/{slug}/
     filter: tag:-hash-sustainabilty-goals+tag:hash-nachhaltigkeitsziele
     template: custom-tag
+
   /:
     permalink: /{slug}/
     filter: tag:-english+tag:german
     template: index
 
 taxonomies:
-  tag: /tag/{slug}/
+  tag: /topic/{slug}/
   author: /author/{slug}/

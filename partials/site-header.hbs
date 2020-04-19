@@ -1,11 +1,12 @@
 <header class="header">
 
     {{#if @site.logo}}
-        <a class="logo" href="{{@site.url}}{{#if en}}/en{{/if}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+        <a class="logo" href="{{@site.url}}{{#if en}}/en{{/if}}"><img src="{{@site.logo}}" alt="{{@site.title}}"/></a>
     {{else}}
         <a class="logo" href="{{@site.url}}{{#if en}}/en{{/if}}">{{@site.title}}</a>
     {{/if}}
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
+
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     {{#if en}}
         {{> "site-nav" en="en"}}

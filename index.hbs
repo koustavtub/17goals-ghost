@@ -70,31 +70,34 @@
             {{#get "posts" filter="tag:hash-vorgestellte" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="Vorgestellte"}}
+                    {{> "post-card" feature="Vorgestellte"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:hash-empfehlung-der-redaktion" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="Empfehlung der redaktion"}}
+                    {{> "post-card" feature="Empfehlung der redaktion"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:hash-nachaltigskeitsziel-des-monats" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="Nachaltigskeitsziel Des Monats"}}
+                    {{> "post-card" feature="Nachaltigskeitsziel Des Monats"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-kurz-and-gut" limit="1"  include="tags,authors"}}
+            {{#get "posts" filter="tag:kurz-and-gut" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="Kurz and Gut"}}
+                    {{> "post-card" feature="Kurz and Gut"}}
                 {{/foreach}}
             {{/get}}
-            {{> "news-and-events"}}
-
+            {{#get "posts" filter="tag:news-and-events" limit="1"  include="tags,authors"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card" feature="News & Events"}}
+                {{/foreach}}
+            {{/get}}
         </div>
-
     </div>
 </main>
 

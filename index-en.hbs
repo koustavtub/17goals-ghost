@@ -70,28 +70,34 @@
             {{#get "posts" filter="tag:hash-featured" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="Featured"}}
+                    {{> "post-card" feature="Featured"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:hash-editors-choice" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="Editors Choice"}}
+                    {{> "post-card" feature="Editors Choice"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:hash-sdg-of-the-month" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="SDG Of The Month"}}
+                    {{> "post-card" feature="SDG Of The Month"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:hash-in-a-nutshell" limit="1"  include="tags,authors"}}
+            {{#get "posts" filter="tag:in-a-nutshell" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card-home" feature="In A Nut Shell"}}
+                    {{> "post-card" feature="In A Nut Shell"}}
                 {{/foreach}}
             {{/get}}
-            {{> "news-and-events" en="en"}}
+            {{#get "posts" filter="tag:news-and-events-en" limit="1"  include="tags,authors"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card" feature="News & Events"}}
+                {{/foreach}}
+            {{/get}}
+
 
         </div>
 
