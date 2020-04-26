@@ -2,7 +2,6 @@
 {{!-- The tag above means: insert everything in this file
   into the {body} of the default.hbs template --}}
 {{#contentFor "extraheads"}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/my.css"}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
 {{/contentFor}}
 
@@ -70,7 +69,7 @@
             {{#get "posts" filter="tag:hash-vorgestellte" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card" feature="Vorgestellte"}}
+                    {{> "post-card" feature="Featured"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:hash-empfehlung-der-redaktion" limit="1"  include="tags,authors"}}

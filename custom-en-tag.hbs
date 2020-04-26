@@ -1,32 +1,100 @@
 {{!< default-en}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+{{!-- The tag above means: insert everything in this file
+  into the {body} of the default.hbs template --}}
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
+{{/contentFor}}
 
-{{#tag}}
-<header class="site-archive-header">
-    {{> site-header}}
-    {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-        <div class="inner site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                {{description}}
-                {{else}}
-                A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
-        </div>
-    </div>
-</header>
-{{/tag}}
+{{> site-header en="en"}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-            {{/foreach}}
+
+{{#post}}
+
+    <main id="site-main" class="site-main outer">
+        <div class="inner">
+
+            <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+
+                <header class="post-full-header">
+                    <h1 class="post-full-title">{{title}}</h1>
+                </header>
+
+                {{#if feature_image}}
+                    <figure class="post-full-image">
+                        {{!-- This is a responsive image, it loads different sizes depending on device
+                        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                        <img
+                                srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                                sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 1170px,
+                            2000px"
+                                src="{{img_url feature_image size="xl"}}"
+                                alt="{{title}}"
+                        />
+                    </figure>
+                {{/if}}
+
+                <section class="post-full-content">
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+                </section>
+
+            </article>
+
         </div>
-    </div>
-</main>
+    </main>
+
+{{/post}}
+{{!-- Ribbon --}}
+<section>
+    {{> "ribbon" en="en"}}
+    <center class="ribbon-caption">Let's make the goals better known. Click through and discover stories about each of the 17 Sustainability Goals</center>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

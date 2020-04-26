@@ -1,13 +1,362 @@
-section-17{
+@import "global.css";
+
+.section-17 {
     height: 100vh;
-    min-height:100vh;
-    max-height:100vh;
-    z-index:2;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-size: 100vh 100vw;
+    overflow: hidden;
+}
+
+.dark-section {
+    z-index: 2;
+    display: none
+}
+
+.light-section {
+    z-index: 2;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
 
 }
-article-17{
+
+.article-17 {
     height: 100vh;
-    min-height:100vh;
-    max-height:100vh;
-    z-index:2;
+    min-height: 100vh;
+    max-height: 100vh;
+    z-index: 2;
+}
+
+.wheel-title {
+    font-size: 6vw;
+    font-weight: 800;
+    color: color(var(--whoblue));
+    animation-delay: .5s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -ms-flex-line-pack: center;
+    align-content: center;
+
+}
+
+.item {
+    margin: 0;
+    display: inherit;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.wheel-container {
+    padding: 0 20px;
+}
+
+.wheel img {
+    width: 25vw;
+}
+
+
+/*Blocks*/
+.blocks {
+    margin: 150px 12%;
+        height: 100%;
+        width: 100%;
+}
+
+.block-row {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 0px;
+    align-items: center;
+}
+
+.block-column {
+    -ms-flex: 16.66%;
+    /* IE10 */
+    flex: 16.66%;
+    max-width: 16.66%;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0px;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.block-column a {
+    vertical-align: middle;
+    width: 100%;
+    padding: 1vw;
+
+}
+.block-column img{
+ vertical-align: middle;
+    width: 100%;
+    padding: 1vw;
+    -webkit-transform: scale(1);
+    	transform: scale(1);
+    	-webkit-transition: .3s ease-in-out;
+    	transition: .3s ease-in-out;
+}
+.block-column img:hover{
+-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.block-column-child-1 {
+    animation-delay: 3.1s;
+}
+
+.block-column-child-2 {
+    animation-delay: 3.2s;
+}
+
+.block-column-child-3 {
+    animation-delay: 3.3s;
+}
+
+.block-column-child-4 {
+    animation-delay: 3.4s;
+}
+
+.block-column-child-5 {
+    animation-delay: 3.5s;
+}
+
+.block-column-child-6 {
+    animation-delay: 3.6s;
+}
+
+.block-column-child-7 {
+    animation-delay: 3.7s;
+}
+
+.block-column-child-8 {
+    animation-delay: 3.8s;
+}
+
+.block-column-child-9 {
+    animation-delay: 3.9s;
+}
+
+.block-column-child-10 {
+    animation-delay: 4s;
+}
+
+.block-column-child-11 {
+    animation-delay: 4.1s;
+}
+
+.block-column-child-12 {
+    animation-delay: 4.2s;
+}
+
+.block-column-child-13 {
+    animation-delay: 4.3s;
+}
+
+.block-column-child-14 {
+    animation-delay: 4.4s;
+}
+
+.block-column-child-15 {
+    animation-delay: 4.5s;
+}
+
+.block-column-child-16 {
+    animation-delay: 4.6s;
+}
+
+.block-column-child-17 {
+    animation-delay: 4.7s;
+}
+
+#modalImage {
+   width: 24%;
+       margin: 0 38%;
+     -webkit-box-shadow: 2px 2px 15px #ccc;
+            box-shadow: 2px 2px 15px #ccc;
+    }
+
+#modalTitle {
+    margin: 5vh 0;
+    padding: 0;
+    font-size: 4.5rem;
+    color: #333;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif
+}
+#modalLink{
+max-width:20%;
+text-decoration:none;
+}
+
+.md-modal {
+    margin: auto;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 75vw;
+    max-width: 95vw;
+    height: auto;
+    z-index: 2000;
+    color: #333;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+
+.md-show {
+    visibility: visible;
+}
+
+.md-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.md-show~.md-overlay {
+    opacity: 1;
+    visibility: visible;
+    backdrop-filter: blur(5px) grayscale(100%);
+}
+
+.md-close {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 4vh;
+    font-weight: 300;
+    background: transparent;
+}
+
+
+
+
+
+blockquote {
+    display: block;
+    background: #fff;
+    font-style: italic;
+    padding: 30px 30px 30px 50px;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #666;
+    text-align: center;
+    border-left: 15px solid color(var(--whoblue));
+    border-right: 5px solid color(var(--whoblue));
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+}
+
+
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: -webkit-box;
+    display: flex;
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+    outline: 0;
+}
+
+.btn-stylish {
+    border-color: #f1c40f;
+    color: #333;
+    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.btn-stylish:hover {
+    background-position: 0;
+}
+
+
+@media screen and (max-width: 800px) {}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+.blocks {
+    margin: 75px 10%;
+}
+    .wheel-title {
+        font-size: 8vw;
+        line-height: 4vh;
+        text-align: center;
+
+    }
+
+    #modalTitle {
+        margin: 5rem 0;
+        font-size: 2.2rem;
+    }
+
+    blockquote {
+        font-size: 1.5rem;
+        padding: 20px 15px;
+    }
+
+    .btn {
+        font-size: 1.5rem;
+    }
+    .block-column {
+        -ms-flex: 33.33%%;
+        /* IE10 */
+        flex: 33.33%;
+        max-width: 33.33%;
+    }
+    .md-modal{
+    width:95%;
+    }
+    #modalImage {
+        width: 40%;
+        margin: 0 30%;
+    }
+
 }

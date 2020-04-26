@@ -1,0 +1,170 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "built/17goals.css"}}"/>
+{{/contentFor}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{> site-header en="en"}}
+
+
+{{!-- Extra 17 Special Section --}}
+<section class="section-17 dark-section flex-container">
+    <div class="wheel-container item">
+        <div class="wheel animated rotateOut delay-3s">
+            <img class="image-responsive animated rotateIn slower " src="{{asset "/images/sdg_wheel.png"}}">
+        </div>
+    </div>
+    <div class="item animated fadeOut delay-3s">
+        <div class="animated zoomIn fast">
+            <center class="wheel-title">
+                <span>seventeen ziele!</span>
+            </center>
+        </div>
+    </div>
+</section>
+
+<section class="section-17 light-section flex-container animated fadeIn delay-3s">
+    {{> "blocks" en="en"}}
+</section>
+
+{{> "modal"}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+
+
+{{#post}}
+
+    <main id="site-main" class="site-main outer">
+        <div class="inner">
+
+            <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+
+                <header class="post-full-header">
+                    <h1 class="post-full-title">{{title}}</h1>
+                </header>
+
+                {{#if feature_image}}
+                    <figure class="post-full-image">
+                        {{!-- This is a responsive image, it loads different sizes depending on device
+                        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                        <img
+                                srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                                sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 1170px,
+                            2000px"
+                                src="{{img_url feature_image size="xl"}}"
+                                alt="{{title}}"
+                        />
+                    </figure>
+                {{/if}}
+
+                <section class="post-full-content">
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+                </section>
+
+            </article>
+
+        </div>
+    </main>
+
+{{/post}}
+
+{{!-- Ribbon --}}
+<section>
+    {{> "ribbon" en="en"}}
+    <center class="ribbon-caption">Let's make the goals better known. Click through and discover stories about each of the 17 Sustainability Goals</center>
+</section>
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+    <script>
+    $(function() {
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+    });
+      $(document).ready(function () {
+      $('.block-column').click((e)=>{
+        e.preventDefault();
+        var imgHtml=e.target.src;
+        $('#modalImage').attr('src',imgHtml);
+        $('#modalLink').attr('href',e.currentTarget.children[0].attributes.href.value).html('Know More');
+
+        e.currentTarget.classList.forEach((k)=>{
+            if(k.startsWith('block-column-child-'))
+            {
+                var index=k.split('block-column-child-')[1]
+                $('#modalTitle').html(jsonCaptions.en[index-1].title)
+                $('#modalCaption').html(jsonCaptions.en[index-1].caption).addClass('animated')
+            }
+        })
+        $('.md-modal').addClass('md-show');
+      })
+      $('.md-close').on('click', () =>{
+    $('.md-modal').removeClass('md-show');
+    $('#modalImage').attr('src','');
+    $('#modalTitle').html('')
+    $('#modalCaption').html('').removeClass('animated')
+  });
+
+            var nav = document.querySelector('.header');
+            var feed = document.getElementById('site-main');
+
+            var lastScrollY = window.scrollY;
+            var lastWindowHeight = window.innerHeight;
+            var lastDocumentHeight = $(document).height();
+            var ticking = false;
+
+            function onScroll() {
+                lastScrollY = window.scrollY;
+                requestTick();
+            }
+
+            function onResize() {
+                lastWindowHeight = window.innerHeight;
+                lastDocumentHeight = $(document).height();
+                requestTick();
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                }
+                ticking = true;
+            }
+
+            function update() {
+                var trigger = feed.getBoundingClientRect().top + window.scrollY;
+                var progressMax = lastDocumentHeight - lastWindowHeight;
+
+                if (lastScrollY >= trigger - 70) {
+                    nav.classList.remove('transparent');
+                } else {
+                    nav.classList.add('transparent');
+                }
+
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', onScroll, {
+                passive: true
+            });
+            window.addEventListener('resize', onResize, false);
+
+            update();
+
+        });
+
+
+    </script>
+{{/contentFor}}
