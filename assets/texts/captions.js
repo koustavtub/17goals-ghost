@@ -73,7 +73,7 @@ const jsonCaptions={
       "caption": "'Wenn du nicht hundert Menschen ernähren kannst, dann ernähre nur einen.' - Mutter Teresa"
     },{
       "title": "Ziel 3 - Gesundheit und Wohlergehen",
-      "caption": "'Der erste Reichtum ist die Gesundheit' - Ralph Waldo Emerson"
+      "caption": "'Der größte Reichtum ist die Gesundheit' - Ralph Waldo Emerson"
     },
     {
       "title": "Ziel 4 - Hochwertige Bildung",
@@ -87,14 +87,14 @@ const jsonCaptions={
       "caption": "'Tausende haben ohne Liebe gelebt, nicht einer ohne Wasser' - W.H.Auden"
     },{
       "title": "Ziel 7 - Bezahlbare und saubere Energie",
-      "caption": "'Die Nation, die bei den erneuerbaren Energien führend ist, wird die Nation sein, die die Welt führt' - James Cameron"
+      "caption": "'Die Nation, die bei den erneuerbaren Energien führend ist, wird die Welt führen' - James Cameron"
     },
     {
       "title": "Ziel 8: Menschenwürdige Arbeit und Wirtschaftswachstum",
       "caption": "'Wirtschaftswachstum bedeutet nichts, wenn es die Menschen außen vor lässt'. - Jack Kemp"
     },{
       "title": "Ziel 9 - Industrie, Innovation und Infrastruktur",
-      "caption": "'Noch nie zuvor in der Geschichte hat die Innovation so vielen Menschen in so kurzer Zeit so viel versprochen' - Bill Gates"
+      "caption": "'Noch nie zuvor in der Geschichte hat Innovation so vielen Menschen in so kurzer Zeit so viel versprochen' - Bill Gates"
     },
     {
       "title": "Ziel 10 - Weniger Ungleichheiten",
@@ -105,11 +105,11 @@ const jsonCaptions={
     },
     {
       "title": "Ziel 12 - Nachhaltige/r Konsum und Produktion",
-      "caption": "'Unendliches Wachstum des Materialverbrauchs in einer endlichen Welt ist eine Unmöglichkeit' - E.F.Schumacher"
+      "caption": "'Unendliche Zunahme des Materialverbrauchs in einer endlichen Welt ist eine Unmöglichkeit' - E.F.Schumacher"
     },
     {
       "title": "Ziel 13 - Maßnahmen zum Klimaschutz",
-      "caption": "'Keine Herausforderung stellt eine größere Bedrohung für künftige Generationen dar als der Klimawandel' - Barack Obama"
+      "caption": "'Keine andere Herausforderung stellt eine größere Bedrohung für künftige Generationen dar als der Klimawandel' - Barack Obama"
     },
     {
       "title": "Ziel 14 - Leben unter Wasser",

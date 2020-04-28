@@ -199,7 +199,7 @@
     font-family: Montserrat, sans-serif
 }
 #modalLink{
-max-width:20%;
+max-width:25%;
 text-decoration:none;
 }
 
@@ -236,7 +236,12 @@ text-decoration:none;
     opacity: 0;
     background: rgba(255, 255, 255, 0.9);
 }
-
+.lower-close{
+    position: relative;
+    cursor:pointer;
+    color:#333;
+    text-transform:uppercase;
+}
 .md-show~.md-overlay {
     opacity: 1;
     visibility: visible;
@@ -317,7 +322,19 @@ blockquote {
 }
 
 
-@media screen and (max-width: 800px) {}
+@media screen and (max-width: 800px) {
+    #modalLink{
+        max-width: 40%;
+        text-decoration: none;
+        font-size: 1.8rem;
+    }
+    .block-column {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+            max-width: 25%;
+        }
+}
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -325,11 +342,18 @@ blockquote {
 .blocks {
     margin: 75px 10%;
 }
-    .wheel-title {
-        font-size: 8vw;
-        line-height: 4vh;
-        text-align: center;
 
+    .item{
+        flex:50%;
+    }
+    .wheel-container{
+        padding: 0 50px;
+    }
+    .wheel-title {
+        font-size: 9vw;
+        line-height: 6vh;
+        text-align: left;
+        margin-left: -15px;
     }
 
     #modalTitle {
@@ -346,7 +370,7 @@ blockquote {
         font-size: 1.5rem;
     }
     .block-column {
-        -ms-flex: 33.33%%;
+        -ms-flex: 33.33%;
         /* IE10 */
         flex: 33.33%;
         max-width: 33.33%;
@@ -358,5 +382,10 @@ blockquote {
         width: 40%;
         margin: 0 30%;
     }
+    #modalLink{
+        max-width: 40%;
+        text-decoration: none;
+        font-size: 1.2rem;
+        }
 
 }

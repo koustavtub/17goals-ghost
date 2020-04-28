@@ -503,7 +503,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .social-link {
     display: inline-block;
     margin: 0;
-    padding: 10px;
     opacity: 0.8;
 }
 
@@ -2991,9 +2990,7 @@ display:block;
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
-.header .menu-btn:checked ~ .lang-switch{
-  display:block;
-}
+
 .transparent{
     background:rgba(0,0,0,0.8);
     box-shadow:none;
@@ -3323,36 +3320,230 @@ height:20vh;
    display: inline-block
 }
 
+
+/**********************/
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px 'Montserrat' sans-serif;
+
+	padding: 55px 50px 0;
+	margin-top: 20px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+
+	font-weight:600;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  color(var(--whoblue));
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  #fff;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 25%;
+	text-align:center;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: var(--whitefull);
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: var(--whitefull);
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  var(--whoblue);
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 32%;
+	text-align:right;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  color(var(--midgrey));
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+	margin-top:20px;
+}
+.footer-company-about a{
+    color: color(var(--midgrey) l(+15%));
+    text-decoration:none;
+    transition: color .3s linear;
+}
+.footer-company-about a:hover{
+    color:var(--whitefull);
+}
+.footer-company-about svg,.footer-company-about path {
+    fill: color(var(--midgrey));
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+.footer-copyright{
+color:var(--whitefull);
+margin-top:50px;
+font-size:12px;
+}
+.lower-footer{
+    margin:0;
+    padding-top:10px;
+}
+.facebook:hover,.twitter:hover,.instagram:hover,.linkedin:hover{
+    background-color:#fff !important;
+}
+.facebook:hover svg{
+    fill:#4267B2;
+}
+.twitter:hover svg{
+    fill:#1DA1F2;
+}
+.instagram:hover svg{
+    fill:#833AB4;
+}
+.linkedin:hover svg{
+    fill:#2867B2;
+}
+
+
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-   .blockquote {
-       padding: 10px 50px;
-       font-size: 2rem;
-       line-height: 20pt;
-   }
-   .blockquote-title {
-       font-size: 2.2rem;
-   }
 
-   .text {
-       padding: 8px 30px;
-   }
+@media (max-width: 880px) {
 
-   hr {
-       margin: 2rem;
-   }
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
 
-   .fade {
-       -webkit-animation-name: slideInDown;
-       -webkit-animation-duration: 1s;
-       animation-name: slideInDown;
-       animation-duration: 1s;
-   }
-   .ribbon-column {
-       -ms-flex: 11%;
-       flex: 11%;
-       max-width: 11%;
-     }
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.blockquote {
+           padding: 10px 50px;
+           font-size: 2rem;
+           line-height: 20pt;
+       }
+       .blockquote-title {
+           font-size: 2.2rem;
+       }
+
+       .text {
+           padding: 8px 30px;
+       }
+
+       hr {
+           margin: 2rem;
+       }
+
+       .fade {
+           -webkit-animation-name: slideInDown;
+           -webkit-animation-duration: 1s;
+           animation-name: slideInDown;
+           animation-duration: 1s;
+       }
+       .ribbon-column {
+           -ms-flex: 11%;
+           flex: 11%;
+           max-width: 11%;
+         }
+
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -3398,7 +3589,11 @@ height:20vh;
            float:right;
            margin-right:0 !important;
            right: 0;
+           top:50px;
            display:none;
+       }
+       .menu-btn:checked ~ .lang-switch{
+         display:block;
        }
        .lang-switch:hover + #language-tooltip{
            opacity: 0;

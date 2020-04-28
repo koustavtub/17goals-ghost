@@ -22,7 +22,7 @@ into the {body} of the default.hbs template --}}
     <div class="item animated fadeOut delay-3s">
         <div class="animated zoomIn fast">
             <center class="wheel-title">
-                <span>seventeen ziele!</span>
+                <span>seventeen goals!</span>
             </center>
         </div>
     </div>
@@ -98,23 +98,25 @@ into the {body} of the default.hbs template --}}
         var imgHtml=e.target.src;
         $('#modalImage').attr('src',imgHtml);
         $('#modalLink').attr('href',e.currentTarget.children[0].attributes.href.value).html('Know More');
+        $('.lower-close').html('Back to all goals');
 
         e.currentTarget.classList.forEach((k)=>{
             if(k.startsWith('block-column-child-'))
             {
                 var index=k.split('block-column-child-')[1]
                 $('#modalTitle').html(jsonCaptions.en[index-1].title)
-                $('#modalCaption').html(jsonCaptions.en[index-1].caption).addClass('animated')
+                $('#modalCaption').html(jsonCaptions.en[index-1].caption)
             }
         })
         $('.md-modal').addClass('md-show');
       })
-      $('.md-close').on('click', () =>{
-    $('.md-modal').removeClass('md-show');
-    $('#modalImage').attr('src','');
-    $('#modalTitle').html('')
-    $('#modalCaption').html('').removeClass('animated')
-  });
+     $('.close-modal').on('click', () => {
+        $('.md-modal').removeClass('md-show');
+        $('#modalImage').attr('src','');
+        $('#modalTitle').html('')
+        $('#modalCaption').html('')
+        $('.lower-close').html('');
+      });
 
             var nav = document.querySelector('.header');
             var feed = document.getElementById('site-main');

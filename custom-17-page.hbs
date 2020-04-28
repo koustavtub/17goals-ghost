@@ -89,82 +89,82 @@ into the {body} of the default.hbs template --}}
 {{#contentFor "scripts"}}
     <script>
     $(function() {
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-    });
-      $(document).ready(function () {
-      $('.block-column').click((e)=>{
-        e.preventDefault();
-        var imgHtml=e.target.src;
-        $('#modalImage').attr('src',imgHtml);
-        $('#modalLink').attr('href',e.currentTarget.children[0].attributes.href.value).html('{{t "Know More"}}');
+         var $postContent = $(".post-full-content");
+         $postContent.fitVids();
+     });
 
-        e.currentTarget.classList.forEach((k)=>{
-            if(k.startsWith('block-column-child-'))
-            {
-                var index=k.split('block-column-child-')[1]
-                $('#modalTitle').html(jsonCaptions.de[index-1].title)
-                $('#modalCaption').html(jsonCaptions.de[index-1].caption).addClass('animated')
-            }
-        })
-        $('.md-modal').addClass('md-show');
-      })
-      $('.md-close').on('click', () =>{
-    $('.md-modal').removeClass('md-show');
-    $('#modalImage').attr('src','');
-    $('#modalTitle').html('')
-    $('#modalCaption').html('').removeClass('animated')
-  });
+     $(document).ready(function() {
+         $('.block-column').click((e) => {
+             e.preventDefault();
+             var imgHtml = e.target.src;
+             $('#modalImage').attr('src', imgHtml);
+             $('#modalLink').attr('href', e.currentTarget.children[0].attributes.href.value).html('{{t "Know More"}}');
+             $('.lower-close').html('{{t "Back to all goals"}}');
 
-            var nav = document.querySelector('.header');
-            var feed = document.getElementById('site-main');
+             e.currentTarget.classList.forEach((k) => {
+                 if (k.startsWith('block-column-child-')) {
+                     var index = k.split('block-column-child-')[1]
+                     $('#modalTitle').html(jsonCaptions.de[index - 1].title)
+                     $('#modalCaption').html(jsonCaptions.de[index - 1].caption)
+                 }
+             })
+             $('.md-modal').addClass('md-show');
+         })
+         $('.close-modal').on('click', () => {
+             $('.md-modal').removeClass('md-show');
+             $('#modalImage').attr('src', '');
+             $('#modalTitle').html('')
+             $('#modalCaption').html('')
+             $('.lower-close').html('')
+         });
 
-            var lastScrollY = window.scrollY;
-            var lastWindowHeight = window.innerHeight;
-            var lastDocumentHeight = $(document).height();
-            var ticking = false;
+         var nav = document.querySelector('.header');
+         var feed = document.getElementById('site-main');
 
-            function onScroll() {
-                lastScrollY = window.scrollY;
-                requestTick();
-            }
+         var lastScrollY = window.scrollY;
+         var lastWindowHeight = window.innerHeight;
+         var lastDocumentHeight = $(document).height();
+         var ticking = false;
 
-            function onResize() {
-                lastWindowHeight = window.innerHeight;
-                lastDocumentHeight = $(document).height();
-                requestTick();
-            }
+         function onScroll() {
+             lastScrollY = window.scrollY;
+             requestTick();
+         }
 
-            function requestTick() {
-                if (!ticking) {
-                    requestAnimationFrame(update);
-                }
-                ticking = true;
-            }
+         function onResize() {
+             lastWindowHeight = window.innerHeight;
+             lastDocumentHeight = $(document).height();
+             requestTick();
+         }
 
-            function update() {
-                var trigger = feed.getBoundingClientRect().top + window.scrollY;
-                var progressMax = lastDocumentHeight - lastWindowHeight;
+         function requestTick() {
+             if (!ticking) {
+                 requestAnimationFrame(update);
+             }
+             ticking = true;
+         }
 
-                if (lastScrollY >= trigger - 70) {
-                    nav.classList.remove('transparent');
-                } else {
-                    nav.classList.add('transparent');
-                }
+         function update() {
+             var trigger = feed.getBoundingClientRect().top + window.scrollY;
+             var progressMax = lastDocumentHeight - lastWindowHeight;
 
-
-                ticking = false;
-            }
-
-            window.addEventListener('scroll', onScroll, {
-                passive: true
-            });
-            window.addEventListener('resize', onResize, false);
-
-            update();
-
-        });
+             if (lastScrollY >= trigger - 70) {
+                 nav.classList.remove('transparent');
+             } else {
+                 nav.classList.add('transparent');
+             }
 
 
+             ticking = false;
+         }
+
+         window.addEventListener('scroll', onScroll, {
+             passive: true
+         });
+         window.addEventListener('resize', onResize, false);
+
+         update();
+
+     });
     </script>
 {{/contentFor}}
