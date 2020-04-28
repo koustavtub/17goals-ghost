@@ -3493,6 +3493,64 @@ font-size:12px;
 .linkedin:hover svg{
     fill:#2867B2;
 }
+/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
+Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+
+
+#mc-embedded-subscribe-form {
+  position: relative;
+  display: block;
+  height: 40px;
+  border-radius: 20px;
+  background: white;
+  margin: 0 auto;
+  font-family:'Montserrat', sans-serif;
+  font-weight:400;
+  overflow: hidden;
+  max-width:350px;
+}
+#mc-embedded-subscribe-form input {
+  line-height: 40px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: #eee;
+}
+#mc-embedded-subscribe-form input:not([type=submit]) {
+  width: 100%;
+  display: block;
+  padding: 0 150px 0 30px;
+}
+#mc-embedded-subscribe-form input:not([type=email]) {
+  position: absolute;
+  height: 36px;
+  line-height: 36px;
+  top: 2px;
+  right: 2px;
+  border-radius: 18px;
+  padding: 0 18px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+#mc-embedded-subscribe-form input:not([type=email]):hover {
+  background: color(var(--whoblue));
+}
+#mc-embedded-subscribe-form input:focus {
+  outline: none;
+  background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Responsive layout - makes a two column-layout instead of four columns */

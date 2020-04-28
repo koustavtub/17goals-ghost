@@ -2,12 +2,12 @@
 {{#post}}
     {{#has tag="hash-legal-en"}}
     {{!< default-en}}
-        {{> site-header en="en"}}
+        {{> "site-header" en="en"}}
         <html lang="en">
     {{else}}
     {{!< default}}
         <html lang="de">
-        {{> site-header}}
+        {{> "site-header"}}
     {{/has}}
 
     <main id="site-main" class="site-main outer">
