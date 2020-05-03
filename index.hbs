@@ -58,9 +58,12 @@
 {{!-- The main content area --}}
 
 <section id="caption" class="blockquote animated fadeIn">
-    <center><span class="blockquote-title">Seventeen Goals</span> {{t "front caption text"}}</center>
+    <span class="blockquote-title">{{@site.title}}</span> {{t "front caption text"}}
 </section>
-
+<section class="index-intro">
+    {{t "Index Intro"}}
+    <hr/>
+</section>
 
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
@@ -100,11 +103,6 @@
     </div>
 </main>
 
-{{!-- Ribbon --}}
-<section>
-    {{> "ribbon"}}
-    <center class="ribbon-caption">{{t "ribbon caption"}}</center>
-</section>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

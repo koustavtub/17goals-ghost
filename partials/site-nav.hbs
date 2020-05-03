@@ -1,22 +1,28 @@
-{{#if en}}
-    <a class="lang-switch" href="{{@site.url}}">
-        <span>de</span></a>
-    <div id="language-tooltip">{{t "Change The Language"}}</div>
-{{else}}
-    <a class="lang-switch" href="{{@site.url}}/en">
-        <span>en</span></a>
-    <div id="language-tooltip">Switch To English</div>
-{{/if}}
 
-<ul class="menu">
-    {{#if @site.navigation}}
-        {{#if en}}
-            {{> "navigation-en"}}
-        {{else}}
-            {{navigation}}
-        {{/if}}
+<div class="menu">
+    {{#if en}}
+        <a class="lang-switch"  href="{{@site.url}}">
+            <div class="flag">{{> "icons/de-flag"}}</div>
+        </a>
+        <div id="language-tooltip">{{t "Change The Language"}}</div>
+    {{else}}
+        <a class="lang-switch" href="{{@site.url}}/en">
+            <div class="flag">{{> "icons/en-flag"}}</div>
+        </a>
+        <div id="language-tooltip">Switch To English</div>
+
     {{/if}}
-    {{#is "post"}}
-        <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
-    {{/is}}
-</ul>
+    <ul class="menu-list">
+        {{#if @site.navigation}}
+            {{#if en}}
+                {{> "navigation-en"}}
+            {{else}}
+                {{navigation}}
+            {{/if}}
+        {{/if}}
+        {{#is "post"}}
+            <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+        {{/is}}
+    </ul>
+</div>
+

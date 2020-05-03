@@ -1,11 +1,10 @@
 {{!-- Everything inside the #post tags pulls data from the post --}}
+{{!< default-switch}}
 {{#post}}
     {{#has tag="english"}}
-    {{!< default-en}}
         {{> site-header en="en"}}
         <html lang="en">
     {{else}}
-    {{!< default}}
         <html lang="de">
         {{> site-header}}
     {{/has}}
@@ -93,7 +92,7 @@
                                 <h4 class="author-name">{{authors}}</h4>
                                 <div class="byline-meta-content">
                                     <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
+                                    <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
                                 </div>
                             </section>
 
@@ -146,19 +145,6 @@
         </div>
     </main>
 
-    {{!-- Ribbon --}}
-    <section>
-        {{#has tag="english"}}
-            {{> "ribbon" en="en"}}
-            <center class="ribbon-caption">Let's make the goals better known. Click through and discover stories about
-                each of the 17 Sustainability Goals
-            </center>
-        {{else}}
-            {{> "ribbon"}}
-            <center class="ribbon-caption">{{t "ribbon caption"}}</center>
-        {{/has}}
-    </section>
-
     {{!-- Links to Previous/Next posts --}}
     <aside class="read-next outer">
         <div class="inner">
@@ -179,8 +165,11 @@
                                                 <li>
                                                     <h4><a href="{{url}}">{{title}}</a></h4>
                                                     <div class="read-next-card-meta">
-                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
-                                        {{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</p>
+                                                        <p>
+                                                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                                            –
+                                                            {{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}
+                                                        </p>
                                                     </div>
                                                 </li>
                                             {{/foreach}}
@@ -254,7 +243,26 @@
         </div>
     </aside>
 
+    {{!-- Ribbon --}}
+    {{#has tag="english"}}
+        <section>
+            <center class="ribbon-head">Let's make the goals better known: </center>
+            {{> "ribbon" en="en"}}
+            <center class="ribbon-caption">Click through and discover stories about each of the 17 Sustainability Goals</center>
+        </section>
+        {{> "footer-en"}}
+    {{else}}
+        <section>
+            <center class="ribbon-head">{{t "ribbon head"}}</center>
+            {{> "ribbon"}}
+            <center class="ribbon-caption">{{t "ribbon caption"}}</center>
+        </section>
+        {{!-- The footer at the very bottom of the screen --}}
+        {{> "footer"}}
+    {{/has}}
 {{/post}}
+
+
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
@@ -283,6 +291,8 @@
             }, 800);
         });
     });
+
+
 
 
     </script>

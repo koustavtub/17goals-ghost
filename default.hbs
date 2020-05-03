@@ -3,16 +3,16 @@
 <head>
 
     {{!-- Document Settings --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     {{!-- Base Meta --}}
     <title>{{meta_title}}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}"/>
     {{{block "extraheads"}}}
 
     <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
@@ -21,6 +21,7 @@
         document.addEventListener('DOMContentLoaded', function () {
         cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"de","website_name":"17goalsmagazin","cookies_policy_url":"https://www.17goalsmagazin.de/cookie-policy-de/","change_preferences_selector":"#changeCookiePref"});
         });
+
     </script>
 
     <!-- Google Analytics -->
@@ -31,15 +32,13 @@
     <!-- GA -->
 
     <script type="text/plain" cookie-consent="tracking">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-145569840-1');
-</script>
+      gtag('config', 'UA-145569840-1');
+    </script>
     <!-- end of GA-->
-
-    <noscript><a href="https://www.PrivacyPolicies.com/cookie-consent/">Cookie Consent by Privacy Policies Generator</a></noscript>
     <!-- End Cookie Consent -->
 
 
@@ -50,18 +49,26 @@
 </head>
 <body class="{{body_class}}">
 
-    <div class="site-wrapper">
+<div class="site-wrapper">
 
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
 
-        {{!-- The footer at the very bottom of the screen --}}
-        {{> "footer"}}
 
-    </div>
+    {{!-- Ribbon --}}
+    <section>
+        <center class="ribbon-head">{{t "ribbon head"}}</center>
+        {{> "ribbon"}}
+        <center class="ribbon-caption">{{t "ribbon caption"}}</center>
+    </section>
 
-    {{!-- The big email subscribe modal content --}}
-    {{#if @labs.members}}
+    {{!-- The footer at the very bottom of the screen --}}
+    {{> "footer"}}
+
+</div>
+
+{{!-- The big email subscribe modal content --}}
+{{#if @labs.members}}
     <div class="subscribe-success-message">
         <a class="subscribe-close" href="javascript:;"></a>
         You've successfully subscribed to {{@site.title}}!
@@ -72,15 +79,16 @@
         <a class="subscribe-close-button" href="#"></a>
         <div class="subscribe-overlay-content">
             {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}"/>
             {{/if}}
             <div class="subscribe-form">
                 <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight to your inbox</p>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
                 <form data-members-form="subscribe">
                     <div class="form-group">
                         <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
-                            autocomplete="false" />
+                               autocomplete="false"/>
                         <button class="button primary" type="submit">
                             <span class="button-content">Subscribe</span>
                             <span class="button-loader">{{> "icons/loader"}}</span>
@@ -96,18 +104,18 @@
             </div>
         </div>
     </div>
-    
-    {{/if}}
 
-    {{!-- jQuery, required for fitvids --}}
-    <script src="{{asset "js/lib/jquery-3.5.0.min.js"}}"></script>
-    {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
-    <script src="{{asset "built/casper.js"}}"></script>
+{{/if}}
+
+{{!-- jQuery, required for fitvids --}}
+<script src="{{asset "js/lib/jquery-3.5.0.min.js"}}"></script>
+{{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+<script src="{{asset "built/casper.js"}}"></script>
 
 
 
-    {{!-- Scripts for Members subscription --}}
-    <script>
+{{!-- Scripts for Members subscription --}}
+<script>
         // Parse the URL parameter
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -138,13 +146,17 @@
             });
         });
 
-    </script>
-    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })</script>
-    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-    {{{block "scripts"}}}
 
-    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-    {{ghost_foot}}
+</script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">
+    window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })
+</script>
+{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+{{{block "scripts"}}}
+
+{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+{{ghost_foot}}
 
 </body>
 </html>
