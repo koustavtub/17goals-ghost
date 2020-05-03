@@ -130,19 +130,18 @@
 
         $(document).ready(function () {
             $('title').html('17GoalsMagazin-English')
-            if (action == 'subscribe') {
-                $('body').addClass("subscribe-success");
+              var postCards = document.getElementsByClassName('post-card');
+
+        if(postCards.length==1)
+        {
+            postCards[0].classList.add('post-card-large')
+        }
+
+        for(i=0; i< postCards.length;i++){
+        if(i%6 == 0){
+            postCards[i].classList.add('post-card-large')
             }
-
-            $('.subscribe-success-message .subscribe-close').click(function () {
-                $('.subscribe-success-message').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
+        }
         });
 
 </script>

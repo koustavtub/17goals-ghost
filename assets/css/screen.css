@@ -2794,8 +2794,8 @@ body {
     text-decoration: none;
 }
 .whitespace {
-    height: 75px;
-    padding: 100px;
+    padding:0;
+    margin:50px;
     display: block;
 }
 /* menu */
@@ -2853,7 +2853,7 @@ body {
     display: none;
 }
 .header .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 350px;
 }
 .header .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;
@@ -2872,25 +2872,6 @@ body {
 .transparent {
     background: rgba(0,0,0,0.8);
     box-shadow: none;
-}
-/* 48em = 768px */
-@media (min-width: 48em) {
-
-    .header li {
-        float: left;
-    }
-    .header li a {
-        padding: 0.5rem 1rem;
-        margin: 0;
-    }
-    .header .menu {
-        clear: none;
-        float: right;
-        max-height: none;
-    }
-    .header .menu-icon {
-        display: none;
-    }
 }
 
 /*  Ribbon */
@@ -2967,8 +2948,8 @@ body {
 }
 #language-tooltip {
     position: absolute;
-    top: 102%;
-    left: 250px;
+    top: 100%;
+    right: 475px;
     z-index: 1001;
     display: block;
     padding: 2px 8px;
@@ -3110,7 +3091,7 @@ body {
     bottom: 0;
     width: 100%;
     text-align: left;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
     background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
 }
 .text:focus,
@@ -3173,7 +3154,7 @@ body {
     position: absolute;
     bottom: 5px;
     left: 5px;
-    color: #333;
+    color: #111;
     background-color: color(var(--whitefull));
     border-radius: 2rem;
     font-size: 1rem;
@@ -3418,10 +3399,32 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 880px) {
+/* 48em = 768px */
+@media (min-width: 48em) {
 
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 0.5rem 1rem;
+        margin: 0;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+
+}
+@media (max-width: 880px) {
     .footer-distributed {
         font: bold 14px sans-serif;
+    }
+    .header li a {
+            padding: 0.5rem;
     }
 
     .footer-distributed .footer-center,

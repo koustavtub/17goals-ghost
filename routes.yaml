@@ -1,6 +1,7 @@
 routes:
   /de/alle-geschichten/: all
   /en/all-stories/: all-en
+  /en/in-a-nutshell/: nutshell-en
 collections:
   /en/:
     permalink: /en/{slug}/

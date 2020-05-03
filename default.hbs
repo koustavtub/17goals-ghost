@@ -37,6 +37,21 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-145569840-1');
+        var postCards = document.getElementsByClassName('post-card');
+
+        if(postCards.length==1)
+        {
+            postCards[0].classList.add('post-card-large')
+        }
+        if(postCards[2]){
+            postCards[2].classList.add('post-card-large')
+        }
+
+        for(i=0; i< postCards.length;i++){
+        if(i%6 == 0){
+            postCards[i].classList.add('post-card-large')
+            }
+        }
     </script>
     <!-- end of GA-->
     <!-- End Cookie Consent -->

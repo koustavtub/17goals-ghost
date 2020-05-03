@@ -11,9 +11,17 @@
 
 <section class="whitespace"></section>
 
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
 
+<main id="site-main" class="site-main outer">
+
+    <section>
+        <h1 class="post-full-title">Alle Geschichten</h1>
+        <hr/>
+        <p class="post-full-custom-excerpt">{{t "All Posts Intro"}}</p>
+        </p>
+    </section>
+
+    <div class="inner posts">
         <div class="post-feed">
             {{#get "posts" filter="tag:-english+tag:german" include="tags,authors" limit="all"}}
                 {{#foreach posts}}
@@ -21,10 +29,9 @@
                     {{> "post-card"}}
                 {{/foreach}}
             {{/get}}
-
         </div>
-
     </div>
+
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

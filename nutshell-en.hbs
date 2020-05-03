@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
 {{/contentFor}}
 
-{{> site-header en="en"}}
+{{> "site-header" en="en"}}
 
 {{!-- The main content area --}}
 
@@ -21,7 +21,7 @@
 
     <div class="inner posts">
         <div class="post-feed">
-            {{#get "posts" filter="tag:-german+tag:english" include="tags,authors" limit="all"}}
+            {{#get "posts" filter="tag:in-a-nutshell" include="tags,authors" limit="all"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card" en="en"}}
