@@ -1359,7 +1359,9 @@ Usage (In Ghost editor):
         margin: 25px -6vw 50px;
         border-radius: 0;
     }
-
+    .post-full-title {
+        font-size:3.5rem;
+    }
     .post-full-image img {
         max-width: 1170px;
     }
@@ -1377,7 +1379,8 @@ Usage (In Ghost editor):
 
     .post-full-title {
         margin-top: 0.2em;
-        font-size: 4.2rem;
+        font-size: 3rem;
+        font-weight:600;
         line-height: 1.05em;
     }
 
@@ -3420,6 +3423,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
 }
 @media (max-width: 880px) {
+
     .footer-distributed {
         font: bold 14px sans-serif;
     }

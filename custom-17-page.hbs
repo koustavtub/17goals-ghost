@@ -12,41 +12,24 @@ into the {body} of the default.hbs template --}}
 {{> site-header}}
 
 
-{{!-- Extra 17 Special Section --}}
-<section class="section-17 dark-section flex-container">
-    <div class="wheel-container item">
-        <div class="wheel animated rotateOut delay-3s">
-            <img class="image-responsive animated rotateIn slower " src="{{asset "/images/sdg_wheel.png"}}">
-        </div>
-    </div>
-    <div class="item animated fadeOut delay-3s">
-        <div class="animated zoomIn fast">
-            <center class="wheel-title">
-                <span>seventeen ziele!</span>
-            </center>
-        </div>
-    </div>
-</section>
-
-<section class="section-17 light-section flex-container animated fadeIn delay-3s">
-    {{> "blocks"}}
-</section>
-
-{{> "modal"}}
-
 {{!-- Everything inside the #post tags pulls data from the post --}}
-
-
 {{#post}}
 
     <main id="site-main" class="site-main outer">
+
         <div class="inner">
 
             <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-                <header class="post-full-header">
+                <header class="post-full-header header-17-page">
                     <h1 class="post-full-title">{{title}}</h1>
                 </header>
+                <section>
+                    <div class="flex-container">
+                        {{> "blocks"}}
+                    </div>
+                </section>
+
 
                 {{#if feature_image}}
                     <figure class="post-full-image">
@@ -65,6 +48,7 @@ into the {body} of the default.hbs template --}}
                         />
                     </figure>
                 {{/if}}
+
 
                 <section class="post-full-content">
                     <div class="post-content">
@@ -89,29 +73,20 @@ into the {body} of the default.hbs template --}}
      });
 
      $(document).ready(function() {
-         $('.block-column').click((e) => {
-             e.preventDefault();
-             var imgHtml = e.target.src;
-             $('#modalImage').attr('src', imgHtml);
-             $('#modalLink').attr('href', e.currentTarget.children[0].attributes.href.value).html('{{t "Know More"}}');
-             $('.lower-close').html('{{t "Back to all goals"}}');
-
+         $('.block-column').mouseenter((e) => {
              e.currentTarget.classList.forEach((k) => {
                  if (k.startsWith('block-column-child-')) {
                      var index = k.split('block-column-child-')[1]
-                     $('#modalTitle').html(jsonCaptions.de[index - 1].title)
                      $('#modalCaption').html(jsonCaptions.de[index - 1].caption)
                  }
              })
-             $('.md-modal').addClass('md-show');
+             $('#modalCaption').show();
          })
-         $('.close-modal').on('click', () => {
-             $('.md-modal').removeClass('md-show');
-             $('#modalImage').attr('src', '');
-             $('#modalTitle').html('')
-             $('#modalCaption').html('')
-             $('.lower-close').html('')
-         });
+         $('.block-column').mouseleave((e) => {
+            $('#modalCaption').html('')
+            $('#modalCaption').hide()
+         })
+
 
          var nav = document.querySelector('.header');
          var feed = document.getElementById('site-main');

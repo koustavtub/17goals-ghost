@@ -61,6 +61,9 @@ const jsonCaptions={
     },{
       "title": "SDG 17: Partnerships for the Goals",
       "caption": "'Competition makes us faster, collaboration makes us better.'- Fyrefly"
+    },{
+      "title": "Sustainable Development Goals",
+      "caption": "Click the icons to explore the 17 Sustainability Goals"
     }
   ],
   "de": [
@@ -124,6 +127,10 @@ const jsonCaptions={
     },{
       "title": "Ziel 17 – Partnerschaften zur Erreichung der Ziele",
       "caption": "'Wettbewerb macht uns schneller, Zusammenarbeit macht uns besser' - Fyrefly"
+    },
+    {
+          "title": "17 Ziele",
+          "caption": "Einfach durchklicken und Geschichten zu jedem der 17 Ziele entdecken"
     }
   ]
 }
