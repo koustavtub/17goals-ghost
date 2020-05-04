@@ -128,21 +128,19 @@
         // Give the parameter a variable name
         var action = getParameterByName('action');
 
-        $(document).ready(function () {
-            $('title').html('17GoalsMagazin-English')
-              var postCards = document.getElementsByClassName('post-card');
-
-        if(postCards.length==1)
-        {
-            postCards[0].classList.add('post-card-large')
-        }
-
-        for(i=0; i< postCards.length;i++){
-        if(i%6 == 0){
-            postCards[i].classList.add('post-card-large')
+$(document).ready(function() {
+    var postCards = document.getElementsByClassName('post-card');
+    if (postCards.length == 2) {
+        postCards[0].classList.add('post-card-large')
+        postCards[1].classList.add('post-card-large')
+    } else {
+        for (i = 0; i < postCards.length; i++) {
+            if (i % 6 == 0) {
+                postCards[i].classList.add('post-card-large')
             }
         }
-        });
+    }
+});
 
 </script>
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
