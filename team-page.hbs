@@ -24,7 +24,7 @@ into the {body} of the default.hbs template --}}
         <h1 class="post-full-title">{{t "About Us"}}</h1>
         <hr/>
         <div class="intro-text inner">Es war ein historischer Moment, als sich 2015 im September 193 Staaten auf 17 Ziele für nachhaltige Entwicklung einigten. Seit wir davon erfuhren, haben uns die international als Sustainable Development Goals (SDGs) bezeichneten Ziele begeistert.
-            Aber anstatt über die Dinge zu schreiben, die in der Welt falsch liefen, wollten wir die positiven Geschichten erzählen. Das seventeen goals Magazin war geboren! Es erzählt inspirierende Geschichten vom Wandel und motiviert zum eigenen Handeln.
+            Aber anstatt über die Dinge zu schreiben, die in der Welt falsch liefen, wollten wir die positiven Geschichten erzählen. Das <strong>seventeen goals Magazin</strong> war geboren! Es erzählt inspirierende Geschichten vom Wandel und motiviert zum eigenen Handeln.
             Es erscheint digital und auch als gedruckte Ausgabe. Als solche liegt es in regelmäßigen Abständen der ZEIT, dem TAGESSPIEGEL sowie zukünftig dem Handelsblatt bei. Falls Sie es verpasst haben: auf unserer Startseite steht es zum digitalen Durchblättern bereit. Und für noch mehr gute Nachrichten abonnieren Sie gerne unseren 4 x jährlich erscheinenden Newsletter.
             Lernen Sie hier unsere Teammitglieder kennen, die – gemeinsam mit vielen freien Journalistinnen und Journalisten – unser Magazin möglich machen.
         </div>
@@ -158,7 +158,7 @@ into the {body} of the default.hbs template --}}
                 if (lastScrollY >= trigger - 10) {
                     window.history.pushState('', '{{t "Our Team"}}', '/unser-team');
                 } else {
-                    window.history.pushState('', title, url);
+                    window.history.pushState('', '{{t "About Us"}}', '/uber-uns');
                 }
 
 
