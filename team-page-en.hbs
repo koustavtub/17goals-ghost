@@ -1,18 +1,16 @@
-{{!< default}}
+{{!< default-en}}
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
 {{#contentFor "custom_title"}}
- - Über Uns
+    - About Us
 {{/contentFor}}
 {{#contentFor "extraheads"}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/team.css"}}"/>
 {{/contentFor}}
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
-{{> site-header}}
 
-
+{{> "site-header" en="en"}}
 
 {{!-- The main content area --}}
 
@@ -21,12 +19,19 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main">
 
     <section class="outer">
-        <h1 class="post-full-title">{{t "About Us"}}</h1>
+        <h1 class="post-full-title">About Us</h1>
         <hr/>
-        <div class="intro-text inner">Es war ein historischer Moment, als sich 2015 im September 193 Staaten auf 17 Ziele für nachhaltige Entwicklung einigten. Seit wir davon erfuhren, haben uns die international als Sustainable Development Goals (SDGs) bezeichneten Ziele begeistert.
-            Aber anstatt über die Dinge zu schreiben, die in der Welt falsch liefen, wollten wir die positiven Geschichten erzählen. Das seventeen goals Magazin war geboren! Es erzählt inspirierende Geschichten vom Wandel und motiviert zum eigenen Handeln.
-            Es erscheint digital und auch als gedruckte Ausgabe. Als solche liegt es in regelmäßigen Abständen der ZEIT, dem TAGESSPIEGEL sowie zukünftig dem Handelsblatt bei. Falls Sie es verpasst haben: auf unserer Startseite steht es zum digitalen Durchblättern bereit. Und für noch mehr gute Nachrichten abonnieren Sie gerne unseren 4 x jährlich erscheinenden Newsletter.
-            Lernen Sie hier unsere Teammitglieder kennen, die – gemeinsam mit vielen freien Journalistinnen und Journalisten – unser Magazin möglich machen.
+        <div class="intro-text inner">It was a historic moment when, in September 2015, the international community
+            agreed on 17 goals for sustainable development. Since we heard of them, we have been excited about the
+            Sustainable Development Goals (SDGs).
+            But instead of writing about the things that went wrong in the world, we wanted to tell the positive
+            stories. The idea of a magazine was born! seventeen goals tells inspiring stories of change and motivates
+            people to take action.
+            The magazine is published online and also in printed editions. As such it is a supplement of ZEIT,
+            TAGESSPIEGEL and Handelsblatt. In case you have missed it, you will find a digital browser through the
+            magazines on on our homepage. And for even more good news, you are welcome to subscribe to our newsletter
+            published 4 times a year.
+            Get to know our team members who - together with many freelance journalists - make our magazine possible.
         </div>
 
     </section>
@@ -48,9 +53,8 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Herausgeber seventeen goals Magazin</p>
-                            <blockquote>"Dinge, die heute noch nicht vorstellbar sind, können zum Mainstream, zur
-                                Selbstverständlichkeit werden. Indem wir die Nachhaltigkeitsziele stärken, tragen wir
-                                dazu bei."
+                            <blockquote>"Things that are not imaginable today can become mainstream, taken for granted.
+                                By strengthening the sustainability goals, we contribute to that"
                             </blockquote>
                         </div>
                     </div>
@@ -65,9 +69,7 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Herausgeberin / Chefredaktion</p>
-                            <blockquote>"In der Recherche- und Redaktionsarbeit immer wieder zu sehen, wie viele gute
-                                Nachrichten es zu erzählen gibt, begeistert mich. Es sind genau diese positiven
-                                Geschichten vom Wandel, auf die ich aufmerksam machen möchte."
+                            <blockquote>"Seeing in my every-day-work of research and editorial work how many good news there are to tell is inspiring. It's exactly these positive stories of change that I want to draw attention to."
                             </blockquote>
                         </div>
                     </div>
@@ -81,9 +83,7 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Online-Redakteurin seventeen goals Magazin</p>
-                            <blockquote>"Superhelden sind überall unter uns, sie tragen keinen Umhang, berühren jedoch
-                                unser Leben und machen die Welt zu einem besseren Ort. Ich möchte sie finden und ihre
-                                Geschichten erzählen!"
+                            <blockquote>"Superheroes are all around us, walking around without capes, yet touching our lives and making the world a better place. I want to find them and tell their stories!"
                             </blockquote>
                         </div>
                     </div>
@@ -97,9 +97,7 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Art Direction seventeen goals Magazin (digital/lokal)</p>
-                            <blockquote>"Nachhaltiges Handeln ist die Zukunft und löst viele unserer Probleme. Mir macht
-                                es großen Spaß, Teil der Lösung zu sein und meinen Beitrag zu mehr Nachhaltigkeit zu
-                                leisten."
+                            <blockquote>"Sustainable action is the future and solves many of our problems. I really enjoy being part of the solution and making my contribution to more sustainability."
                             </blockquote>
                         </div>
                     </div>
@@ -156,7 +154,7 @@ into the {body} of the default.hbs template --}}
                 var progressMax = lastDocumentHeight - lastWindowHeight;
 
                 if (lastScrollY >= trigger - 10) {
-                    window.history.pushState('', '{{t "Our Team"}}', '/unser-team');
+                    window.history.pushState('', 'Our Team', '/en/our-team/');
                 } else {
                     window.history.pushState('', title, url);
                 }
@@ -175,6 +173,7 @@ into the {body} of the default.hbs template --}}
 
 
     });
+
 
 
     </script>

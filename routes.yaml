@@ -4,8 +4,9 @@ routes:
   /en/in-a-nutshell/: nutshell-en
   /en/news-and-events/: news-en
   /uber-uns/: team-page
-  /our-team/: team-page
+  /unser-team/: team-page
   /en/about-us/: team-page-en
+  /en/our-team/: team-page-en
 collections:
   /en/:
     permalink: /en/{slug}/
