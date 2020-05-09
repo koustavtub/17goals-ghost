@@ -2,6 +2,9 @@ routes:
   /de/alle-geschichten/: all
   /en/all-stories/: all-en
   /en/in-a-nutshell/: nutshell-en
+  /en/news-and-events/: news-en
+  /our-team/: team-page
+  /en/our-team/: team-page-en
 collections:
   /en/:
     permalink: /en/{slug}/

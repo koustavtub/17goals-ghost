@@ -73,8 +73,6 @@
 .block-column a {
     vertical-align: middle;
     width: 100%;
-
-
 }
 .block-column img{
    vertical-align: middle;
@@ -158,7 +156,14 @@
 .block-column-child-17 {
     animation-delay: 1.6s;
 }
-
+.block-column-child-18 {
+    animation-delay: 1.8s;
+    cursor:not-allowed;
+}
+.block-column-child-18 img:hover{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
 #modalCaption{
     display:none;
     transition:.2s all linear;

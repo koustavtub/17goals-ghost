@@ -14,14 +14,15 @@
 <main id="site-main" class="site-main outer">
 
     <section>
-        <h1 class="post-full-title">In A Nutshell</h1>
+        <h1 class="post-full-title">News & Events</h1>
         <hr/>
-        <p class="post-full-custom-excerpt">Here you will find amazing ideas and initiatives for sustainable development from across the globe brought to you in a nutshell!</p>
+        <p class="post-full-custom-excerpt">What is happening around the world for sustainability? We show the most recent and upcoming News and events here</p>
+
     </section>
 
     <div class="inner posts">
         <div class="post-feed">
-            {{#get "posts" filter="tag:in-a-nutshell" include="tags,authors" limit="all"}}
+            {{#get "posts" filter="tag:news-and-events-en" include="tags,authors" limit="all"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card" en="en"}}

@@ -3017,11 +3017,12 @@ body {
 
 .index-intro {
     text-align: center;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Monteserrat', sans-serif;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 800;
     padding: 2% 10%;
     margin: 15px 0 0 0;
+    color:#666;
 }
 
 
@@ -3479,11 +3480,17 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
+
+    .post-card-image {
+        object-fit: cover;
+    }
     .blockquote, .index-intro {
-        padding: 5%;
-        line-height: 15pt;
+        padding: 2% 8%;
         font-size: 1.2rem;
         margin: 0;
+    }
+    .index-intro {
+        padding:8%;
     }
     .blockquote-title {
         font-size: 1.5rem;
