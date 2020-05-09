@@ -36,7 +36,6 @@
 
 .person {
   width: calc(25% - 30px);
-  cursor: pointer;
   overflow: hidden;
   transition: 0.45s;
   position: relative;
