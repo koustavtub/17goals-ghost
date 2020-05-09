@@ -1,0 +1,206 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#contentFor "custom_title"}}
+ - Über Uns
+{{/contentFor}}
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/team.css"}}"/>
+{{/contentFor}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{> site-header}}
+
+
+
+
+{{!< default-en}}
+{{!-- The tag above means: insert everything in this file
+  into the {body} of the default.hbs template --}}
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
+{{/contentFor}}
+
+{{> "site-header"}}
+
+{{!-- The main content area --}}
+
+<section class="whitespace"></section>
+
+<main id="site-main" class="site-main">
+
+    <section>
+        <h1 class="post-full-title">{{t "About Us"}}</h1>
+        <hr/>
+        <p class="post-full-custom-excerpt">What is happening around the world for sustainability? We show the most
+            recent and upcoming News and events here</p>
+
+    </section>
+
+    <div class="posts">
+        <div class="t-container" id="team">
+            <div class="team-container">
+                <div class="t-header">
+                    <h2 class="t-header-title">{{t "Our Team"}}</h2>
+                </div>
+                <div class="person-list">
+                    <div class="person">
+                        <img class="person-img" src="{{asset "images/team/andreas-kruk.jpg"}}">
+                        <div class="person-details">
+                            <h2 class="person-title">Andreas Kruk
+                                <a target="_blank" href="https://www.linkedin.com/in/andreas-kruk-53070761/" class="linkedin">
+                                    <svg width="32" height="32" role="img" aria-label="linkedin-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a></h2>
+                            <p class="person-desc">Herausgeber seventeen goals Magazin</p>
+                            <blockquote>"Dinge, die heute noch nicht vorstellbar sind, können zum Mainstream, zur
+                                Selbstverständlichkeit werden. Indem wir die Nachhaltigkeitsziele stärken, tragen wir
+                                dazu bei."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="person">
+                        <img class="person-img" src="{{asset "images/team/iris-rodriguez.jpg"}}">
+                        <div class="person-details">
+                            <h2 class="person-title">Iris Rodriguez
+                                <a target="_blank" href="https://www.linkedin.com/in/iris-rodriguez-8aba54149/" class="linkedin">
+                                    <svg width="32" height="32" role="img" aria-label="linkedin-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a></h2>
+                            <p class="person-desc">Herausgeberin / Chefredaktion</p>
+                            <blockquote>"In der Recherche- und Redaktionsarbeit immer wieder zu sehen, wie viele gute
+                                Nachrichten es zu erzählen gibt, begeistert mich. Es sind genau diese positiven
+                                Geschichten vom Wandel, auf die ich aufmerksam machen möchte."
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img class="person-img" src="{{asset "images/team/sayanti-sengupta.jpg"}}">
+                        <div class="person-details">
+                            <h2 class="person-title">Sayanti Sengupta
+                                <a target="_blank" href="https://www.linkedin.com/in/sayanti-sengupta-8b47a0100/" class="linkedin">
+                                    <svg width="32" height="32" role="img" aria-label="linkedin-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a></h2>
+                            <p class="person-desc">Online-Redakteurin seventeen goals Magazin</p>
+                            <blockquote>"Superhelden sind überall unter uns, sie tragen keinen Umhang, berühren jedoch
+                                unser Leben und machen die Welt zu einem besseren Ort. Ich möchte sie finden und ihre
+                                Geschichten erzählen!"
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img class="person-img" src="{{asset "images/team/anke-thiele.jpg"}}">
+                        <div class="person-details">
+                            <h2 class="person-title">Anke Thiele
+                                <a target="_blank" href="https://www.linkedin.com/in/anke-thiele-1749708a/" class="linkedin">
+                                    <svg width="32" height="32" role="img" aria-label="linkedin-icon">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </a></h2>
+                            <p class="person-desc">Art Direction seventeen goals Magazin (digital/lokal)</p>
+                            <blockquote>"Nachhaltiges Handeln ist die Zukunft und löst viele unserer Probleme. Mir macht
+                                es großen Spaß, Teil der Lösung zu sein und meinen Beitrag zu mehr Nachhaltigkeit zu
+                                leisten."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+    <script>
+    $(document).ready(function () {
+            var url=window.location.href,
+            title=document.querySelector('title').innerHTML;
+
+
+
+            var nav = document.querySelector('.header');
+            nav.classList.remove('transparent');
+
+            var feed = document.querySelector('#team'),
+            lastScrollY = window.scrollY,
+            lastWindowHeight = window.innerHeight,
+            lastDocumentHeight = $(document).height(),
+            ticking = false;
+
+            function onScroll() {
+                lastScrollY = window.scrollY;
+                requestTick();
+            }
+
+            function onResize() {
+                lastWindowHeight = window.innerHeight;
+                lastDocumentHeight = $(document).height();
+                requestTick();
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                }
+                ticking = true;
+            }
+
+            function update() {
+                var trigger = feed.getBoundingClientRect().top + window.scrollY;
+                var progressMax = lastDocumentHeight - lastWindowHeight;
+
+                if (lastScrollY >= trigger - 10) {
+                    window.history.pushState('', '{{t "Our Team"}}', '/our-team');
+                } else {
+                    window.history.pushState('', title, url);
+                }
+
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', onScroll, {
+                passive: true
+            });
+            window.addEventListener('resize', onResize, false);
+
+            update();
+
+
+
+    });
+
+
+    </script>
+{{/contentFor}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

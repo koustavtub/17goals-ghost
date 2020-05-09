@@ -3,8 +3,9 @@ routes:
   /en/all-stories/: all-en
   /en/in-a-nutshell/: nutshell-en
   /en/news-and-events/: news-en
+  /uber-uns/: team-page
   /our-team/: team-page
-  /en/our-team/: team-page-en
+  /en/about-us/: team-page-en
 collections:
   /en/:
     permalink: /en/{slug}/
