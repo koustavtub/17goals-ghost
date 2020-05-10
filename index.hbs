@@ -105,7 +105,7 @@
             {{#get "posts" filter="tag:hash-read-online" limit="1" include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card" feature="Read Online"}}
+                    {{> "post-card" feature=(t "Read Online")}}
                 {{/foreach}}
             {{/get}}
         </div>
