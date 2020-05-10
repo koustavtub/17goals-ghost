@@ -102,6 +102,12 @@
                     {{> "post-card" feature="News & Events"}}
                 {{/foreach}}
             {{/get}}
+            {{#get "posts" filter="tag:hash-read-online-en" limit="1" include="tags,authors"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card" feature="Read Online"}}
+                {{/foreach}}
+            {{/get}}
 
 
         </div>
@@ -175,13 +181,6 @@
         //   scrolling but continuous processing even when not scrolling
         $(document).ready(function () {
 
-        var postCards = document.getElementsByClassName('post-card');
-        if(postCards[0]){
-            postCards[0].classList.add('post-card-large')
-        }
-        if(postCards[4]){
-            postCards[4].classList.add('post-card-large')
-        }
 
             var nav = document.querySelector('.header');
             var bq = document.querySelector('.blockquote');
