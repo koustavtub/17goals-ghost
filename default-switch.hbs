@@ -122,19 +122,14 @@
         var action = getParameterByName('action');
 
         $(document).ready(function () {
-            if (action == 'subscribe') {
-                $('body').addClass("subscribe-success");
+            for (i = 1; i <= postCards.length; i++) {
+                if (i % 6 == 0) {
+                    postCards[i-1].classList.add('post-card-large')
+                }
             }
-
-            $('.subscribe-success-message .subscribe-close').click(function () {
-                $('.subscribe-success-message').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
+            if (postCards.length % 6==4) {
+                postCards[postCards.length-1].classList.add('post-card-large')
+            }
         });
 
     </script>

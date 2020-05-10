@@ -130,15 +130,13 @@
 
 $(document).ready(function() {
     var postCards = document.getElementsByClassName('post-card');
-    if (postCards.length == 2) {
-        postCards[0].classList.add('post-card-large')
-        postCards[1].classList.add('post-card-large')
-    } else {
-        for (i = 0; i < postCards.length; i++) {
+    for (i = 1; i <= postCards.length; i++) {
             if (i % 6 == 0) {
-                postCards[i].classList.add('post-card-large')
+                postCards[i-1].classList.add('post-card-large')
             }
         }
+    if (postCards.length % 6==4) {
+        postCards[postCards.length-1].classList.add('post-card-large')
     }
 });
 
