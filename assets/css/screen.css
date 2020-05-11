@@ -3556,15 +3556,6 @@ body {
     width: 80%;
 }
 
-.olControlAttribution {
-    bottom: 2px !important;
-    left: 2px !important;
-    z-index: 999 !important;
-}
-
-.olControlZoom {
-    z-index: 999 !important;
-}
 
 .navigate {
     display: none;

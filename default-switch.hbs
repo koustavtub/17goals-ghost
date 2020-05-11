@@ -3,24 +3,26 @@
 <head>
 
     {{!-- Document Settings --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     {{!-- Base Meta --}}
     <title>{{meta_title}}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}"/>
     {{{block "extraheads"}}}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
     <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
     <script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.0.0/cookie-consent.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
         cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"de","website_name":"17goalsmagazin","cookies_policy_url":"https://www.17goalsmagazin.de/cookie-policy-de/","change_preferences_selector":"#changeCookiePref"});
         });
+
     </script>
 
     <!-- Google Analytics -->
@@ -36,10 +38,12 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-145569840-1');
-</script>
+
+    </script>
     <!-- end of GA-->
 
-    <noscript><a href="https://www.PrivacyPolicies.com/cookie-consent/">Cookie Consent by Privacy Policies Generator</a></noscript>
+    <noscript><a href="https://www.PrivacyPolicies.com/cookie-consent/">Cookie Consent by Privacy Policies Generator</a>
+    </noscript>
     <!-- End Cookie Consent -->
 
 
@@ -50,17 +54,16 @@
 </head>
 <body class="{{body_class}}">
 
-    <div class="site-wrapper">
+<div class="site-wrapper">
 
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
 
 
+</div>
 
-    </div>
-
-    {{!-- The big email subscribe modal content --}}
-    {{#if @labs.members}}
+{{!-- The big email subscribe modal content --}}
+{{#if @labs.members}}
     <div class="subscribe-success-message">
         <a class="subscribe-close" href="javascript:;"></a>
         You've successfully subscribed to {{@site.title}}!
@@ -71,15 +74,16 @@
         <a class="subscribe-close-button" href="#"></a>
         <div class="subscribe-overlay-content">
             {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}"/>
             {{/if}}
             <div class="subscribe-form">
                 <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight to your inbox</p>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
                 <form data-members-form="subscribe">
                     <div class="form-group">
                         <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
-                            autocomplete="false" />
+                               autocomplete="false"/>
                         <button class="button primary" type="submit">
                             <span class="button-content">Subscribe</span>
                             <span class="button-loader">{{> "icons/loader"}}</span>
@@ -96,17 +100,17 @@
         </div>
     </div>
 
-    {{/if}}
+{{/if}}
 
-    {{!-- jQuery, required for fitvids --}}
-    <script src="{{asset "js/lib/jquery-3.5.0.min.js"}}"></script>
-    {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
-    <script src="{{asset "built/casper.js"}}"></script>
+{{!-- jQuery, required for fitvids --}}
+<script src="{{asset "js/lib/jquery-3.5.0.min.js"}}"></script>
+{{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+<script src="{{asset "built/casper.js"}}"></script>
 
 
 
-    {{!-- Scripts for Members subscription --}}
-    <script>
+{{!-- Scripts for Members subscription --}}
+<script>
         // Parse the URL parameter
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -132,32 +136,55 @@
             }
         });
 
-    </script>
-    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })</script>
-    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-    {{{block "scripts"}}}
-    <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
-    <script>
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
 
-    var lonLat = new OpenLayers.LonLat( 13.3393693,52.4947440)
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
+</script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">
+    window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })
+</script>
+{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+{{{block "scripts"}}}
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
+<script>
 
-    var zoom=17;
+    var map = new ol.Map({
+        target: 'mapdiv',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([13.3393693,52.4947440]),
+          zoom: 19
+        })
+      });
 
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([13.3393693,52.4947440])
+      ),
+      name: 'seventeen Goals Magazin'
+    });
 
-    markers.addMarker(new OpenLayers.Marker(lonLat));
+    var iconStyle = new ol.style.Style({
+      image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+        src: '{{asset "images/marker.svg"}}'
+      }))
+    });
+    marker.setStyle(iconStyle);
+    var vectorSource = new ol.source.Vector({
+      features: [marker]
+    });
 
-    map.setCenter (lonLat, zoom);
-  </script>
-    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-    {{ghost_foot}}
+    var markerVectorLayer = new ol.layer.Vector({
+      source: vectorSource,
+    });
+    map.addLayer(markerVectorLayer);
+
+</script>
+{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+{{ghost_foot}}
 
 </body>
 </html>

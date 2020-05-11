@@ -16,12 +16,14 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}"/>
     {{{block "extraheads"}}}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
     <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
     <script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.0.0/cookie-consent.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
         cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"de","website_name":"17goalsmagazin","cookies_policy_url":"https://www.17goalsmagazin.de/cookie-policy-de/","change_preferences_selector":"#changeCookiePref"});
         });
+
 
     </script>
 
@@ -38,6 +40,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-145569840-1');
+
     </script>
     <!-- end of GA-->
     <!-- End Cookie Consent -->
@@ -141,33 +144,55 @@ $(document).ready(function() {
         postCards[postCards.length-1].classList.add('post-card-large')
     }
 });
+
 </script>
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">
     window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })
+
 </script>
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 {{{block "scripts"}}}
-<script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
 <script>
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
 
-    var lonLat = new OpenLayers.LonLat( 13.3393693,52.4947440)
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
+    var map = new ol.Map({
+        target: 'mapdiv',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([13.3393693,52.4947440]),
+          zoom: 19
+        })
+      });
 
-    var zoom=17;
+    var marker = new ol.Feature({
+      geometry: new ol.geom.Point(
+        ol.proj.fromLonLat([13.3393693,52.4947440])
+      ),
+      name: 'seventeen Goals Magazin'
+    });
 
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
+    var iconStyle = new ol.style.Style({
+      image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+        src: '{{asset "images/marker.svg"}}'
+      }))
+    });
+    marker.setStyle(iconStyle);
+    var vectorSource = new ol.source.Vector({
+      features: [marker]
+    });
 
-    markers.addMarker(new OpenLayers.Marker(lonLat));
+    var markerVectorLayer = new ol.layer.Vector({
+      source: vectorSource,
+    });
+    map.addLayer(markerVectorLayer);
 
-    map.setCenter (lonLat, zoom);
-  </script>
+
+</script>
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}
 
