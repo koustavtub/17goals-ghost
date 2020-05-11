@@ -29,12 +29,13 @@ production stylesheet in assets/built/screen.css
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 @import "global.css";
-@import url( 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Muli&display=swap');
 
 body {
     font-family: 'Muli', sans-serif;
     background: color(var(--whitefull));
 }
+
 h1,
 h2,
 h3,
@@ -99,6 +100,7 @@ h6 {
 /* 3. Special Template Styles
 /* ---------------------------------------------------------- */
 @media (min-width: 900px) {
+
     .author-template .post-feed,
     .home-template .post-feed,
     .tag-template .post-feed {
@@ -123,6 +125,7 @@ h6 {
     background: color(var(--whoblue) l(-5%)) no-repeat center center;
     background-size: cover;
 }
+
 .site-header-background:before {
     content: "";
     position: absolute;
@@ -132,8 +135,9 @@ h6 {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
+    background: rgba(0, 0, 0, 0.18);
 }
+
 .site-header-background:after {
     content: "";
     position: absolute;
@@ -144,8 +148,9 @@ h6 {
     z-index: 10;
     display: block;
     height: 140px;
-    background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
 }
+
 .site-header-background.no-image:after,
 .site-header-background.no-image:before {
     display: none;
@@ -248,6 +253,7 @@ h6 {
         padding-bottom: 9vw;
     }
 }
+
 @media (max-width: 500px) {
     .site-home-header .site-title {
         font-size: 4.2rem;
@@ -301,6 +307,7 @@ h6 {
     flex: 1 0 auto;
     display: flex;
 }
+
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     content: "";
@@ -310,10 +317,11 @@ h6 {
     width: 40px;
     height: 100%;
 }
+
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-    background: linear-gradient(to right, color(var(--whoblue) l(-5%) a(0)) 0%,color(var(--whoblue) l(-5%)) 100%);
+    background: linear-gradient(to right, color(var(--whoblue) l(-5%) a(0)) 0%, color(var(--whoblue) l(-5%)) 100%);
 }
 
 .site-nav-left {
@@ -332,6 +340,7 @@ h6 {
 
     -ms-overflow-scrolling: touch;
 }
+
 .site-nav-left .nav li:last-of-type {
     padding-right: 20px;
 }
@@ -358,6 +367,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     letter-spacing: -0.5px;
     text-transform: none;
 }
+
 .site-nav-logo:hover {
     text-decoration: none;
 }
@@ -401,10 +411,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 0.8;
     transition: opacity 0.35s ease-in-out;
 }
+
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
 }
+
 .nav li a:before {
     content: "";
     position: absolute;
@@ -416,6 +428,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 0.25;
     transition: all 0.35s ease-in-out;
 }
+
 .nav li a:hover:before {
     right: 12px;
     opacity: 0.5;
@@ -443,6 +456,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .nav-post-title.dash {
     left: -25px;
 }
+
 .nav-post-title.dash:before {
     content: "– ";
     opacity: 0.5;
@@ -471,9 +485,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-right .nav a {
     white-space: nowrap;
 }
+
 .site-nav-right .nav a:before {
     display: none;
 }
+
 .site-nav-right .nav li:last-of-type a {
     margin-right: -12px;
 }
@@ -489,12 +505,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0;
     opacity: 0.8;
 }
+
 .social-link:hover {
     opacity: 1.0;
 }
 
 .social-link svg {
-    height: 1.8rem;
+    height: 2.5rem;
     fill: color(var(--whitefull));
 }
 
@@ -524,12 +541,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     border-radius: 10px;
     opacity: 0.8;
 }
+
 .subscribe-button:hover {
     text-decoration: none;
     opacity: 1;
 }
 
-.site-nav-right .nav + .subscribe-button {
+.site-nav-right .nav+.subscribe-button {
     margin-left: 24px;
 }
 
@@ -537,6 +555,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     padding: 10px 8px;
     opacity: 0.8;
 }
+
 .rss-button:hover {
     opacity: 1;
 }
@@ -562,6 +581,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     opacity: 1;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
 }
+
 @media (max-width: 700px) {
     .site-home-header .site-nav {
         margin-left: -5vw;
@@ -630,6 +650,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     color: var(--darkgrey);
 }
+
 .post-card-content-link:hover {
     text-decoration: none;
 }
@@ -740,16 +761,18 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     white-space: nowrap;
     background: var(--darkgrey);
     border-radius: 3px;
-    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: translateY(6px);
     pointer-events: none;
 }
+
 .author-list-item:hover .author-name-tooltip {
     opacity: 1.0;
     transform: translateY(0px);
 }
+
 @media (max-width: 700px) {
     .author-name-tooltip {
         display: none;
@@ -826,9 +849,11 @@ make sure this only happens on large viewports / desktop-ish devices.
         min-height: 280px;
         border-top: 0;
     }
+
     .post-card-large:hover {
         border-bottom-color: color(var(--lightgrey) l(+10%));
     }
+
     .post-card-large:not(.no-image) .post-card-header {
         margin-top: 0;
     }
@@ -877,6 +902,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-bottom: 5vw;
     }
 }
+
 @media (max-width: 650px) {
     .post-feed {
         padding-top: 5vw;
@@ -886,6 +912,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-bottom: 5vw;
     }
 }
+
 @media (max-width: 500px) {
     .post-card-title {
         font-size: 1.9rem;
@@ -930,17 +957,20 @@ make sure this only happens on large viewports / desktop-ish devices.
     font-size: 1.2rem;
     font-weight: 400;
 }
+
 @media (max-width: 1170px) {
     .post-full-header {
         padding: 60px 11vw 50px;
     }
 }
+
 @media (max-width: 800px) {
     .post-full-header {
         padding-right: 5vw;
         padding-left: 5vw;
     }
 }
+
 @media (max-width: 500px) {
     .post-full-header {
         padding: 20px 0 35px;
@@ -993,17 +1023,20 @@ make sure this only happens on large viewports / desktop-ish devices.
     line-height: 1.6em;
     background: color(var(--whitefull));
 }
+
 @media (max-width: 1170px) {
     .post-full-content {
         padding: 0 11vw;
     }
 }
+
 @media (max-width: 800px) {
     .post-full-content {
         padding: 0 5vw;
         font-size: 1.8rem;
     }
 }
+
 @media (max-width: 500px) {
     .post-full-custom-excerpt {
         font-size: 1.9rem;
@@ -1014,6 +1047,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .no-image .post-full-content {
     padding-top: 0;
 }
+
 .no-image .post-full-content:after,
 .no-image .post-full-content:before {
     display: none;
@@ -1036,7 +1070,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 0 1.5em;
     min-width: 100%;
 }
+
 @media (max-width: 500px) {
+
     .footnotes,
     .post-full-comments,
     .post-full-content dl,
@@ -1062,6 +1098,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     box-shadow: var(--darkgrey) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 }
+
 .post-full-content a:hover {
     color: var(--blue);
     text-decoration: none;
@@ -1077,6 +1114,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     display: inline-block;
     line-height: 1.6em;
 }
+
 .post-full-content li:first-child {
     margin-top: 0;
 }
@@ -1088,7 +1126,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     max-width: 1040px;
     height: auto;
 }
+
 @media (max-width: 1040px) {
+
     .post-full-content img,
     .post-full-content video {
         width: 100%;
@@ -1116,7 +1156,7 @@ Usage (In Ghost editor):
 <small>Your image caption</small>
 
 */
-.post-full-content img + br + small {
+.post-full-content img+br+small {
     display: block;
     margin-top: -3em;
     margin-bottom: 1.5em;
@@ -1133,6 +1173,7 @@ Usage (In Ghost editor):
     padding: 0 1.5em;
     border-left: #3eb0ef 3px solid;
 }
+
 @media (max-width: 500px) {
     .post-full-content blockquote {
         padding: 0 1.3em;
@@ -1146,6 +1187,7 @@ Usage (In Ghost editor):
     line-height: inherit;
     font-style: italic;
 }
+
 .post-full-content blockquote p:last-child {
     margin-bottom: 0;
 }
@@ -1154,7 +1196,7 @@ Usage (In Ghost editor):
     padding: 0 5px 2px;
     font-size: 0.8em;
     line-height: 1em;
-    font-weight: 400!important;
+    font-weight: 400 !important;
     background: var(--whitegrey);
     border-radius: 3px;
 }
@@ -1186,6 +1228,7 @@ Usage (In Ghost editor):
     line-height: inherit;
     background: transparent;
 }
+
 .post-full-content pre code:not(span) {
     color: inherit;
 }
@@ -1197,6 +1240,7 @@ Usage (In Ghost editor):
 .post-full-content hr {
     margin: 2em 0;
 }
+
 .post-full-content hr:after {
     content: "";
     position: absolute;
@@ -1211,7 +1255,7 @@ Usage (In Ghost editor):
     transform: rotate(45deg);
 }
 
-.post-full-content hr + p {
+.post-full-content hr+p {
     margin-top: 1.2em;
 }
 
@@ -1231,9 +1275,11 @@ Usage (In Ghost editor):
     line-height: 1.25em;
     font-weight: 600;
 }
-.post-full-content p + h1 {
+
+.post-full-content p+h1 {
     margin-top: 0.8em;
 }
+
 @media (max-width: 800px) {
     .post-full-content h1 {
         font-size: 3.2rem;
@@ -1247,9 +1293,11 @@ Usage (In Ghost editor):
     line-height: 1.25em;
     font-weight: 600;
 }
-.post-full-content p + h2 {
+
+.post-full-content p+h2 {
     margin-top: 0.8em;
 }
+
 @media (max-width: 800px) {
     .post-full-content h2 {
         margin-bottom: 0.3em;
@@ -1264,9 +1312,11 @@ Usage (In Ghost editor):
     line-height: 1.3em;
     font-weight: 600;
 }
-.post-full-content h2 + h3 {
+
+.post-full-content h2+h3 {
     margin-top: 0.7em;
 }
+
 @media (max-width: 800px) {
     .post-full-content h3 {
         margin-bottom: 0.3em;
@@ -1280,12 +1330,15 @@ Usage (In Ghost editor):
     font-size: 2.5rem;
     font-weight: 600;
 }
-.post-full-content h2 + h4 {
+
+.post-full-content h2+h4 {
     margin-top: 0.7em;
 }
-.post-full-content h3 + h4 {
+
+.post-full-content h3+h4 {
     margin-top: 0;
 }
+
 @media (max-width: 800px) {
     .post-full-content h4 {
         margin-bottom: 0.3em;
@@ -1305,12 +1358,14 @@ Usage (In Ghost editor):
     line-height: 1.35em;
     text-align: center;
 }
+
 @media (min-width: 1180px) {
     .post-full-content h5 {
         max-width: 1060px;
         width: 100vw;
     }
 }
+
 @media (max-width: 800px) {
     .post-full-content h5 {
         margin-bottom: 1em;
@@ -1326,6 +1381,7 @@ Usage (In Ghost editor):
     font-size: 2.0rem;
     font-weight: 700;
 }
+
 @media (max-width: 800px) {
     .post-full-content h6 {
         font-size: 1.8rem;
@@ -1359,18 +1415,22 @@ Usage (In Ghost editor):
         margin: 25px -6vw 50px;
         border-radius: 0;
     }
+
     .post-full-title {
-        font-size:3.5rem;
+        font-size: 3.5rem;
     }
+
     .post-full-image img {
         max-width: 1170px;
     }
 }
+
 @media (max-width: 700px) {
     .post-full-image {
         margin: 25px -5vw;
     }
 }
+
 @media (max-width: 500px) {
     .post-full-meta {
         font-size: 1.2rem;
@@ -1380,7 +1440,7 @@ Usage (In Ghost editor):
     .post-full-title {
         margin-top: 0.2em;
         font-size: 3rem;
-        font-weight:600;
+        font-weight: 600;
         line-height: 1.05em;
     }
 
@@ -1392,6 +1452,7 @@ Usage (In Ghost editor):
     .post-full-content {
         padding: 0;
     }
+
     .post-full-content:after,
     .post-full-content:before {
         display: none;
@@ -1420,13 +1481,15 @@ Usage (In Ghost editor):
     background-size: 10px 100%, 10px 100%;
     background-repeat: no-repeat;
 }
+
 .post-full-content table td:first-child {
-    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
+
 .post-full-content table td:last-child {
-    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
@@ -1489,6 +1552,7 @@ Usage (In Ghost editor):
 .post-full-byline-meta h4 a {
     color: color(var(--darkgrey) l(+10%));
 }
+
 .post-full-byline-meta h4 a:hover {
     color: var(--darkgrey);
 }
@@ -1523,12 +1587,13 @@ Usage (In Ghost editor):
     line-height: 1.5em;
     background: white;
     border-radius: 3px;
-    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
+    box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(0.98) translateY(15px);
     pointer-events: none;
 }
+
 .author-list-item .author-card:before {
     content: "";
     position: absolute;
@@ -1599,20 +1664,24 @@ Usage (In Ghost editor):
     height: 60px;
     opacity: 0.15;
 }
+
 @media (max-width: 1170px) {
     .author-list-item .author-card {
         margin-left: -50px;
         width: 430px;
     }
+
     .author-list-item .author-card:before {
         left: 50px;
     }
 }
+
 @media (max-width: 650px) {
     .author-list-item .author-card {
         display: none;
     }
 }
+
 @media (max-width: 500px) {
     .author-avatar {
         width: 36px;
@@ -1689,6 +1758,7 @@ Usage (In Ghost editor):
 
     -webkit-appearance: none;
 }
+
 .subscribe-email:focus {
     outline: 0;
     border-color: color(var(--lightgrey) l(-2%));
@@ -1706,11 +1776,12 @@ Usage (In Ghost editor):
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient( color(var(--blue) whiteness(+7%)), color(var(--blue) lightness(-7%) saturation(-10%)) 60%, color(var(--blue) lightness(-7%) saturation(-10%)) 90%, color(var(--blue) lightness(-4%) saturation(-10%)) );
+    background: linear-gradient(color(var(--blue) whiteness(+7%)), color(var(--blue) lightness(-7%) saturation(-10%)) 60%, color(var(--blue) lightness(-7%) saturation(-10%)) 90%, color(var(--blue) lightness(-4%) saturation(-10%)));
     border-radius: 5px;
 
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
 .subscribe-form button:active,
 .subscribe-form button:focus {
     background: color(var(--blue) lightness(-9%) saturation(-10%));
@@ -1760,6 +1831,7 @@ Usage (In Ghost editor):
 .subscribe-form .invalid .message-error {
     display: block;
 }
+
 @media (max-width: 650px) {
     .subscribe-form-title {
         font-size: 2.4rem;
@@ -1769,6 +1841,7 @@ Usage (In Ghost editor):
         font-size: 1.6rem;
     }
 }
+
 @media (max-width: 500px) {
     .subscribe-form form {
         flex-direction: column;
@@ -1811,6 +1884,7 @@ Usage (In Ghost editor):
     padding-bottom: 0;
     border-bottom: none;
 }
+
 .read-next .post-card:after {
     display: none;
 }
@@ -1825,6 +1899,7 @@ Usage (In Ghost editor):
     opacity: 0.8;
     transition: all 0.2s ease-in-out;
 }
+
 .read-next .post-card:hover .post-card-image {
     opacity: 1.0;
 }
@@ -1860,6 +1935,7 @@ Usage (In Ghost editor):
 .read-next-card a {
     transition: all 0.2s ease-in-out;
 }
+
 .read-next-card a:hover {
     text-decoration: none;
 }
@@ -1880,6 +1956,7 @@ Usage (In Ghost editor):
     text-decoration: none;
     opacity: 0.8;
 }
+
 .read-next-card-header h3 a:hover {
     opacity: 1;
 }
@@ -1904,6 +1981,7 @@ Usage (In Ghost editor):
     padding: 20px 0;
     border-bottom: rgba(255, 255, 255, 0.1);
 }
+
 .read-next-card-content li:last-of-type {
     padding-bottom: 5px;
     border: none;
@@ -1921,6 +1999,7 @@ Usage (In Ghost editor):
     color: color(var(--whitefull));
     opacity: 0.8;
 }
+
 .read-next-card-content li a:hover {
     opacity: 1;
 }
@@ -1958,17 +2037,20 @@ Usage (In Ghost editor):
     border-radius: 999px;
     transition: all 0.35s ease-in-out;
 }
+
 .read-next-card-footer a:hover {
     border-color: var(--yellow);
     color: var(--yellow);
     text-decoration: none;
 }
+
 @media (max-width: 1170px) {
     .read-next-card {
         flex: 1 1 261px;
         margin-bottom: 5vw;
     }
 }
+
 @media (max-width: 650px) {
     .read-next-feed {
         flex-direction: column;
@@ -2005,7 +2087,7 @@ Usage (In Ghost editor):
 }
 
 /* Preventing full-width image overlap with post image.  */
-.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
+.post-full-image+.post-full-content .kg-content *:first-child .kg-image {
     width: 100%;
 }
 
@@ -2021,10 +2103,10 @@ Usage (In Ghost editor):
     margin: 0.8em 0 2.3em;
 }
 
-.post-full-content h1 + figure,
-.post-full-content h2 + figure,
-.post-full-content h3 + figure,
-.post-full-content h4 + figure {
+.post-full-content h1+figure,
+.post-full-content h2+figure,
+.post-full-content h3+figure,
+.post-full-content h4+figure {
     margin-top: 2em;
 }
 
@@ -2056,6 +2138,7 @@ Usage (In Ghost editor):
 .kg-embed-card .fluid-width-video-wrapper {
     margin: 0;
 }
+
 @media (max-width: 1040px) {
     .post-full-content .kg-width-full .kg-image {
         width: 100vw;
@@ -2081,17 +2164,19 @@ Usage (In Ghost editor):
     width: 100%;
     height: 100%;
 }
+
 .kg-gallery-row:not(:first-of-type) {
     margin: 0.75em 0 0;
 }
+
 .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
 }
 
-.kg-gallery-card + .kg-gallery-card,
-.kg-gallery-card + .kg-image-card.kg-width-wide,
-.kg-image-card.kg-width-wide + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+.kg-gallery-card+.kg-gallery-card,
+.kg-gallery-card+.kg-image-card.kg-width-wide,
+.kg-image-card.kg-width-wide+.kg-gallery-card,
+.kg-image-card.kg-width-wide+.kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
 }
 
@@ -2108,7 +2193,7 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-.kg-card + .kg-bookmark-card {
+.kg-card+.kg-bookmark-card {
     margin-top: 0;
 }
 
@@ -2121,6 +2206,7 @@ Usage (In Ghost editor):
     border-radius: 3px;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
 }
+
 .post-full-content .kg-bookmark-container:hover {
     color: var(--darkgrey);
     text-decoration: none;
@@ -2143,6 +2229,7 @@ Usage (In Ghost editor):
     font-weight: 600;
     transition: color 0.2s ease-in-out;
 }
+
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
     color: var(--blue);
 }
@@ -2196,6 +2283,7 @@ Usage (In Ghost editor):
 .kg-bookmark-author {
     line-height: 1.5em;
 }
+
 .kg-bookmark-author:after {
     content: "•";
     margin: 0 6px;
@@ -2208,19 +2296,22 @@ Usage (In Ghost editor):
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 @media (max-width: 800px) {
     .post-full-content figure {
         margin: 0.2em 0 1.3em;
     }
 
-    .post-full-content h1 + figure,
-    .post-full-content h2 + figure,
-    .post-full-content h3 + figure,
-    .post-full-content h4 + figure {
+    .post-full-content h1+figure,
+    .post-full-content h2+figure,
+    .post-full-content h3+figure,
+    .post-full-content h4+figure {
         margin-top: 0.9em;
     }
 }
+
 @media (max-width: 500px) {
+
     .post-full-content .kg-width-full,
     .post-full-content .kg-width-wide {
         margin-right: -5vw;
@@ -2293,7 +2384,7 @@ Usage (In Ghost editor):
     margin: -4px 0 0;
     width: 110px;
     height: 110px;
-    box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
 }
 
 .author-header-content .author-bio {
@@ -2319,6 +2410,7 @@ Usage (In Ghost editor):
     text-transform: uppercase;
     white-space: nowrap;
 }
+
 .author-header-content .social-link:first-of-type {
     padding-left: 4px;
 }
@@ -2341,6 +2433,7 @@ Usage (In Ghost editor):
 .no-image .author-social-link a {
     color: var(--darkgrey);
 }
+
 .author-social-link a:hover {
     opacity: 1;
 }
@@ -2350,27 +2443,32 @@ Usage (In Ghost editor):
     margin: 0;
     padding: 6px 0;
 }
-.author-location + .author-stats:before,
-.author-social-link + .author-social-link:before,
-.author-stats + .author-social-link:before {
+
+.author-location+.author-stats:before,
+.author-social-link+.author-social-link:before,
+.author-stats+.author-social-link:before {
     content: "\2022";
     display: inline-block;
     margin: 0 12px;
     color: color(var(--whitefull));
     opacity: 0.6;
 }
-.no-image .author-location + .author-stats:before,
-.no-image .author-social-link + .author-social-link:before,
-.no-image .author-stats + .author-social-link:before {
+
+.no-image .author-location+.author-stats:before,
+.no-image .author-social-link+.author-social-link:before,
+.no-image .author-stats+.author-social-link:before {
     color: var(--midgrey);
 }
+
 @media (max-width: 700px) {
+
     .author-location,
     .author-stats,
-    .author-stats + .author-social-link:first-of-type:before {
+    .author-stats+.author-social-link:first-of-type:before {
         display: none;
     }
 }
+
 @media (max-width: 500px) {
     .author-header {
         padding: 10px 0 0;
@@ -2400,9 +2498,10 @@ Usage (In Ghost editor):
     .author-header-content .author-meta {
         margin-top: 8px;
     }
-    .author-location + .author-stats:before,
-    .author-social-link + .author-social-link:before,
-    .author-stats + .author-social-link:before {
+
+    .author-location+.author-stats:before,
+    .author-social-link+.author-social-link:before,
+    .author-stats+.author-social-link:before {
         display: inline;
         margin: 0 6px;
     }
@@ -2454,6 +2553,7 @@ Usage (In Ghost editor):
     display: inline-block;
     margin-top: 5px;
 }
+
 @media (min-width: 940px) {
     .error-content .post-card {
         margin-bottom: 0;
@@ -2461,25 +2561,31 @@ Usage (In Ghost editor):
         border-bottom: none;
     }
 }
+
 @media (max-width: 800px) {
     .error-content {
         padding-top: 24vw;
     }
+
     .error-code {
         font-size: 11.2rem;
     }
+
     .error-message {
         padding-bottom: 16vw;
     }
+
     .error-description {
         margin: 5px 0 0;
         font-size: 1.8rem;
     }
 }
+
 @media (max-width: 500px) {
     .error-content {
         padding-top: 28vw;
     }
+
     .error-message {
         padding-bottom: 14vw;
     }
@@ -2531,6 +2637,7 @@ Usage (In Ghost editor):
     width: 40px;
     height: 40px;
 }
+
 .subscribe-close-button:before {
     content: "";
     position: absolute;
@@ -2543,6 +2650,7 @@ Usage (In Ghost editor):
     opacity: 0.8;
     transform: rotate(45deg);
 }
+
 .subscribe-close-button:after {
     content: "";
     position: absolute;
@@ -2555,6 +2663,7 @@ Usage (In Ghost editor):
     opacity: 0.8;
     transform: rotate(-45deg);
 }
+
 .subscribe-close-button:hover,
 .subscribe-close-overlay:hover {
     cursor: default;
@@ -2570,11 +2679,12 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(9,10,11,0.97);
+    background: rgba(9, 10, 11, 0.97);
     opacity: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
 }
+
 .subscribe-overlay:target {
     z-index: 2001;
     opacity: 1;
@@ -2648,6 +2758,7 @@ Usage (In Ghost editor):
 
     -webkit-appearance: none;
 }
+
 .subscribe-email:focus {
     outline: 0;
     border-color: color(var(--lightgrey) l(-2%));
@@ -2664,11 +2775,12 @@ Usage (In Ghost editor):
     line-height: 38px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient( color(var(--blue) whiteness(+7%)), color(var(--blue) lightness(-7%) saturation(-10%)) 60%, color(var(--blue) lightness(-7%) saturation(-10%)) 90%, color(var(--blue) lightness(-4%) saturation(-10%)) );
+    background: linear-gradient(color(var(--blue) whiteness(+7%)), color(var(--blue) lightness(-7%) saturation(-10%)) 60%, color(var(--blue) lightness(-7%) saturation(-10%)) 90%, color(var(--blue) lightness(-4%) saturation(-10%)));
     border-radius: 8px;
 
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
     background: color(var(--blue) lightness(-9%) saturation(-10%));
@@ -2677,6 +2789,7 @@ Usage (In Ghost editor):
 .subscribe-overlay .loading .button-loader {
     top: 5px;
 }
+
 @media (max-width: 500px) {
     .subscribe-overlay button {
         margin: 12px 0 0;
@@ -2700,15 +2813,16 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.3rem;
 }
 
 .site-footer-content a {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
+
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
@@ -2720,6 +2834,7 @@ Usage (In Ghost editor):
     position: relative;
     margin-left: 20px;
 }
+
 .site-footer-nav a:before {
     content: "";
     position: absolute;
@@ -2731,26 +2846,31 @@ Usage (In Ghost editor):
     background: color(var(--whitefull));
     border-radius: 100%;
 }
+
 .site-footer-nav a:first-of-type:before {
     display: none;
 }
+
 @media (max-width: 650px) {
     .site-footer-content {
         flex-direction: column;
     }
+
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
 }
+
 /* 12 New Header */
 /* header */
 body {
     margin: 0;
 }
+
 .header {
     background-color: color(var(--whoblue));
     color: color(var(--whitefull));
-    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.2);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .2);
     padding: 0 25px;
     position: fixed;
     width: 100%;
@@ -2771,6 +2891,7 @@ body {
     text-decoration: none;
     transition: all 0.2s linear;
 }
+
 .header li a:after {
     background: color(var(--whitegrey));
     content: '';
@@ -2781,6 +2902,7 @@ body {
     margin-top: 2px;
 
 }
+
 .header li a:hover:after {
     opacity: 0.8;
     transition: all 0.35s ease-in-out;
@@ -2796,19 +2918,22 @@ body {
     padding: 15px 0;
     text-decoration: none;
 }
+
 .whitespace {
-    padding:0;
-    margin:50px;
+    padding: 0;
+    margin: 50px;
     display: block;
 }
+
 /* menu */
 
 .header .menu {
     clear: both;
     max-height: 0;
     transition: max-height 0.2s ease-out;
-    display:inline-flex;
+    display: inline-flex;
 }
+
 .menu-list {
     clear: both;
     transition: max-height 0.2s ease-out;
@@ -2833,6 +2958,7 @@ body {
     transition: background 0.2s ease-out;
     width: 18px;
 }
+
 .header .menu-icon .navicon:after,
 .header .menu-icon .navicon:before {
     background: color(var(--whitefull));
@@ -2843,9 +2969,11 @@ body {
     transition: all 0.2s ease-out;
     width: 100%;
 }
+
 .header .menu-icon .navicon:before {
     top: 5px;
 }
+
 .header .menu-icon .navicon:after {
     top: -5px;
 }
@@ -2855,25 +2983,30 @@ body {
 .header .menu-btn {
     display: none;
 }
-.header .menu-btn:checked ~ .menu {
+
+.header .menu-btn:checked~.menu {
     max-height: 350px;
 }
-.header .menu-btn:checked ~ .menu-icon .navicon {
+
+.header .menu-btn:checked~.menu-icon .navicon {
     background: transparent;
 }
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
     transform: rotate(-45deg);
 }
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
     transform: rotate(45deg);
 }
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before {
     top: 0;
 }
 
 .transparent {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     box-shadow: none;
 }
 
@@ -2881,6 +3014,7 @@ body {
 .ribbon {
     margin: 10px 5%
 }
+
 .ribbon-row {
     display: -ms-flexbox;
     /* IE10 */
@@ -2890,6 +3024,7 @@ body {
     flex-wrap: wrap;
     padding: 0 4px;
 }
+
 .ribbon-column {
     -ms-flex: 5.88%;
     /* IE10 */
@@ -2901,17 +3036,21 @@ body {
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 .ribbon-column a {
     text-decoration: none;
 }
+
 .ribbon-column img {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
 }
+
 .ribbon-sm {
     display: flex;
 }
+
 .ribbon-column-sm {
     margin: 1px 0;
     height: 100%;
@@ -2919,6 +3058,7 @@ body {
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 .ribbon-column-sm img {
     margin: 2px;
     vertical-align: middle;
@@ -2926,21 +3066,25 @@ body {
     height: auto;
     max-height: 64px;
 }
+
 .ribbon-column-sm:hover,
 .ribbon-column:hover {
     z-index: 2;
     transform: scale(1.5, 1.5);
     cursor: pointer;
 }
+
 .ribbon-column:hover .middle {
     opacity: 1;
 }
+
 .ribbon-caption {
-    margin:20px 0;
+    margin: 20px 0;
 }
+
 .ribbon-head {
     margin-top: 25px;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .middle {
@@ -2949,6 +3093,7 @@ body {
     font-size: 7pt;
     font-weight: 600;
 }
+
 #language-tooltip {
     position: absolute;
     top: 100%;
@@ -2962,14 +3107,14 @@ body {
     white-space: nowrap;
     background: #15171a;
     border-radius: 3px;
-    box-shadow: 0 12px 26px rgba(39,44,49,.08), 1px 3px 8px rgba(39,44,49,.03);
+    box-shadow: 0 12px 26px rgba(39, 44, 49, .08), 1px 3px 8px rgba(39, 44, 49, .03);
     opacity: 0;
-    transition: all 0.35s cubic-bezier(.4,.01,.165,.99);
+    transition: all 0.35s cubic-bezier(.4, .01, .165, .99);
     transform: translateY(6px);
     pointer-events: none;
 }
 
-.lang-switch:hover + #language-tooltip {
+.lang-switch:hover+#language-tooltip {
     opacity: 1.0;
     transform: translateY(0px);
 }
@@ -2999,7 +3144,7 @@ body {
     height: 20vh;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     padding: 50px 150px 150px;
     line-height: 25pt;
@@ -3022,7 +3167,7 @@ body {
     font-weight: 800;
     padding: 2% 10%;
     margin: 15px 0 0 0;
-    color:#666;
+    color: #666;
 }
 
 
@@ -3098,6 +3243,7 @@ body {
     backdrop-filter: blur(3px);
     background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
 }
+
 .text:focus,
 .text:hover {
     color: color(var(--lgreen));
@@ -3133,14 +3279,17 @@ body {
     font-weight: 600;
     animation-delay: 5s;
 }
+
 .caps:hover {
     border-bottom: 1px solid color(var(--whoblue));
     transition: 0.3s;
 }
+
 .mySlides:hover .head-title {
     border-left: 3px solid color(var(--lgreen));
     transition: 0.3s;
 }
+
 .mySlides:hover .head-desc {
     color: color(var(--lgreen));
     transition: 0.3s;
@@ -3177,12 +3326,9 @@ body {
 /**********************/
 .footer-distributed {
     background-color: #292c2f;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
     width: 100%;
     text-align: left;
-    font: bold 16px 'Montserrat' sans-serif;
-
+    font: bold 16px 'Montserrat'sans-serif;
     padding: 55px 50px 0;
     margin-top: 20px;
 }
@@ -3216,9 +3362,12 @@ body {
 /* Footer links */
 
 .footer-distributed .footer-links {
-    color: #ffffff;
+    color: #fff;
     margin: 20px 0 12px;
     padding: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: .3pt;
 }
 
 .footer-distributed .footer-links a {
@@ -3226,6 +3375,12 @@ body {
     line-height: 1.8;
     text-decoration: none;
     color: #fff;
+    transition: .3s all ease-in;
+}
+
+.footer-links a:hover {
+    color: var(--whoblue);
+    text-decoration: underline;
 }
 
 .footer-distributed .footer-company-name {
@@ -3278,6 +3433,32 @@ body {
     text-decoration: none;
 }
 
+.partners {
+    margin-top: 50px;
+}
+
+.partners a {
+    width: 150px;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    margin: 20px 0;
+    background: #fefefe;
+    padding: 5px;
+    clear: both;
+    display: block;
+    border-radius: 3px;
+}
+
+
+.die-zeit {
+    background: #000 !important;
+}
+
+.tagsp {
+    height: 100%;
+}
+
 /* Footer Right */
 
 .footer-distributed .footer-right {
@@ -3287,19 +3468,25 @@ body {
 
 .footer-distributed .footer-company-about {
     line-height: 20px;
-    color: color(var(--midgrey));
+    color: color(var(--whitegrey));
     font-size: 14px;
-    font-weight: normal;
+    font-weight: 600;
     margin: 20px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
 }
+
 .footer-company-about a {
     color: color(var(--midgrey) l(+15%));
     text-decoration: none;
+    font-weight: 400;
     transition: color 0.3s linear;
 }
+
 .footer-company-about a:hover {
-    color: var(--whitefull);
+    color: var(--whoblue);
 }
+
 .footer-company-about path,
 .footer-company-about svg {
     fill: color(var(--midgrey));
@@ -3307,55 +3494,102 @@ body {
 
 .footer-distributed .footer-icons a {
     display: inline-block;
-    width: 35px;
-    height: 35px;
+    width: 48px;
+    height: 48px;
     cursor: pointer;
     background-color: #33383b;
     border-radius: 2px;
-
-    font-size: 20px;
     color: #ffffff;
     text-align: center;
-    line-height: 35px;
-
+    line-height: 48px;
     margin-right: 3px;
     margin-bottom: 5px;
 }
+
 .footer-copyright {
     color: var(--whitefull);
     margin-top: 50px;
     font-size: 12px;
 }
+
 .lower-footer {
-    margin: 0;
+    margin: -1px;
     padding-top: 10px;
 }
+
 .facebook:hover,
 .instagram:hover,
 .linkedin:hover,
 .twitter:hover {
     background-color: #fff !important;
 }
+
 .facebook:hover svg {
     fill: #4267B2;
 }
+
 .twitter:hover svg {
     fill: #1DA1F2;
 }
+
 .instagram:hover svg {
     fill: #833AB4;
 }
+
 .linkedin:hover svg {
     fill: #2867B2;
 }
-.flag{
-    height:25px;
-    width:25px;
+
+.flag {
+    height: 25px;
+    width: 25px;
     padding-top: 18px;
-    display:inline-block;
+    display: inline-block;
 }
+
+.map {
+    margin: 10px;
+}
+
+#mapdiv {
+    height: 250px;
+    width: 80%;
+}
+
+.olControlAttribution {
+    bottom: 2px !important;
+    left: 2px !important;
+    z-index: 999 !important;
+}
+
+.olControlZoom {
+    z-index: 999 !important;
+}
+
+.navigate {
+    display: none;
+    margin: 15px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--whoblue);
+    padding: 15px;
+    width: 50%;
+    text-align: center;
+    transition: .2s linear all;
+
+}
+
+.navigate:hover {
+    background: var(--whoblue);
+    color: #fff;
+    text-decoration: none;
+}
+
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
 Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+#mc_embed_signup {
+    margin-top: 100px;
+}
 
 #mc-embedded-subscribe-form {
     position: relative;
@@ -3369,18 +3603,22 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     overflow: hidden;
     max-width: 350px;
 }
+
 #mc-embedded-subscribe-form input {
     line-height: 40px;
     padding: 0;
     border: none;
     outline: none;
     background: #eee;
+    transition: .2s all ease-in;
 }
+
 #mc-embedded-subscribe-form input:not([type=submit]) {
     width: 100%;
     display: block;
     padding: 0 150px 0 30px;
 }
+
 #mc-embedded-subscribe-form input:not([type=email]) {
     position: absolute;
     height: 36px;
@@ -3391,15 +3629,19 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     padding: 0 18px;
     background: #333;
     color: white;
+    font-weight: 800;
     cursor: pointer;
 }
+
 #mc-embedded-subscribe-form input:not([type=email]):hover {
     background: color(var(--whoblue));
 }
+
 #mc-embedded-subscribe-form input:focus {
     outline: none;
     background: #fff;
 }
+
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 /* 48em = 768px */
@@ -3408,27 +3650,32 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .header li {
         float: left;
     }
+
     .header li a {
         padding: 0.5rem 1rem;
         margin: 0;
     }
+
     .header .menu {
         clear: none;
         float: right;
         max-height: none;
     }
+
     .header .menu-icon {
         display: none;
     }
 
 }
+
 @media (max-width: 880px) {
 
     .footer-distributed {
         font: bold 14px sans-serif;
     }
+
     .header li a {
-            padding: 0.5rem;
+        padding: 0.5rem;
     }
 
     .footer-distributed .footer-center,
@@ -3443,11 +3690,13 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+
     .blockquote {
         padding: 5%;
         font-size: 2rem;
         line-height: 20pt;
     }
+
     .blockquote-title {
         font-size: 2.2rem;
     }
@@ -3466,31 +3715,38 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         animation-name: slideInDown;
         animation-duration: 1s;
     }
+
     .ribbon-column {
         -ms-flex: 11%;
         flex: 11%;
         max-width: 11%;
     }
+
     .header .logo img {
-        width:20rem;
+        width: 20rem;
     }
 
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 600px) {
 
     .post-card-image {
         object-fit: cover;
     }
-    .blockquote, .index-intro {
+
+    .blockquote,
+    .index-intro {
         padding: 2% 8%;
         font-size: 1.2rem;
         margin: 0;
     }
+
     .index-intro {
-        padding:8%;
+        padding: 8%;
     }
+
     .blockquote-title {
         font-size: 1.5rem;
     }
@@ -3502,16 +3758,21 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .head-desc {
         max-width: 90%;
     }
+
     .header ul {
-        padding-right: 22vw;
-        margin:0;
+        margin: 0;
+        float: left;
+        text-align: left;
+        width: 85vw;
     }
+
     .header .logo {
         padding: 0;
         font-size: 1.2em;
     }
+
     .header .logo img {
-        width: 23rem;
+        width: 22rem;
         vertical-align: bottom;
         padding-top: 20px;
     }
@@ -3522,16 +3783,19 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         animation-name: flipInY;
         animation-duration: 1s;
     }
+
     .ribbon-column {
         -ms-flex: 33%;
         flex: 33%;
         max-width: 33%;
     }
+
     .post-full-byline {
         -ms-flex: 51%;
         flex: 51%;
         flex-wrap: wrap;
     }
+
     .menu {
         float: right;
         margin-right: 0 !important;
@@ -3539,17 +3803,34 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         top: 50px;
         display: none;
     }
-    .menu-btn:checked ~ .menu {
+
+    .menu-btn:checked~.menu {
         display: block;
     }
-    .flag{
-        float:right;
-        display:none;
+
+    .flag {
+        float: right;
+        display: none;
     }
-    .flag:hover + #language-tooltip {
+
+    .flag:hover+#language-tooltip {
         opacity: 0;
     }
-    .menu-btn:checked ~ .menu .flag {
-            display: inline-block;
+
+    .menu-btn:checked~.menu .flag {
+        display: inline-block;
+    }
+
+    .map {
+        margin: 5px;
+    }
+
+    #mapdiv {
+        height: 250px;
+        width: 100%;
+    }
+
+    .navigate {
+        display: block;
     }
 }
