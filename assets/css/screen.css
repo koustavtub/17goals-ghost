@@ -67,6 +67,7 @@ h6 {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .site-main {
@@ -642,7 +643,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     width: 100%;
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .post-card-content-link {
@@ -2935,6 +2936,7 @@ body {
 }
 
 .menu-list {
+    z-index:0;
     clear: both;
     transition: max-height 0.2s ease-out;
 }
@@ -3114,6 +3116,9 @@ body {
     pointer-events: none;
 }
 
+.lang-switch {
+    z-index:2;
+}
 .lang-switch:hover+#language-tooltip {
     opacity: 1.0;
     transform: translateY(0px);
@@ -3173,15 +3178,16 @@ body {
 
 /* ---------- */
 .allSlides {
-    height: 80vh;
+    height: 100vh;
     background: #000;
 }
 
 .header-img {
-    height: 80vh;
-    max-height: 80vh;
+    height: 100vh;
+    max-height: 100vh;
     margin: 0;
     padding: 0;
+    object-fit:cover;
 }
 
 /* Slideshow container */
@@ -3235,7 +3241,7 @@ body {
 .text {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
-    padding: 2em 12em;
+    padding: 2rem 12rem;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -3252,10 +3258,11 @@ body {
 
 .head-title {
     border-left: 3px solid color(var(--whoblue));
-    padding: 0 0 0 1.875rem;
+    padding: 0 0 0 1rem;
     color: #fff;
     letter-spacing: 1px;
     font-weight: 600;
+    font-size: 3.5rem;
     margin: 0 0 0.75rem;
     text-transform: uppercase;
     animation-delay: 0.5s;
@@ -3277,7 +3284,7 @@ body {
     margin: 0;
     float: right;
     font-weight: 600;
-    animation-delay: 5s;
+    animation-delay: 3s;
 }
 
 .caps:hover {
@@ -3556,7 +3563,6 @@ body {
     width: 80%;
 }
 
-
 .navigate {
     display: none;
     margin: 15px 0;
@@ -3742,9 +3748,6 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         font-size: 1.5rem;
     }
 
-    .text {
-        padding: 8px 20px;
-    }
 
     .head-desc {
         max-width: 90%;
@@ -3754,7 +3757,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         margin: 0;
         float: left;
         text-align: left;
-        width: 85vw;
+        width: 75vw;
     }
 
     .header .logo {
@@ -3786,13 +3789,19 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         flex: 51%;
         flex-wrap: wrap;
     }
-
     .menu {
         float: right;
         margin-right: 0 !important;
         right: 0;
         top: 50px;
         display: none;
+    }
+    .header .menu, .menu-list {
+    width:100%;
+    }
+
+    .head-title {
+        font-size:unset;
     }
 
     .menu-btn:checked~.menu {

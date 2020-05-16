@@ -47,6 +47,19 @@
 }
 .person-img {
   width: 100%;
+  border-radius: 50%;
+}
+.person-list .person:nth-child(1)>.person-img{
+   border:3px solid  #56C02B;
+}
+.person-list .person:nth-child(2)>.person-img{
+   border:3px solid  #FD6925;
+}
+.person-list .person:nth-child(3)>.person-img{
+   border:3px solid  #26BDE2;
+}
+.person-list .person:nth-child(4)>.person-img{
+   border:3px solid  #DD1367;
 }
 .person-title {
   color: #333;
