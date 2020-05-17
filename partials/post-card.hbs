@@ -46,7 +46,68 @@
             </section>
 
         </a>
+<aside>
+    <ul class="tag-list">
+        {{#foreach tags}}
 
+            {{#has slug="1"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg1.png"}}" /></li>
+            {{/has}}
+            {{#has slug="2"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg2.png"}}" /></li>
+            {{/has}}
+            {{#has slug="3"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg3.png"}}" /></li>
+            {{/has}}
+            {{#has slug="4"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg4.png"}}" /></li>
+            {{/has}}
+            {{#has slug="5"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg5.png"}}" /></li>
+            {{/has}}
+            {{#has slug="6"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg6.png"}}" /></li>
+            {{/has}}
+            {{#has slug="7"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg7.png"}}" /></li>
+            {{/has}}
+            {{#has slug="8"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg8.png"}}" /></li>
+            {{/has}}
+            {{#has slug="9"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg9.png"}}" /></li>
+            {{/has}}
+            {{#has slug="10"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg10.png"}}" /></li>
+            {{/has}}
+            {{#has slug="11"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg11.png"}}" /></li>
+            {{/has}}
+            {{#has slug="12"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg12.png"}}" /></li>
+            {{/has}}
+            {{#has slug="13"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg13.png"}}" /></li>
+            {{/has}}
+            {{#has slug="14"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg14.png"}}" /></li>
+            {{/has}}
+            {{#has slug="15"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg15.png"}}" /></li>
+            {{/has}}
+            {{#has slug="16"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg16.png"}}" /></li>
+            {{/has}}
+            {{#has slug="17"}}
+                <li class="tag-list-item"><img src="{{asset "images/small-icons/sdg17.png"}}" /></li>
+            {{/has}}
+
+        {{/foreach}}
+
+
+    </ul>
+
+</aside>
         <footer class="post-card-meta">
             <ul class="author-list">
                 {{#foreach authors}}
@@ -69,14 +130,15 @@
             <div class="post-card-byline-content">
                 {{#has tag="english"}}
                     <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
-                    <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time seconds=(t "1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
+                    <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="L"}}</time> <span class="bull">&bull;</span> {{reading_time seconds="1 min read" minute="1 min read" minutes="% min read"}}</span>
                 {{else}}
                     <span>{{#has author="count:>2"}}{{t "Multiple authors"}}{{else}}{{authors}}{{/has}}</span>
-                    <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time seconds=(t "1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
+                    <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="L"}}</time> <span class="bull">&bull;</span> {{reading_time seconds=(t "1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
 
                 {{/has}}
             </div>
         </footer>
+
 
     </div>{{!--/.post-card-content--}}
 

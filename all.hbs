@@ -23,7 +23,7 @@
 
     <div class="inner posts">
         <div class="post-feed">
-            {{#get "posts" filter="tag:-[english,kurz-and-gut,news-and-events]+tag:german" include="tags,authors" limit="all"}}
+            {{#get "posts" filter="tag:-[english,kurz-and-gut,news-and-events,hash-read-online]+tag:german" include="tags,authors" limit="all"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card"}}

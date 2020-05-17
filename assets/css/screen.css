@@ -835,6 +835,23 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: inline-block;
 }
 
+.tag-list {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 0 10px 4px;
+    padding: 0;
+    list-style: none;
+}
+
+.tag-list-item {
+    position: relative;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+        max-width: 40px;
+        max-height: 40px;
+}
+
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
@@ -894,6 +911,9 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin-bottom: 1.5em;
         font-size: 1.8rem;
         line-height: 1.5em;
+    }
+    .post-card-large .tag-list{
+        padding: 0 0 0 40px;
     }
 }
 
