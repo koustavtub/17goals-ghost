@@ -64,65 +64,67 @@
     </div>
 
     <div class="footer-right">
-        <!-- Begin Mailchimp Signup Form -->
+        <center>
+            <div class="footer-icons">
 
-        <div id="mc_embed_signup">
-            <form action="https://17goalsmagazin.us18.list-manage.com/subscribe/post?u=a967b0fd82e5f4dacb7365b92&amp;id=13e86d77f6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                <div id="mc_embed_signup_scroll">
+                <a href="{{facebook_url @site.facebook}}" class="social-link facebook" title="Facebook" target="_blank" rel="noopener">
+                    <svg width="32" height="32" role="img" aria-label="facebook-icon">
+                        <use xlink:href="#facebook"></use>
+                    </svg>
+                </a>
+                <a href="{{twitter_url @site.twitter}}" class="social-link twitter" title="Twitter" target="_blank" rel="noopener">
+                    <svg width="32" height="32" role="img" aria-label="twitter-icon">
+                        <use xlink:href="#twitter"></use>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/17goalsmagazin/" class="social-link instagram" title="Instagram" target="_blank" rel="noopener">
+                    <svg width="32" height="32" role="img" aria-label="instagram-icon">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/17goalsmagazin/" class="social-link linkedin" title="LinkedIn" target="_blank" rel="noopener">
+                    <svg width="32" height="32" role="img" aria-label="linkedin-icon">
+                        <use xlink:href="#linkedin"></use>
+                    </svg>
+                </a>
+            </div>
 
-                    <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required"/>
-                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                        <input type="text" name="b_a967b0fd82e5f4dacb7365b92_13e86d77f6" tabindex="-1" value=""></div>
-                    <div class="clear">
-                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+            <!-- Begin Mailchimp Signup Form -->
+
+            <div id="mc_embed_signup">
+                <form action="https://17goalsmagazin.us18.list-manage.com/subscribe/post?u=a967b0fd82e5f4dacb7365b92&amp;id=13e86d77f6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+
+                        <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required"/>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_a967b0fd82e5f4dacb7365b92_13e86d77f6" tabindex="-1" value="">
+                        </div>
+                        <div class="clear">
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
 
-        <!--End mc_embed_signup-->
+            <!--End mc_embed_signup-->
 
 
-        <nav class="footer-links">
-            <a href="/imprint/">Imprint</a>
-            ·
-            <a href="/privacy-policy/">Privacy Policy</a>
-            ·
-            <a href="javascript:void(0)" id="changeCookiePref">Cookie Preferences</a>
-        </nav>
-
+            <nav class="footer-links">
+                <a href="/imprint/">Imprint</a>
+                ·
+                <a href="/privacy-policy/">Privacy Policy</a>
+                ·
+                <a href="javascript:void(0)" id="changeCookiePref">Cookie Preferences</a>
+            </nav>
+        </center>
     </div>
-    <hr/>
 </footer>
 <footer class="footer-distributed lower-footer">
     <div class="inner">
         <section>
             <center>
-                <div class="footer-icons">
-
-                    <a href="{{facebook_url @site.facebook}}" class="social-link facebook" title="Facebook" target="_blank" rel="noopener">
-                        <svg width="32" height="32" role="img" aria-label="facebook-icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                    <a href="{{twitter_url @site.twitter}}" class="social-link twitter" title="Twitter" target="_blank" rel="noopener">
-                        <svg width="32" height="32" role="img" aria-label="twitter-icon">
-                            <use xlink:href="#twitter"></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/17goalsmagazin/" class="social-link instagram" title="Instagram" target="_blank" rel="noopener">
-                        <svg width="32" height="32" role="img" aria-label="instagram-icon">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/17goalsmagazin/" class="social-link linkedin" title="LinkedIn" target="_blank" rel="noopener">
-                        <svg width="32" height="32" role="img" aria-label="linkedin-icon">
-                            <use xlink:href="#linkedin"></use>
-                        </svg>
-                    </a>
-                </div>
-                <p class="footer-copyright"><a href="{{@site.url}}/en">{{@site.title}}</a> &copy; {{date format="YYYY"}}</p>
+                <p class="footer-copyright"><a href="{{@site.url}}/en">{{@site.title}}</a> &copy; {{date format="YYYY"}} </p>
             </center>
         </section>
     </div>
