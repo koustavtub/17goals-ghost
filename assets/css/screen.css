@@ -3342,6 +3342,16 @@ body {
     animation-duration: 0.5s;
 }
 
+.featurer-top {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 2px 10px;
+    z-index: 2;
+}
+.featurer-top svg{
+    height:250px;
+}
 .featurer {
     position: absolute;
     bottom: 5px;
@@ -3767,7 +3777,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
     .blockquote,
     .index-intro {
-        padding: 2% 8%;
+        padding: 2% 5%;
         font-size: 1.2rem;
         margin: 0;
     }
@@ -3809,7 +3819,9 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         animation-name: flipInY;
         animation-duration: 1s;
     }
-
+    .featurer-top svg {
+        height: 150px;
+    }
     .ribbon-column {
         -ms-flex: 33%;
         flex: 33%;

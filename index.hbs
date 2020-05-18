@@ -16,7 +16,7 @@
 <!-- Slideshow container -->
 <div class="allSlides">
     <div class="slideshow-container">
-        {{#get "posts" filter="tag:-[english,kurz-and-gut,news-and-events]+tag:german" limit="5"}}
+        {{#get "posts" filter="tag:-[english,kurz-and-gut,news-and-events,17-goals-blog-award]+tag:german" limit="5"}}
             {{#foreach posts}}
 
                 <!-- Full-width images with number and caption text -->
@@ -106,6 +106,12 @@
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card" feature=(t "Read Online")}}
+                {{/foreach}}
+            {{/get}}
+            {{#get "posts" filter="tag:17-goals-blog-award" limit="1" include="tags,authors"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card" feature=(t "17 Goals Blog Award")}}
                 {{/foreach}}
             {{/get}}
         </div>

@@ -1,34 +1,40 @@
-{{!< default}}
+{{!< default-en}}
 {{!-- The tag above means: insert everything in this file
   into the {body} of the default.hbs template --}}
-{{> site-header}}
+
+{{> "site-header" en="en"}}
 
 {{!-- The main content area --}}
 
 <section class="whitespace"></section>
 
-
 <main id="site-main" class="site-main outer">
 
     <section>
-        <h1 class="post-full-title">Alle Geschichten</h1>
+        <h1 class="post-full-title">17 Goals Blog Award</h1>
         <hr/>
-        <p class="post-full-custom-excerpt">{{t "All Posts Intro"}}</p>
-        </p>
+        <p class="post-full-custom-excerpt">We at the seventeen goals magazine believe that good work needs to be
+            acknowledged! And to inspire talented bloggers and get more people involved in sustainable living, we have
+            initiated the "17 Goals Blog Award”. With this we select and honour a blog post every month. We choose this
+            on the basis of how this post contributes to achieving the goals, the impact it has on the readers and last
+            but not the least its creativity and journalistic skills exhibited in the post. </p>
+
     </section>
 
     <div class="inner posts">
         <div class="post-feed">
-            {{#get "posts" filter="tag:-[english,kurz-and-gut,news-and-events,hash-read-online,17-goals-blog-award]+tag:german" include="tags,authors" limit="all"}}
+            {{#get "posts" filter="tag:17-goals-blog-award-en" include="tags,authors" limit="all"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
+                    {{> "post-card" en="en"}}
                 {{/foreach}}
             {{/get}}
         </div>
     </div>
 
 </main>
+
+
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
