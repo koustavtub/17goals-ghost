@@ -6,6 +6,7 @@ into the {body} of the default.hbs template --}}
     - About Us
 {{/contentFor}}
 {{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset "built/team.css"}}"/>
 {{/contentFor}}
 
@@ -19,20 +20,28 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main">
 
     <section class="outer">
-        <h1 class="post-full-title">About Us</h1>
+        <h1 class="post-full-title">How It All Began...</h1>
         <hr/>
-        <div class="intro-text inner">It was a historic moment when, in September 2015, the international community
-            agreed on 17 goals for sustainable development. Since we heard of them, we have been excited about the
-            Sustainable Development Goals (SDGs).
-            But instead of writing about the things that went wrong in the world, we wanted to tell the positive
-            stories. The idea of a magazine was born! <strong>seventeen goals Magazin</strong> tells inspiring stories of change and motivates
-            people to take action.
+        <div class="intro-text inner">
+            <p>It was a historic moment when, in September 2015, the international community agreed on 17 goals for
+                sustainable development. Since we heard of them, we have been excited about the Sustainable Development
+                Goals (SDGs). But instead of writing about the things that went wrong in the world, we wanted to tell
+                the positive stories. The idea of a magazine was born!
+                <strong>seventeen goals Magazin</strong> tells inspiring stories of change and motivates people to take
+                action.
+            </p>
+            <p>
+                In case you have missed it, you will find a digital browser to browse through the magazines
+                <a href="/en/browse-through-our-printed-editions/" target="_blank">here</a>.
+                And for even more good news, you are welcome to <a href="javascript:scrollToSubscribe()">subscribe to our newsletter</a>
+                published 4 times a year.
+            </p>
+            <p>
 
-            The magazine is published online and also in printed editions. As such it is a supplement of ZEIT,
-            TAGESSPIEGEL and Handelsblatt. In case you have missed it, you will find a digital browser through the
-            magazines on on our homepage. And for even more good news, you are welcome to subscribe to our newsletter
-            published 4 times a year.
-            Get to know our team members who - together with many freelance journalists - make our magazine possible.
+                Get to know our team members; who, together with many freelance journalists, make our magazine possible.
+            </p>
+
+
         </div>
 
     </section>
@@ -70,7 +79,9 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Publisher / editor-in-chief</p>
-                            <blockquote>"I am thrilled to see how much good news there is to be found in research and editorial work. It is precisely these positive stories about change that we would like to draw your attention to."
+                            <blockquote>"I am thrilled to see how much good news there is to be found in research and
+                                editorial work. It is precisely these positive stories about change that we would like
+                                to draw your attention to."
                             </blockquote>
                         </div>
                     </div>
@@ -84,7 +95,8 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Editor, seventeen goals Magazin</p>
-                            <blockquote>"Superheroes are all around us, walking around without capes, yet touching our lives and making the world a better place. I want to find them and tell their stories!"
+                            <blockquote>"Superheroes are all around us, walking around without capes, yet touching our
+                                lives and making the world a better place. I want to find them and tell their stories!"
                             </blockquote>
                         </div>
                     </div>
@@ -98,7 +110,8 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Art Direction seventeen goals Magazin (digital/local)</p>
-                            <blockquote>"Sustainable action is the future and solves many of our problems. I really enjoy being part of the solution and making my contribution to more sustainability."
+                            <blockquote>"Sustainable action is the future and solves many of our problems. I really
+                                enjoy being part of the solution and making my contribution to more sustainability."
                             </blockquote>
                         </div>
                     </div>
@@ -174,9 +187,14 @@ into the {body} of the default.hbs template --}}
 
 
     });
-
-
-
+    const sub_form=document.getElementById('mc_embed_signup'),sub_btn = document.getElementById('mc-embedded-subscribe');
+    function scrollToSubscribe(){
+        document.querySelector('#mce-EMAIL').scrollIntoView({
+          behavior: 'smooth'
+        });
+        sub_btn.classList.add('sub_btn');
+        sub_form.classList.add('heartBeat','animated','delay-2s');
+    }
     </script>
 {{/contentFor}}
 

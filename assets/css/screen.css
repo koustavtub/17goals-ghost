@@ -848,8 +848,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     margin: 0;
     padding: 0;
-        max-width: 40px;
-        max-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 /* Special Styling for home page grid (below):
@@ -2921,7 +2921,6 @@ body {
     height: 1px;
     position: relative;
     margin-top: 2px;
-
 }
 
 .header li a:hover:after {
@@ -2946,6 +2945,19 @@ body {
     display: block;
 }
 
+.active a {
+    font-weight:800;
+}
+.active a:after {
+    opacity: 1 !important;
+    background: #ffd31d !important;
+    height: 2px !important;
+}
+.active:hover a:after {
+    background: #fff !important;
+    height: 1px !important;
+    transition: .3s all ease-in-out;
+}
 /* menu */
 
 .header .menu {

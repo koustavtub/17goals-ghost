@@ -3,10 +3,11 @@
 into the {body} of the default.hbs template --}}
 
 {{#contentFor "custom_title"}}
- - Über Uns
+    - Über Uns
 {{/contentFor}}
 {{#contentFor "extraheads"}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/team.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "built/animate.css"}}"/>
 {{/contentFor}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
@@ -21,12 +22,27 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main">
 
     <section class="outer">
-        <h1 class="post-full-title">{{t "About Us"}}</h1>
+        <h1 class="post-full-title">{{t "How it began"}}</h1>
         <hr/>
-        <div class="intro-text inner">Es war ein historischer Moment, als sich 2015 im September 193 Staaten auf 17 Ziele für nachhaltige Entwicklung einigten. Seit wir davon erfuhren, haben uns die international als Sustainable Development Goals (SDGs) bezeichneten Ziele begeistert.
-            Aber anstatt über die Dinge zu schreiben, die in der Welt falsch liefen, wollten wir die positiven Geschichten erzählen. Das <strong>seventeen goals Magazin</strong> war geboren! Es erzählt inspirierende Geschichten vom Wandel und motiviert zum eigenen Handeln.
-            Es erscheint digital und auch als gedruckte Ausgabe. Als solche liegt es in regelmäßigen Abständen der ZEIT, dem TAGESSPIEGEL sowie zukünftig dem Handelsblatt bei. Falls Sie es verpasst haben: auf unserer Startseite steht es zum digitalen Durchblättern bereit. Und für noch mehr gute Nachrichten abonnieren Sie gerne unseren 4 x jährlich erscheinenden Newsletter.
-            Lernen Sie hier unsere Teammitglieder kennen, die – gemeinsam mit vielen freien Journalistinnen und Journalisten – unser Magazin möglich machen.
+        <div class="intro-text inner">
+            Es war ein historischer Moment, als sich 2015 im September 193 Staaten auf 17 Ziele für nachhaltige
+            Entwicklung einigten. Seit wir davon erfuhren, haben uns die international als Sustainable Development Goals
+            (SDGs) bezeichneten Ziele begeistert. Aber anstatt über die Dinge zu schreiben, die in der Welt falsch
+            liefen, wollten wir die positiven Geschichten erzählen.
+            Das <strong>seventeen goals Magazin</strong> war geboren!
+            <p>Es erzählt inspirierende Geschichten vom Wandel und motiviert zum eigenen Handeln. Es erscheint digital
+                und auch als gedruckte Ausgabe. Falls Sie es verpasst haben: auf unserer Startseite steht es zum
+                <a href="/online-lesen/" target="_blank">
+                    digitalen Durchblättern
+                </a>bereit.
+            </p>
+
+            <p>
+                Und für noch mehr gute Nachrichten <a href="javascript:scrollToSubscribe()"> abonnieren Sie </a> gerne
+                unseren 4 x jährlich erscheinenden Newsletter.
+                Lernen Sie hier unsere Teammitglieder kennen, die – gemeinsam mit vielen freien Journalistinnen und
+                Journalisten – unser Magazin möglich machen.
+            </p>
         </div>
 
     </section>
@@ -65,7 +81,9 @@ into the {body} of the default.hbs template --}}
                                     </svg>
                                 </a></h2>
                             <p class="person-desc">Herausgeberin / Chefredaktion</p>
-                            <blockquote>"In der Recherche- und Redaktionsarbeit immer wieder zu sehen, wie viele gute Nachrichten es zu erzählen gibt, begeistert uns. Es sind genau diese positiven Geschichten vom Wandel, auf die wir aufmerksam machen möchten."
+                            <blockquote>"In der Recherche- und Redaktionsarbeit immer wieder zu sehen, wie viele gute
+                                Nachrichten es zu erzählen gibt, begeistert uns. Es sind genau diese positiven
+                                Geschichten vom Wandel, auf die wir aufmerksam machen möchten."
                             </blockquote>
                         </div>
                     </div>
@@ -169,10 +187,17 @@ into the {body} of the default.hbs template --}}
             window.addEventListener('resize', onResize, false);
 
             update();
-
-
-
     });
+    const sub_form=document.getElementById('mc_embed_signup'),sub_btn = document.getElementById('mc-embedded-subscribe');
+    function scrollToSubscribe(){
+        document.querySelector('#mce-EMAIL').scrollIntoView({
+          behavior: 'smooth'
+        });
+        sub_btn.classList.add('sub_btn');
+        sub_form.classList.add('heartBeat','animated','delay-2s');
+    }
+
+
 
 
     </script>

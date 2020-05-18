@@ -134,7 +134,7 @@ function getParameterByName(name, url) {
 // Give the parameter a variable name
 var action = getParameterByName('action');
 $(document).ready(function() {
-    var postCards = document.getElementsByClassName('post-card');
+    const postCards = document.getElementsByClassName('post-card');
     for (i = 1; i <= postCards.length; i++) {
             if (i % 6 == 0) {
                 postCards[i-1].classList.add('post-card-large')
@@ -142,6 +142,20 @@ $(document).ready(function() {
         }
     if (postCards.length % 6==4 || postCards.length % 6==1) {
         postCards[postCards.length-1].classList.add('post-card-large')
+    }
+
+    const page_url=window.location.href;
+    const menu_list=document.querySelectorAll('.header li');
+    if(page_url.includes('/17ziele_17sdg')){
+        menu_list[0].classList.add('active');
+    }else if(page_url.includes('/alle-geschichten')){
+        menu_list[1].classList.add('active');
+    }else if(page_url.includes('/news-and-events')){
+        menu_list[2].classList.add('active');
+    }else if(page_url.includes('/kurz-and-gut')){
+        menu_list[3].classList.add('active');
+    }else if(page_url.includes('/uber-uns')||page_url.includes('/unser-team')){
+        menu_list[4].classList.add('active');
     }
 });
 
