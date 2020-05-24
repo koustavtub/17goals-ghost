@@ -1,14 +1,14 @@
 const jsonCaptions={
   "en": [
     {
-      "title": "SDG 1. No Poverty",
+      "title": "SDG 1: No Poverty",
       "caption": "'Poverty is the worst form of violence!' - Mahatma Gandhi "
     },
     {
-      "title": "SDG 2. Zero Hunger",
+      "title": "SDG 2: Zero Hunger",
       "caption": "'If you can not feed a hundred people, then just feed one.'- Mother Teresa"
     },{
-      "title": "SDG 3. Good Health and Well Being",
+      "title": "SDG 3: Good Health and Well Being",
       "caption": "'The first wealth is health'- Ralph Waldo Emerson"
     },
     {

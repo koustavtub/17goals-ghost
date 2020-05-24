@@ -1,13 +1,117 @@
 routes:
-  /de/alle-geschichten/: all
+  /alle-geschichten/: all
   /en/all-stories/: all-en
   /en/in-a-nutshell/: nutshell-en
   /en/news-and-events/: news-en
+  /en/sdg/: read-next-custom-en
   /en/17-goals-blog-award/: blog-award-en
   /uber-uns/: team-page
   /unser-team/: team-page
   /en/about-us/: team-page-en
   /en/our-team/: team-page-en
+  /ziel/1/:
+    template: stories-in-tags
+    data: tag.1
+  /ziel/2/:
+    template: stories-in-tags
+    data: tag.2
+  /ziel/3/:
+    template: stories-in-tags
+    data: tag.3
+  /ziel/4/:
+    template: stories-in-tags
+    data: tag.4
+  /ziel/5/:
+    template: stories-in-tags
+    data: tag.5
+  /ziel/6/:
+    template: stories-in-tags
+    data: tag.6
+  /ziel/7/:
+    template: stories-in-tags
+    data: tag.7
+  /ziel/8/:
+    template: stories-in-tags
+    data: tag.8
+  /ziel/9/:
+    template: stories-in-tags
+    data: tag.9
+  /ziel/10/:
+    template: stories-in-tags
+    data: tag.10
+  /ziel/11/:
+    template: stories-in-tags
+    data: tag.11
+  /ziel/12/:
+    template: stories-in-tags
+    data: tag.12
+  /ziel/13/:
+    template: stories-in-tags
+    data: tag.13
+  /ziel/14/:
+    template: stories-in-tags
+    data: tag.14
+  /ziel/15/:
+    template: stories-in-tags
+    data: tag.15
+  /ziel/16/:
+    template: stories-in-tags
+    data: tag.16
+  /ziel/17/:
+    template: stories-in-tags
+    data: tag.17
+  /en/sdg/1/:
+    template: stories-in-tags-en
+    data: tag.1
+  /en/sdg/2/:
+    template: stories-in-tags-en
+    data: tag.2
+  /en/sdg/3/:
+    template: stories-in-tags-en
+    data: tag.3
+  /en/sdg/4/:
+    template: stories-in-tags-en
+    data: tag.4
+  /en/sdg/5/:
+    template: stories-in-tags-en
+    data: tag.5
+  /en/sdg/6/:
+    template: stories-in-tags-en
+    data: tag.6
+  /en/sdg/7/:
+    template: stories-in-tags-en
+    data: tag.7
+  /en/sdg/8/:
+    template: stories-in-tags-en
+    data: tag.8
+  /en/sdg/9/:
+    template: stories-in-tags-en
+    data: tag.9
+  /en/sdg/10/:
+    template: stories-in-tags-en
+    data: tag.10
+  /en/sdg/11/:
+    template: stories-in-tags-en
+    data: tag.11
+  /en/sdg/12/:
+    template: stories-in-tags-en
+    data: tag.12
+  /en/sdg/13/:
+    template: stories-in-tags-en
+    data: tag.13
+  /en/sdg/14/:
+    template: stories-in-tags-en
+    data: tag.14
+  /en/sdg/15/:
+    template: stories-in-tags-en
+    data: tag.15
+  /en/sdg/16/:
+    template: stories-in-tags-en
+    data: tag.16
+  /en/sdg/17/:
+    template: stories-in-tags-en
+    data: tag.17
+
 collections:
   /en/:
     permalink: /en/{slug}/

@@ -43,12 +43,72 @@
                         {{content}}
                     </div>
                 </section>
-
             </article>
 
         </div>
     </main>
 
+    {{!-- Links to Previous/Next posts --}}
+    <aside class="read-next outer">
+        <div class="inner">
+
+            <div class="read-next-feed">
+                {{#foreach tags visibility="all"}}
+                    {{#has slug="hash-sdg1"}}
+                        {{> "read-next-custom-en" primry_tag=1}}
+                    {{/has}}
+                    {{#has slug="hash-sdg2"}}
+                        {{> "read-next-custom-en" primry_tag=2}}
+                    {{/has}}
+                    {{#has slug="hash-sdg3"}}
+                        {{> "read-next-custom-en" primry_tag=3}}
+                    {{/has}}
+                    {{#has slug="hash-sdg4"}}
+                        {{> "read-next-custom-en" primry_tag=4}}
+                    {{/has}}
+                    {{#has slug="hash-sdg5"}}
+                        {{> "read-next-custom-en" primry_tag=5}}
+                    {{/has}}
+                    {{#has slug="hash-sdg6"}}
+                        {{> "read-next-custom-en" primry_tag=6}}
+                    {{/has}}
+                    {{#has slug="hash-sdg7"}}
+                        {{> "read-next-custom-en" primry_tag=7}}
+                    {{/has}}
+                    {{#has slug="hash-sdg8"}}
+                        {{> "read-next-custom-en" primry_tag=8}}
+                    {{/has}}
+                    {{#has slug="hash-sdg9"}}
+                        {{> "read-next-custom-en" primry_tag=9}}
+                    {{/has}}
+                    {{#has slug="hash-sdg10"}}
+                        {{> "read-next-custom-en" primry_tag=10}}
+                    {{/has}}
+                    {{#has slug="hash-sdg11"}}
+                        {{> "read-next-custom-en" primry_tag=11}}
+                    {{/has}}
+                    {{#has slug="hash-sdg12"}}
+                        {{> "read-next-custom-en" primry_tag=12}}
+                    {{/has}}
+                    {{#has slug="hash-sdg13"}}
+                        {{> "read-next-custom-en" primry_tag=13}}
+                    {{/has}}
+                    {{#has slug="hash-sdg14"}}
+                        {{> "read-next-custom-en" primry_tag=14}}
+                    {{/has}}
+                    {{#has slug="hash-sdg15"}}
+                        {{> "read-next-custom-en" primry_tag=15}}
+                    {{/has}}
+                    {{#has slug="hash-sdg16"}}
+                        {{> "read-next-custom-en" primry_tag=16}}
+                    {{/has}}
+                    {{#has slug="hash-sdg17"}}
+                        {{> "read-next-custom-en" primry_tag=17}}
+                    {{/has}}
+                {{/foreach}}
+            </div>
+        </div>
+    </aside>
 {{/post}}
 
 

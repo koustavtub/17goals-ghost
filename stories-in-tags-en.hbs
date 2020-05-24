@@ -1,0 +1,52 @@
+{{!< default-en}}
+{{!-- The tag above means: insert everything in this file
+  into the {body} of the default.hbs template --}}
+
+{{> site-header en="en"}}
+
+{{!-- The main content area --}}
+
+<section class="whitespace"></section>
+
+<main id="site-main" class="site-main outer">
+
+    {{#tag}}
+        <section>
+
+<script>
+    const sdg_no={{slug}};
+</script>
+            <h1 class="post-full-title">SDG - {{slug}}</h1>
+            <hr/>
+            <p class="post-full-custom-excerpt">All our posts about Sustainable Development Goal -{{slug}}</p>
+
+        </section>
+
+
+        <div class="inner posts">
+            <div class="post-feed">
+                {{#get "posts" filter="tag:-[german,in-a-nutshell,news-and-events-en,hash-read-online-en,17-goals-blog-award-en]+tag:{{slug}}" include="tags,authors" limit="all"}}
+                    {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                        {{> "post-card" en="en"}}
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    {{/tag}}
+
+</main>
+
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+    <script type="text/javascript" src="{{asset "texts/captions.js"}}"></script>
+    <script>
+    $(document).ready(function () {
+      var nav = document.querySelector('.header');
+      nav.classList.remove('transparent');
+      $('.post-full-title').html(jsonCaptions.en[sdg_no - 1].title)
+    });
+    </script>
+{{/contentFor}}
