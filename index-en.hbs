@@ -126,6 +126,13 @@
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
     <script>
+    if(goal_of_the_month){
+        document.querySelectorAll('.featurer span').forEach((k)=>{
+        if(k.innerHTML.includes('The Month')){
+                k.innerHTML+= ` - <code class="gotm">SDG  ${goal_of_the_month} </i>`;
+            }
+        })
+    }
 
     var slideIndex = 1;
     showSlides(slideIndex);

@@ -123,6 +123,14 @@
 {{#contentFor "scripts"}}
     <script>
 
+    if(goal_of_the_month){
+        document.querySelectorAll('.featurer span').forEach((k)=>{
+        if(k.innerHTML.includes('Des Monats')){
+                k.innerHTML+= ` - <code class="gotm">Ziel  ${goal_of_the_month} </i>`;
+            }
+        })
+    }
+
     var slideIndex = 1;
     showSlides(slideIndex);
 

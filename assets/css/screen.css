@@ -3206,7 +3206,11 @@ body {
     margin: 15px 0 0 0;
     color: #666;
 }
-
+.gotm{
+    color: #d50102;
+    font-family:unset;
+    font-size:unset;
+}
 
 /* ---------- */
 .allSlides {
