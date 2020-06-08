@@ -2,9 +2,9 @@
     "name": "17goals",
     "description": "A custom them for 17goalsmagazin.de",
     "demo": "https://www.17goalsmagazin.de/",
-    "version": "3.0.12",
+    "version": "3.18.1",
     "engines": {
-        "ghost": ">=3.0.12",
+        "ghost": ">=3.18.1",
         "ghost-api": "v3"
     },
     "license": "MIT",

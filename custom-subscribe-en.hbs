@@ -1,0 +1,233 @@
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{!< default-en}}
+{{> "site-header" en="en"}}
+{{#contentFor "extraheads"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/subscribe.css"}}"/>
+{{/contentFor}}
+
+{{#post}}
+
+
+    <main id="site-main" class="site-main outer">
+        <div class="inner">
+
+            <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+
+                <header class="post-full-header">
+                    <h1 class="post-full-title">{{title}}</h1>
+
+                    {{#if custom_excerpt}}
+                        <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
+                    {{/if}}
+
+                </header>
+
+
+                <section class="post-full-content">
+                    <div class="post-content">
+                        <div class="flex-container">
+                            <div class="item">
+                                {{#if feature_image}}
+                                    <img
+                                            srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                                            sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px"
+                                            src="{{img_url feature_image size="xl"}}"
+                                            alt="{{title}}"
+                                    />
+                                {{/if}}
+                            </div>
+                            <div class="item">
+                                <!-- Begin Mailchimp Signup Form -->
+                                <div id="mc_embed_signup">
+                                    <form action="https://17goalsmagazin.us18.list-manage.com/subscribe/post?u=a967b0fd82e5f4dacb7365b92&amp;id=13e86d77f6" method="post" id="subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" autocomplete="off">
+                                        <div>
+                                            <div class="indicates-required">
+                                                <span class="asterisk">*</span> Indicates Required Fields
+                                            </div>
+                                            <span class="mc-field-group input input--hoshi">
+                                                <label for="mce-EMAIL" class="input__label input__label--hoshi input__label--hoshi-color-1">E-Mail Address <span class="asterisk">*</span>
+                                                </label>
+                                                <input type="email" name="EMAIL" class="input__field input__field--hoshi" required>
+                                            </span>
+                                            <span class="mc-field-group input input--hoshi">
+                                                <label for="mce-FNAME" class="input__label input__label--hoshi input__label--hoshi-color-1">First Name </label>
+                                                <input type="text" name="FNAME" class="input__field input__field--hoshi">
+                                            </span>
+                                            <span class="mc-field-group input input--hoshi">
+                                                <label for="mce-LNAME" class="input__label input__label--hoshi input__label--hoshi-color-1">Last Name </label>
+                                                <input type="text" name="LNAME" class="input__field input__field--hoshi" >
+                                            </span>
+                                            <div id="mce-responses" class="clear">
+                                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                                <div class="response" id="mce-success-response" style="display:none"></div>
+                                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                                <input type="text" name="b_a967b0fd82e5f4dacb7365b92_13e86d77f6" tabindex="-1" value="">
+                                            </div>
+                                            <div class="clear">
+                                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!--End mc_embed_signup-->
+                            </div>
+
+                        </div>
+
+
+                        {{content}}
+                    </div>
+                </section>
+                {{!-- Email subscribe form at the bottom of the page --}}
+                {{#if @labs.members}}
+                    {{> subscribe-form}}
+                {{/if}}
+
+                {{!--
+                <section class="post-full-comments">
+                    If you want to embed comments, this is a good place to do it!
+                </section>
+                --}}
+
+            </article>
+
+        </div>
+    </main>
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+    <script>
+    /*!
+ * classie - class helper functions
+ * from bonzo https://github.com/ded/bonzo
+ *
+ * classie.has( elem, 'my-class' ) -> true/false
+ * classie.add( elem, 'my-new-class' )
+ * classie.remove( elem, 'my-unwanted-class' )
+ * classie.toggle( elem, 'my-class' )
+ */
+
+/*jshint browser: true, strict: true, undef: true */
+/*global define: false */
+
+( function( window ) {
+
+'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+function classReg( className ) {
+  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+// classList support for class management
+// altho to be fair, the api sucks because it won't accept multiple classes at once
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+  hasClass = function( elem, c ) {
+    return elem.classList.contains( c );
+  };
+  addClass = function( elem, c ) {
+    elem.classList.add( c );
+  };
+  removeClass = function( elem, c ) {
+    elem.classList.remove( c );
+  };
+}
+else {
+  hasClass = function( elem, c ) {
+    return classReg( c ).test( elem.className );
+  };
+  addClass = function( elem, c ) {
+    if ( !hasClass( elem, c ) ) {
+      elem.className = elem.className + ' ' + c;
+    }
+  };
+  removeClass = function( elem, c ) {
+    elem.className = elem.className.replace( classReg( c ), ' ' );
+  };
+}
+
+function toggleClass( elem, c ) {
+  var fn = hasClass( elem, c ) ? removeClass : addClass;
+  fn( elem, c );
+}
+
+var classie = {
+  // full names
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  toggleClass: toggleClass,
+  // short names
+  has: hasClass,
+  add: addClass,
+  remove: removeClass,
+  toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+  // AMD
+  define( classie );
+} else {
+  // browser global
+  window.classie = classie;
+}
+
+})( window );
+
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+    });
+
+
+
+
+
+
+    </script>
+{{/contentFor}}
