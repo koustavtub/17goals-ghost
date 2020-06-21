@@ -1,12 +1,12 @@
 
 <div class="menu">
     {{#if en}}
-        <a class="lang-switch"  href="{{@site.url}}">
+        <a class="lang-switch" target="_self" href="{{@site.url}}">
             <div class="flag">{{> "icons/de-flag"}}</div>
         </a>
         <div id="language-tooltip">{{t "Change The Language"}}</div>
     {{else}}
-        <a class="lang-switch" href="{{@site.url}}/en">
+        <a class="lang-switch" target="_self" href="{{@site.url}}/en">
             <div class="flag">{{> "icons/en-flag"}}</div>
         </a>
         <div id="language-tooltip">Switch To English</div>
