@@ -4,7 +4,7 @@
     <ul  role="menu">
         {{#foreach navigation}}
             <li class="nav-{{slug}}" role="menuitem">
-                <a href="{{url}}" class="social-link">
+                <a target="_blank" href="{{url}}" class="social-link">
                     <svg width="16" height="16" role="img" aria-label="{{slug}}icon">
                         <use xlink:href="#{{slug}}"></use>
                     </svg>
@@ -15,10 +15,10 @@
 {{else}}
     <!-- primary navigation -->
     <ul role="menu">
-        <li class="nav-good-news" role="menuitem"><a href="/17goals/">17 Goals</a></li>
-        <li class="nav-17-goals" role="menuitem"><a href="/en/all-stories/">Stories</a></li>
-        <li class="nav-editorial" role="menuitem"><a href="/en/news-and-events/">News & Events</a></li>
-        <li class="nav-editorial" role="menuitem"><a href="/en/in-a-nutshell/">In A Nutshell</a></li>
-        <li class="nav-newsletter-abo" role="menuitem"><a href="/en/about-us/">About Us</a></li>
+        <li class="nav-good-news" role="menuitem"><a target="_self" href="/17goals/">17 Goals</a></li>
+        <li class="nav-17-goals" role="menuitem"><a target="_self" href="/en/all-stories/">Stories</a></li>
+        <li class="nav-editorial" role="menuitem"><a target="_self" href="/en/news-and-events/">News & Events</a></li>
+        <li class="nav-editorial" role="menuitem"><a target="_self" href="/en/in-a-nutshell/">In A Nutshell</a></li>
+        <li class="nav-newsletter-abo" role="menuitem"><a target="_self" href="/en/about-us/">About Us</a></li>
     </ul>
 {{/if}}

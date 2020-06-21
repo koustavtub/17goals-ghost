@@ -4,7 +4,7 @@
 <ul role="menu">
     {{#foreach navigation}}
     <li class="nav-{{slug}}" role="menuitem">
-        <a href="{{url}}" class="social-link">
+        <a target="_blank" href="{{url}}" class="social-link">
             <svg width="16" height="16" role="img" aria-label="{{slug}}icon">
                         <use xlink:href="#{{slug}}"></use>
                     </svg>
@@ -17,7 +17,7 @@
 
 <ul role="menu">
     {{#foreach navigation}}
-        <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+        <li><a target="_self" href="{{url absolute="true"}}">{{label}}</a></li>
    {{!-- <!--<li class="{{link_class for=(url) class=(concat "nav-" slug)}}" role="menuitem"><a
             >{{label}}</a></li>--> --}}
     {{/foreach}}
