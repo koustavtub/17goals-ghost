@@ -19,7 +19,7 @@
                     {{#if primary_tag}}
                         <section class="post-full-tags">
                             {{#primary_tag}}
-                                <a href="{{url}}">{{name}}</a>
+                                <a target="_self" href="{{url}}">{{name}}</a>
                             {{/primary_tag}}
                         </section>
                     {{/if}}
@@ -51,12 +51,12 @@
                                                         <p>{{bio}}</p>
                                                         {{#has tag="english"}}
                                                             <p>
-                                                                <a href="{{url}}">More Posts</a> by {{name}}
+                                                                <a target="_self" href="{{url}}">More Posts</a> by {{name}}
                                                                 .
                                                             </p>
                                                         {{else}}
                                                             <p>
-                                                                <a href="{{url}}">{{t "More posts"}}</a> {{t "By"}} {{name}}
+                                                                <a target="_self" href="{{url}}">{{t "More posts"}}</a> {{t "By"}} {{name}}
                                                                 .
                                                             </p>
                                                         {{/has}}
@@ -65,11 +65,11 @@
                                                     <h2>{{name}}</h2>
                                                     {{#has tag="english"}}
                                                         <p>Read
-                                                            <a href="{{url}}">More Posts</a> by this author.
+                                                            <a target="_self" href="{{url}}">More Posts</a> by this author.
                                                         </p>
                                                     {{else}}
                                                         <p>
-                                                            <a href="{{url}}">{{t "More posts"}}</a> {{t "By"}} {{t "This Author"}}
+                                                            <a target="_self" href="{{url}}">{{t "More posts"}}</a> {{t "By"}} {{t "This Author"}}
                                                             .</p>
                                                     {{/has}}
                                                 {{/if}}
@@ -156,14 +156,14 @@
                                 <article class="read-next-card">
                                     <header class="read-next-card-header">
                                         {{#../primary_tag}}
-                                            <h3><span>More In</span> <a href="{{url}}">{{name}}</a></h3>
+                                            <h3><span>More In</span> <a target="_self" href="{{url}}">{{name}}</a></h3>
                                         {{/../primary_tag}}
                                     </header>
                                     <div class="read-next-card-content">
                                         <ul>
                                             {{#foreach related_posts}}
                                                 <li>
-                                                    <h4><a href="{{url}}">{{title}}</a></h4>
+                                                    <h4><a target="_self" href="{{url}}">{{title}}</a></h4>
                                                     <div class="read-next-card-meta">
                                                         <p>
                                                             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="L"}}</time>
@@ -176,7 +176,7 @@
                                         </ul>
                                     </div>
                                     <footer class="read-next-card-footer">
-                                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
+                                        <a target="_self" href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
                                             →</a>
                                     </footer>
                                 </article>
@@ -200,14 +200,14 @@
                                 <article class="read-next-card">
                                     <header class="read-next-card-header">
                                         {{#../primary_tag}}
-                                            <h3><span>{{t "More In"}}</span> <a href="{{url}}">{{name}}</a></h3>
+                                            <h3><span>{{t "More In"}}</span> <a target="_self" href="{{url}}">{{name}}</a></h3>
                                         {{/../primary_tag}}
                                     </header>
                                     <div class="read-next-card-content">
                                         <ul>
                                             {{#foreach related_posts}}
                                                 <li>
-                                                    <h4><a href="{{url}}">{{title}}</a></h4>
+                                                    <h4><a target="_self" href="{{url}}">{{title}}</a></h4>
                                                     <div class="read-next-card-meta">
                                                         <p>
                                                             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
@@ -220,7 +220,7 @@
                                         </ul>
                                     </div>
                                     <footer class="read-next-card-footer">
-                                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "% posts") plural=(t "See all % posts")}}
+                                        <a target="_self" href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "% posts") plural=(t "See all % posts")}}
                                             →</a>
                                     </footer>
                                 </article>

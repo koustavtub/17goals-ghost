@@ -42,7 +42,7 @@
     </script>
     <!-- end of GA-->
 
-    <noscript><a href="https://www.PrivacyPolicies.com/cookie-consent/">Cookie Consent by Privacy Policies Generator</a>
+    <noscript><a target="_self" href="https://www.PrivacyPolicies.com/cookie-consent/">Cookie Consent by Privacy Policies Generator</a>
     </noscript>
     <!-- End Cookie Consent -->
 
@@ -65,7 +65,7 @@
 {{!-- The big email subscribe modal content --}}
 {{#if @labs.members}}
     <div class="subscribe-success-message">
-        <a class="subscribe-close" href="javascript:;"></a>
+        <a class="subscribe-close" rel="noopener" href="javascript:void(0);"></a>
         You've successfully subscribed to {{@site.title}}!
     </div>
 
