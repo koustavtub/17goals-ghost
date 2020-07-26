@@ -2,6 +2,7 @@ routes:
   /alle-geschichten/: all
   /en/all-stories/: all-en
   /en/in-a-nutshell/: nutshell-en
+  /en/solutions/: solutions
   /en/news-and-events/: news-en
   /en/sdg/: read-next-custom-en
   /en/17-goals-blog-award/: blog-award-en

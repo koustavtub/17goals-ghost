@@ -91,10 +91,15 @@
                     {{> "post-card" feature="Nachaltigskeitsziel Des Monats"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:kurz-and-gut" limit="1"  include="tags,authors"}}
+           {{!-- {{#get "posts" filter="tag:kurz-and-gut" limit="1"  include="tags,authors"}}
+                {{#foreach posts}}
+                    {{> "post-card" feature="Kurz and Gut"}}
+                {{/foreach}}
+            {{/get}} --}}
+            {{#get "posts" filter="tag:losungen" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card" feature="Kurz and Gut"}}
+                    {{> "post-card" feature="Lösungen"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:news-and-events" limit="1"  include="tags,authors"}}

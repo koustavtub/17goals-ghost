@@ -91,10 +91,14 @@
                     {{> "post-card" feature="SDG Of The Month"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:in-a-nutshell" limit="1"  include="tags,authors"}}
+            {{!--{{#get "posts" filter="tag:in-a-nutshell" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card" feature="In A Nut Shell"}}
+                {{/foreach}}
+            {{/get}} --}}
+            {{#get "posts" filter="tag:solutions" limit="1"  include="tags,authors"}}
+                {{#foreach posts}}
+                    {{> "post-card" feature="Solutions"}}
                 {{/foreach}}
             {{/get}}
             {{#get "posts" filter="tag:news-and-events-en" limit="1"  include="tags,authors"}}

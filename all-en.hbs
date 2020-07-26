@@ -18,7 +18,7 @@
 
     <div class="inner posts">
         <div class="post-feed">
-            {{#get "posts" filter="tag:-[german,in-a-nutshell,news-and-events-en,hash-read-online-en,17-goals-blog-award-en]+tag:english" include="tags,authors" limit="all"}}
+            {{#get "posts" filter="tag:-[german,solutions,in-a-nutshell,news-and-events-en,hash-read-online-en,17-goals-blog-award-en]+tag:english" include="tags,authors" limit="all"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card" en="en"}}
