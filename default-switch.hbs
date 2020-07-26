@@ -127,6 +127,9 @@
         var action = getParameterByName('action');
 
         $(document).ready(function () {
+         const postCards = document.getElementsByClassName('post-card');
+         if(postCards)
+         {
             for (i = 1; i <= postCards.length; i++) {
                 if (i % 6 == 0) {
                     postCards[i-1].classList.add('post-card-large')
@@ -135,6 +138,7 @@
             if (postCards.length % 6==4 || postCards.length % 6==1) {
                 postCards[postCards.length-1].classList.add('post-card-large')
             }
+         }
         });
 
 
