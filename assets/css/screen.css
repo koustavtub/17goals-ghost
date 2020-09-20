@@ -3696,7 +3696,12 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     background: #fff;
 }
 
-
+.feedgrabbr_widget {
+    padding-left: 25px;
+}
+.uw-w-branding{
+    padding: 0 0 0 5000px;
+}
 /* Responsive layout - makes a two column-layout instead of four columns */
 /* 48em = 768px */
 @media (min-width: 48em) {

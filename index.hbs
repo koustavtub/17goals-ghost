@@ -102,12 +102,9 @@
                     {{> "post-card" feature="Lösungen"}}
                 {{/foreach}}
             {{/get}}
-            {{#get "posts" filter="tag:news-and-events" limit="1"  include="tags,authors"}}
-                {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card" feature="News & Events"}}
-                {{/foreach}}
-            {{/get}}
+            <article class="post-card post news">
+                <div class="feedgrabbr_widget" id="fgid_9f21b877d2b27254b50daf05a"></div>
+            </article>
             {{#get "posts" filter="tag:hash-read-online" limit="1" include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
@@ -120,6 +117,10 @@
                     {{> "post-card" feature=(t "17 Goals Blog Award")}}
                 {{/foreach}}
             {{/get}}
+
+
+
+
         </div>
     </div>
 </main>
@@ -127,6 +128,8 @@
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
+    <script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_9f21b877d2b27254b50daf05a");</script>
+    <script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
     <script>
 
     if(goal_of_the_month){
