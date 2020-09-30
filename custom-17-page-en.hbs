@@ -25,6 +25,9 @@ into the {body} of the default.hbs template --}}
 
                 <header class="post-full-header header-17-page">
                     <h1 class="post-full-title">{{title}}</h1>
+                    {{#if custom_excerpt}}
+                        <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
+                    {{/if}}
                 </header>
                 <section>
                     <div class="flex-container">
