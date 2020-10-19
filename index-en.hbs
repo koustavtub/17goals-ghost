@@ -73,12 +73,6 @@
     <div class="inner posts">
 
         <div class="post-feed no-load">
-            {{#get "posts" filter="tag:hash-featured" limit="1"  include="tags,authors"}}
-                {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card" feature="Featured"}}
-                {{/foreach}}
-            {{/get}}
             {{#get "posts" filter="tag:hash-editors-choice" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
@@ -91,11 +85,18 @@
                     {{> "post-card" feature="SDG Of The Month"}}
                 {{/foreach}}
             {{/get}}
+            {{#get "posts" filter="tag:sponsored-17+tag:english" limit="1"  include="tags,authors"}}
+                {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card" feature="Sponsored"}}
+                {{/foreach}}
+            {{/get}}
             {{!--{{#get "posts" filter="tag:in-a-nutshell" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                     {{> "post-card" feature="In A Nut Shell"}}
                 {{/foreach}}
             {{/get}} --}}
+
             {{#get "posts" filter="tag:solutions" limit="1"  include="tags,authors"}}
                 {{#foreach posts}}
                     {{> "post-card" feature="Solutions"}}
