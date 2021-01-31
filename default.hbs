@@ -111,7 +111,7 @@
 {{!-- jQuery, required for fitvids --}}
 <script src="{{asset "js/lib/jquery-3.5.0.min.js"}}"></script>
 {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
-<script src="{{asset "built/casper.js"}}"></script>
+<script src="{{asset "built/casper.js"}}" async></script>
 
 
 
@@ -160,15 +160,11 @@ $(document).ready(function() {
 });
 
 </script>
-<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<script type="text/javascript">
-    window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })
 
-</script>
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 {{{block "scripts"}}}
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js" async></script>
+<script async>
 
     var map = new ol.Map({
         target: 'mapdiv',
@@ -206,6 +202,14 @@ $(document).ready(function() {
     map.addLayer(markerVectorLayer);
 
 
+</script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false" async></script>
+<script type="text/javascript" async>
+    window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })
+    var links = document.links;
+    for (var i = 0; i < links.length; i++) {
+         links[i].target = "_blank";
+    }
 </script>
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}
