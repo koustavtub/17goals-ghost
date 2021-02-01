@@ -34,7 +34,7 @@ into the {body} of the default.hbs template --}}
                 In case you have missed it, you will find a digital browser to browse through the magazines
                 <a href="/en/browse-through-our-printed-editions/" target="_blank">here</a>. Also, it is included in the <strong>ZEIT</strong> and the <strong>TAGESSPIEGEL</strong> at regular intervals.
 
-                And for even more good news, you are welcome to <a rel="noopener"  href="javascript:scrollToSubscribe()">subscribe to our newsletter</a>
+                And for even more good news, you are welcome to <a rel="noopener"  href="/subscribe">subscribe to our newsletter</a>
                 published 4 times a year.
             </p>
             <p>
@@ -216,14 +216,6 @@ into the {body} of the default.hbs template --}}
 
 
     });
-    const sub_form=document.getElementById('mc_embed_signup'),sub_btn = document.getElementById('mc-embedded-subscribe');
-    function scrollToSubscribe(){
-        document.querySelector('#mce-EMAIL').scrollIntoView({
-          behavior: 'smooth'
-        });
-        sub_btn.classList.add('sub_btn');
-        sub_form.classList.add('heartBeat','animated','delay-2s');
-    }
     </script>
 {{/contentFor}}
 

@@ -111,7 +111,7 @@
 {{!-- jQuery, required for fitvids --}}
 <script src="{{asset "js/lib/jquery-3.5.0.min.js"}}"></script>
 {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
-<script src="{{asset "built/casper.js"}}" async></script>
+<script src="{{asset "built/casper.js"}}"></script>
 
 
 
@@ -163,8 +163,8 @@ $(document).ready(function() {
 
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 {{{block "scripts"}}}
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js" async></script>
-<script async>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
+<script>
 
     var map = new ol.Map({
         target: 'mapdiv',

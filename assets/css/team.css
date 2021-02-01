@@ -68,18 +68,20 @@
 .person-title {
   color: #333;
   font-size: 2rem;
+  transition: .3s ease-in-out;
 }
 .person-title a{
-float:right;
-margin-top: -.8rem;
+  float:right;
+  margin-top: -.8rem;
 }
-
 .person-desc {
   color: rgba(0, 0, 0, 0.6);
   margin-top: 15px;
   text-transform: uppercase;
   font-size: 0.8em;
   letter-spacing: 2px;
+  transition: .3s ease-in-out;
+  transition-delay: .3s;
 }
 .person-list {
   display: flex;
@@ -87,14 +89,13 @@ margin-top: -.8rem;
   width: 100%;
   justify-content: center;
 }
-.person-list:hover .person {
-  opacity: 0.2;
-  filter:blur(1px);
+.person:hover .person-title {
+   color:#00adef;
 }
-.person:hover {
-  opacity: 1 !important;
-  filter:unset !important;
+.person:hover .person-desc {
+   color:#106e45;
 }
+
 .person:before {
   position: absolute;
   left: 0;
@@ -103,13 +104,14 @@ margin-top: -.8rem;
   background: #fff;
   content: "";
   height: 0px;
-  transition: 0.45s;
+  transition: 0.45s ease-in-out;
 }
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em;
-    border-left: .2em solid #00afaa;
+    border-left: .1em solid #aaa;
     font-style: italic;
+    transition: 0.3s ease-in;
 }
 .intro-text{
     font-size: 2rem;

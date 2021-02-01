@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
 
             <p>
                 Und für noch mehr gute Nachrichten
-                <a rel="noopener" href="javascript:scrollToSubscribe()"> abonnieren Sie </a> gerne
+                <a href="/abonnieren/"> abonnieren Sie </a> gerne
                 unseren 4 x jährlich erscheinenden Newsletter. Lernen Sie hier unsere Teammitglieder kennen, die –
                 gemeinsam mit vielen freien Journalistinnen und Journalisten – unser Magazin möglich machen.
             </p>
@@ -218,19 +218,6 @@ into the {body} of the default.hbs template --}}
 
             update();
     });
-    const sub_form=document.getElementById('mc_embed_signup'),sub_btn = document.getElementById('mc-embedded-subscribe');
-    function scrollToSubscribe(){
-        document.querySelector('#mce-EMAIL').scrollIntoView({
-          behavior: 'smooth'
-        });
-        sub_btn.classList.add('sub_btn');
-        sub_form.classList.add('heartBeat','animated','delay-2s');
-    }
-
-
-
-
-
     </script>
 {{/contentFor}}
 
