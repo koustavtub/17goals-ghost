@@ -912,7 +912,8 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 1.8rem;
         line-height: 1.5em;
     }
-    .post-card-large .tag-list{
+
+    .post-card-large .tag-list {
         padding: 0 0 0 40px;
     }
 }
@@ -2946,18 +2947,21 @@ body {
 }
 
 .active a {
-    font-weight:800;
+    font-weight: 800;
 }
+
 .active a:after {
     opacity: 1 !important;
     background: #ffd31d !important;
     height: 2px !important;
 }
+
 .active:hover a:after {
     background: #fff !important;
     height: 1px !important;
     transition: .3s all ease-in-out;
 }
+
 /* menu */
 
 .header .menu {
@@ -2968,9 +2972,49 @@ body {
 }
 
 .menu-list {
-    z-index:0;
+    z-index: 0;
     clear: both;
     transition: max-height 0.2s ease-out;
+}
+
+.nav-search input[type=text] {
+    padding: 6px;
+    height:32px;
+    border: none;
+    color: #333;
+    width: 240px;
+}
+
+.search-container button {
+    float: right;
+    padding: 2.5px 6px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button img {
+    height: 26px;
+}
+/*Menu DropDown*/
+.dropdown-content {
+  display: none;
+  left: 0;
+  z-index: 1;
+}
+.themen{
+font-weight:600;
+color:#fcfcfc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* menu icon */
@@ -3149,8 +3193,9 @@ body {
 }
 
 .lang-switch {
-    z-index:2;
+    z-index: 2;
 }
+
 .lang-switch:hover+#language-tooltip {
     opacity: 1.0;
     transform: translateY(0px);
@@ -3206,23 +3251,28 @@ body {
     margin: 15px 0 0 0;
     color: #666;
 }
-.gotm{
+
+.gotm {
     color: #d50102;
-    font-family:unset;
-    font-size:unset;
+    font-family: unset;
+    font-size: unset;
 }
-.caret-down{
+
+.caret-down {
     position: absolute;
     bottom: 0;
     left: calc(50% - 3.5rem);
     pointer: scroll;
 }
-.caret-down svg{
-    width:7rem;
+
+.caret-down svg {
+    width: 7rem;
 }
-.small-font{
+
+.small-font {
     font-size: 12pt;
 }
+
 /* ---------- */
 .allSlides {
     height: 100vh;
@@ -3234,7 +3284,7 @@ body {
     max-height: 100vh;
     margin: 0;
     padding: 0;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 /* Slideshow container */
@@ -3364,9 +3414,11 @@ body {
     padding: 2px 10px;
     z-index: 2;
 }
-.featurer-top svg{
-    height:250px;
+
+.featurer-top svg {
+    height: 250px;
 }
+
 .featurer {
     position: absolute;
     bottom: 5px;
@@ -3723,7 +3775,9 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 }
 
 @media (max-width: 880px) {
-
+    .nav-search input[type=text] {
+        width: 110px;
+    }
     .footer-distributed {
         font: bold 14px sans-serif;
     }
@@ -3731,7 +3785,8 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .header li a {
         padding: 0.5rem;
     }
-    .small-font{
+
+    .small-font {
         font-size: 8pt;
     }
 
@@ -3792,7 +3847,8 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .post-card-image {
         object-fit: cover;
     }
-    .caret-down{
+
+    .caret-down {
         bottom: 15%;
     }
 
@@ -3840,9 +3896,11 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         animation-name: flipInY;
         animation-duration: 1s;
     }
+
     .featurer-top svg {
         height: 150px;
     }
+
     .ribbon-column {
         -ms-flex: 33%;
         flex: 33%;
@@ -3854,6 +3912,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         flex: 51%;
         flex-wrap: wrap;
     }
+
     .menu {
         float: right;
         margin-right: 0 !important;
@@ -3861,12 +3920,14 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         top: 50px;
         display: none;
     }
-    .header .menu, .menu-list {
-    width:100%;
+
+    .header .menu,
+    .menu-list {
+        width: 100%;
     }
 
     .head-title {
-        font-size:unset;
+        font-size: unset;
     }
 
     .menu-btn:checked~.menu {
