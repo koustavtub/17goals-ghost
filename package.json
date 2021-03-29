@@ -4,8 +4,8 @@
     "demo": "https://www.17goalsmagazin.de/",
     "version": "3.18.1",
     "engines": {
-        "ghost": ">=3.18.1",
-        "ghost-api": "v3"
+        "ghost": ">=4.0.0",
+        "ghost-api": "v4"
     },
     "license": "MIT",
     "screenshots": {

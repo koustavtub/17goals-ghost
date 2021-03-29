@@ -8,7 +8,7 @@
             tagsArray.push('{{slug}}');
         {{/foreach}}
 
-        var lang = {{#if en}}'en'{{else}}'{{@site.lang}}'{{/if}};
+        var lang = {{#if en}}'en'{{else}}'{{@site.locale}}'{{/if}};
 
         if(lang=='en'){
             {{#foreach tags visibility="internal"}}
