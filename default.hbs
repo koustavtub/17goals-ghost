@@ -208,8 +208,17 @@ $(document).ready(function() {
     window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"a967b0fd82e5f4dacb7365b92","lid":"13e86d77f6","uniqueMethods":true}) })
     var links = document.links;
     for (var i = 0; i < links.length; i++) {
-         links[i].target = "_blank";
+         if(!links[i].target){
+            links[i].target = "_blank";
+         }
     }
+     $('.dropdown').click(function(){
+        $('.dropdown-content').show(500);
+    });
+    $('.close-dropdown').click(function(){
+        $('.dropdown-content').hide(300);
+    });
+
 </script>
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}

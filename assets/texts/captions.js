@@ -129,8 +129,8 @@ const jsonCaptions={
       "caption": "'Wettbewerb macht uns schneller, Zusammenarbeit macht uns besser' - Fyrefly"
     },
     {
-          "title": "17 Ziele",
-          "caption": "Einfach durchklicken und Geschichten zu jedem der 17 Ziele entdecken"
+      "title": "17 Ziele",
+      "caption": "Einfach durchklicken und Geschichten zu jedem der 17 Ziele entdecken"
     }
   ]
 }

@@ -14,3 +14,28 @@
         {{> "site-nav"}}
     {{/if}}
 </header>
+<!--Secondary Nav -->
+{{#if en}}
+    <nav class="dropdown-content">
+        <ul>
+            <li><h2><span class="sub-title">Topics</span> <span class="close-dropdown"><a href="javascript:void(0)" target="_self"> &#x2715</a></span></h2></li>
+            <li><a href="/en/economics/">Economics</a></li>
+            <li><a href="/en/environment/">Environment</a></li>
+            <li><a href="/en/social">Social</a></li>
+            <li><a href="/en/society">Society</a></li>
+            <li><a href="/en/digital-transformation/">Digital Transformation</a></li>
+        </ul>
+    </nav>
+
+{{else}}
+    <nav class="dropdown-content">
+        <ul>
+            <li><h2><span class="sub-title">Themen</span> <span class="close-dropdown"><a href="javascript:void(0)" target="_self"> &#x2715</a></span></h2></li>
+            <li><a href="/topic/wirtschaft/">Wirtschaft</a></li>
+            <li><a href="/topic/gesellschaft/">Gesellschaft</a></li>
+            <li><a href="/topic/okologie">Ökologie</a></li>
+            <li><a href="/topic/soziales">Soziales</a></li>
+            <li><a href="/topic/digitale-transformation/">digitale Transformation</a></li>
+        </ul>
+    </nav>
+{{/if}}
