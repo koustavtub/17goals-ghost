@@ -112,6 +112,21 @@ routes:
   /en/sdg/17/:
     template: stories-in-tags-en
     data: tag.17
+  /en/economics/:
+    template: stories-in-tags-en
+    data: tag.economics
+  /en/environment/:
+    template: stories-in-tags-en
+    data: tag.environment
+  /en/social/:
+    template: stories-in-tags-en
+    data: tag.social
+  /en/society/:
+    template: stories-in-tags-en
+    data: tag.society
+  /en/digital-transformation/:
+    template: stories-in-tags-en
+    data: tag.digital-transformation
 
 collections:
   /en/:

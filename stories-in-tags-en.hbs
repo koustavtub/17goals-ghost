@@ -13,12 +13,12 @@
     {{#tag}}
         <section>
 
-<script>
-    const sdg_no={{slug}};
-</script>
-            <h1 class="post-full-title">SDG - {{slug}}</h1>
+    <script>
+        const sdg_no='{{slug}}';
+    </script>
+            <h1 class="post-full-title">{{slug}}</h1>
             <hr/>
-            <p class="post-full-custom-excerpt">All our posts about Sustainable Development Goal -{{slug}}</p>
+            <p class="post-full-custom-excerpt">All our posts about <span class="sdg-span"></span>{{slug}}</p>
 
         </section>
 
@@ -46,7 +46,10 @@
     $(document).ready(function () {
       var nav = document.querySelector('.header');
       nav.classList.remove('transparent');
-      $('.post-full-title').html(jsonCaptions.en[sdg_no - 1].title)
+      if(!isNaN(sdg_no)){
+        $('.post-full-title').html(jsonCaptions.en[parseInt(sdg_no) - 1].title);
+        $('.sdg-span').html('Sustainable Development Goal -');
+      }
     });
     </script>
 {{/contentFor}}

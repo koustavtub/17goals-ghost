@@ -3,12 +3,18 @@
     </div>
 </div>
 <script>
-       var tagsArray = new Array(),engImg = new Array(),deImg = new Array();
+       var tagsArray = new Array(),enTagsArray = new Array(),engImg = new Array(),deImg = new Array();
         {{#foreach tags}}
             tagsArray.push('{{slug}}');
         {{/foreach}}
 
         var lang = {{#if en}}'en'{{else}}'{{@site.lang}}'{{/if}};
+
+        if(lang=='en'){
+            {{#foreach tags visibility="internal"}}
+                    enTagsArray.push('{{slug}}'.replace('hash-sdg',''))
+            {{/foreach}}
+        }
 
         engImg.push('<div class="ribbon-column-sm"><a href="/en/sustainability-goals/sdg-1-no-poverty"> <img src={{asset "images/en/sm-sdg-1.png"}}/></a></div>')
         engImg.push('<div class="ribbon-column-sm"><a href="/en/sustainability-goals/sdg-2-zero-hunger"> <img src={{asset "images/en/sm-sdg-2.png"}}/></a></div>')
@@ -48,15 +54,16 @@
 
 
         if (lang && lang == 'de') {
-           showTagImg(deImg)
+           showTagImg(deImg,tagsArray)
         } else {
-           showTagImg(engImg)
+           showTagImg(engImg,enTagsArray)
         }
 
-        function showTagImg(imgLangArr){
+        function showTagImg(imgLangArr,tagArray){
             var smallRibbon = document.getElementById('smallRibbon');
             var htmlToAppend='';
-            tagsArray.forEach(tag=>{
+
+            tagArray.forEach(tag=>{
                 var index=Number(tag);
                 if(index && imgLangArr[index-1])
                 {

@@ -1002,6 +1002,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-title {
     margin: 0 0 0.2em;
     color: color(var(--darkgrey) l(-5%));
+    text-transform: capitalize;
 }
 
 .post-full-custom-excerpt {
@@ -2938,6 +2939,9 @@ body {
     font-weight: 600;
     padding: 15px 0;
     text-decoration: none;
+    position: absolute;
+    top: 5px;
+    max-width: 325px;
 }
 
 .whitespace {
@@ -2998,18 +3002,53 @@ body {
 }
 /*Menu DropDown*/
 .dropdown-content {
-  display: none;
-  left: 0;
-  z-index: 1;
+    display: none;
+    left: 0;
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-.themen{
-font-weight:600;
-color:#fcfcfc;
+.dropdown-content> ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #440a67;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+.sub-title{
+    position:absolute;
+    left:25px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+.close-dropdown{
+    position:absolute;
+    right:25px;
+    font-weight:800;
+    font-size:32px;
+}
+.close-dropdown a{
+    color: #fff;
+    text-decoration: none;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-content>ul>li>a {
   display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
+.dropdown-content a:hover{
+  color: var(--yellow)
+}
+
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
