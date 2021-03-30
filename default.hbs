@@ -148,14 +148,18 @@ $(document).ready(function() {
     const menu_list=document.querySelectorAll('.header li');
     if(page_url.includes('/17ziele_17sdg')){
         menu_list[0].classList.add('active');
-    }else if(page_url.includes('/alle-geschichten')){
-        menu_list[1].classList.add('active');
-    }else if(page_url.includes('/news-and-events')){
+    }else if(page_url.includes('/topic/wirtschaft')){
         menu_list[2].classList.add('active');
-    }else if(page_url.includes('/losungen')){
+    }else if(page_url.includes('/topic/gesellschaft/')){
         menu_list[3].classList.add('active');
-    }else if(page_url.includes('/uber-uns')||page_url.includes('/unser-team')){
+    }else if(page_url.includes('/topic/okologie/')){
         menu_list[4].classList.add('active');
+    }else if(page_url.includes('/topic/soziales/')){
+        menu_list[5].classList.add('active');
+    }else if(page_url.includes('/topic/digitale-transformation/')){
+        menu_list[6].classList.add('active');
+    }else if(page_url.includes('/uber-uns')||page_url.includes('/unser-team')){
+        menu_list[7].classList.add('active');
     }
 });
 
@@ -212,13 +216,6 @@ $(document).ready(function() {
             links[i].target = "_blank";
          }
     }
-     $('.dropdown').click(function(){
-        $('.dropdown-content').show(500);
-    });
-    $('.close-dropdown').click(function(){
-        $('.dropdown-content').hide(300);
-    });
-
 </script>
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}

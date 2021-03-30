@@ -151,14 +151,18 @@ $(document).ready(function() {
     const menu_list=document.querySelectorAll('.header li');
     if(page_url.includes('/17goals')){
         menu_list[0].classList.add('active');
-    }else if(page_url.includes('/all-stories')){
-        menu_list[1].classList.add('active');
-    }else if(page_url.includes('/news-and-events')){
+    }else if(page_url.includes('/en/economics')){
         menu_list[2].classList.add('active');
-    }else if(page_url.includes('/solutions')){
+    }else if(page_url.includes('/en/environment')){
         menu_list[3].classList.add('active');
-    }else if(page_url.includes('/about-us')||page_url.includes('/our-team')){
+    }else if(page_url.includes('/en/social')){
         menu_list[4].classList.add('active');
+    }else if(page_url.includes('/en/society')){
+        menu_list[5].classList.add('active');
+    }else if(page_url.includes('/en/digital-transformation')){
+        menu_list[6].classList.add('active');
+    }else if(page_url.includes('/about-us')||page_url.includes('/our-team')){
+        menu_list[7].classList.add('active');
     }
 });
 
@@ -216,12 +220,6 @@ $(document).ready(function() {
             links[i].target = "_blank";
          }
     }
-     $('.dropdown').click(function(){
-        $('.dropdown-content').show(500);
-    });
-    $('.close-dropdown').click(function(){
-        $('.dropdown-content').hide(300);
-    });
 </script>
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}

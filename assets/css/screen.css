@@ -1002,7 +1002,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-title {
     margin: 0 0 0.2em;
     color: color(var(--darkgrey) l(-5%));
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 
 .post-full-custom-excerpt {
@@ -2913,6 +2913,8 @@ body {
     margin: 20px 10px;
     text-decoration: none;
     transition: all 0.2s linear;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
 }
 
 .header li a:after {
@@ -2965,7 +2967,39 @@ body {
     height: 1px !important;
     transition: .3s all ease-in-out;
 }
+/*newMenu*/
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  min-width: 250px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+/* Style the links inside the dropdown */
+.dropdown-content li a {
+  float: none;
+  color: #00afed;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight:600;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+}
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content,.dropdown:focus .dropdown-content {
+  display: block;
+}
+.dropdown li a:hover {
+    color:#333;
+}
+.dropdown:hover li a:before {
+    background: color(var(--darkgrey));
+    }
 /* menu */
 
 .header .menu {
@@ -2999,53 +3033,6 @@ body {
 
 .search-container button img {
     height: 26px;
-}
-/*Menu DropDown*/
-.dropdown-content {
-    display: none;
-    left: 0;
-    z-index: 1001;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-.dropdown-content> ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #440a67;
-  position: fixed;
-  top: 0;
-  width: 100%;
-
-}
-.sub-title{
-    position:absolute;
-    left:25px;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-}
-.close-dropdown{
-    position:absolute;
-    right:25px;
-    font-weight:800;
-    font-size:32px;
-}
-.close-dropdown a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.dropdown-content>ul>li>a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-.dropdown-content a:hover{
-  color: var(--yellow)
 }
 
 
@@ -3102,7 +3089,7 @@ body {
 }
 
 .header .menu-btn:checked~.menu {
-    max-height: 350px;
+    max-height: 95vh;
 }
 
 .header .menu-btn:checked~.menu-icon .navicon {
@@ -3795,7 +3782,9 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .header li {
         float: left;
     }
-
+    .dropdown-content li {
+        float:none;
+    }
     .header li a {
         padding: 0.5rem 1rem;
         margin: 0;
@@ -3998,4 +3987,10 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .navigate {
         display: block;
     }
+    .dropdown-content {position: relative;}
+    .dropdown-content ul {
+        background-color: #fcfcfc;
+        margin-block-end: 25px;
+    }
+    .header{ overflow:auto;}
 }
