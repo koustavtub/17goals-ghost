@@ -10,6 +10,21 @@ routes:
   /unser-team/: team-page
   /en/about-us/: team-page-en
   /en/our-team/: team-page-en
+  /wirtschaft/:
+    template: stories-in-tags
+    data: tag.wirtschaft
+  /gesellschaft/:
+    template: stories-in-tags
+    data: tag.gesellschaft
+  /okologie/:
+    template: stories-in-tags
+    data: tag.okologie
+  /soziales/:
+    template: stories-in-tags
+    data: tag.soziales
+  /digitale-transformation/:
+    template: stories-in-tags
+    data: tag.digitale-transformation
   /ziel/1/:
     template: stories-in-tags
     data: tag.1

@@ -1,6 +1,17 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
   into the {body} of the default.hbs template --}}
+{{#contentFor "extraheads"}}
+    <style>
+        .post-full-custom-excerpt {
+            display:none;
+        }
+    </style>
+    <script>
+        const sdg_no='{{slug}}';
+    </script>
+{{/contentFor}}
+
 {{> site-header}}
 
 {{!-- The main content area --}}
@@ -13,7 +24,6 @@
     {{#tag}}
         <section>
             <h1 class="post-full-title">{{name}}</h1>
-            <hr/>
             <p class="post-full-custom-excerpt">{{description}}</p>
         </section>
 
@@ -37,6 +47,9 @@
     $(document).ready(function () {
       var nav = document.querySelector('.header');
       nav.classList.remove('transparent');
+      if(!isNaN(sdg_no)){
+        $('.post-full-custom-excerpt').show();
+      }
     });
     </script>
 {{/contentFor}}

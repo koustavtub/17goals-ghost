@@ -2,7 +2,7 @@
     "name": "17goals",
     "description": "A custom them for 17goalsmagazin.de",
     "demo": "https://www.17goalsmagazin.de/",
-    "version": "3.18.1",
+    "version": "4.0.2",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
