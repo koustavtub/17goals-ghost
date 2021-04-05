@@ -1004,7 +1004,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: color(var(--darkgrey) l(-5%));
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-weight:400;
+    font-weight: 400;
 }
 
 .post-full-custom-excerpt {
@@ -1895,7 +1895,7 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
-    background: color(var(--darkgrey) l(-5%));
+    background: #333;
 }
 
 .read-next-feed {
@@ -1953,7 +1953,7 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 25px 50px;
     padding: 25px;
-    background: linear-gradient(color(var(--darkgrey) l(+2%)), color(var(--darkgrey) l(-5%)));
+    background: linear-gradient(color(var(--darkgrey) l(+10%)), color(var(--darkgrey) l(-5%)));
     border-radius: 3px;
 }
 
@@ -2916,7 +2916,7 @@ body {
     text-decoration: none;
     transition: all 0.2s linear;
     font-family: 'Montserrat', sans-serif;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .header li a:after {
@@ -2929,13 +2929,15 @@ body {
     margin-top: 2px;
 }
 
-.header li a:hover{
-    color:var(--lgreen);
+.header li a:hover {
+    color: #fcfcfc;
+    transition: all 0.3s ease-in-out;
+
 }
 
 .header li a:hover:after {
     opacity: 1;
-    transition: all 0.35s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .header .logo {
@@ -2973,37 +2975,44 @@ body {
     height: 1px !important;
     transition: .3s all ease-in-out;
 }
+
 /*newMenu*/
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--darkblue);
-  min-width: 250px;
-  z-index: 1;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: none;
+    position: absolute;
+    background-color: var(--darkblue);
+    min-width: 250px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 
 /* Style the links inside the dropdown */
 .dropdown-content li a {
-  float: none;
-  color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-weight:600;
-  font-family: 'Montserrat', sans-serif;
-  text-align: left;
+    float: none;
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
 }
+
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropbtn {
+    cursor: pointer;
+}
+
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown:hover li a:before {
     background: color(var(--white));
-    }
+}
+
 /* menu */
 
 .header .menu {
@@ -3021,7 +3030,7 @@ body {
 
 .nav-search input[type=text] {
     padding: 6px;
-    height:32px;
+    height: 32px;
     border: none;
     color: #333;
     width: 240px;
@@ -3042,9 +3051,9 @@ body {
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* menu icon */
@@ -3786,9 +3795,11 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .header li {
         float: left;
     }
+
     .dropdown-content li {
-        float:none;
+        float: none;
     }
+
     .header li a {
         padding: 0.5rem 1rem;
         margin: 0;
@@ -3810,6 +3821,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .nav-search input[type=text] {
         width: 110px;
     }
+
     .footer-distributed {
         font: bold 14px sans-serif;
     }
@@ -3991,10 +4003,17 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     .navigate {
         display: block;
     }
-    .dropdown-content {position: relative;}
+
+    .dropdown-content {
+        position: relative;
+    }
+
     .dropdown-content ul {
         background-color: var(--darkblue);
         margin-block-end: 25px;
     }
-    .header{ overflow:auto;}
+
+    .header {
+        overflow: auto;
+    }
 }
