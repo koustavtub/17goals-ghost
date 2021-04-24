@@ -127,9 +127,9 @@ routes:
   /en/sdg/17/:
     template: stories-in-tags-en
     data: tag.17
-  /en/economics/:
+  /en/economy/:
     template: stories-in-tags-en
-    data: tag.economics
+    data: tag.economy
   /en/environment/:
     template: stories-in-tags-en
     data: tag.environment

@@ -65,6 +65,9 @@
 .person-list .person:nth-child(6)>.person-img{
    border:3px solid  #FCC30B;
 }
+.person-list .person:nth-child(7)>.person-img{
+   border:3px solid  #3F7E44;
+}
 .person-title {
   color: #333;
   font-size: 2rem;

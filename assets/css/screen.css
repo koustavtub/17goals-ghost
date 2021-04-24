@@ -1002,7 +1002,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-title {
     margin: 0 0 0.2em;
     color: color(var(--darkgrey) l(-5%));
-    text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -2978,9 +2977,9 @@ body {
 
 /*newMenu*/
 
-.dropdown-content {
+.drpdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: var(--darkblue);
     min-width: 250px;
     z-index: 1;
@@ -2989,7 +2988,7 @@ body {
 
 
 /* Style the links inside the dropdown */
-.dropdown-content li a {
+.drpdown-content li a {
     float: none;
     color: #fff;
     padding: 12px 16px;
@@ -3005,13 +3004,10 @@ body {
     cursor: pointer;
 }
 
-.dropdown:hover .dropdown-content {
+.drpdown:hover .drpdown-content {
     display: block;
 }
 
-.dropdown:hover li a:before {
-    background: color(var(--white));
-}
 
 /* menu */
 
@@ -3413,7 +3409,9 @@ body {
     white-space: nowrap;
     animation-delay: 2s;
 }
-
+.uppercase{
+    text-transform: uppercase;
+}
 .caps {
     border-bottom: 1px solid transparent;
     text-transform: uppercase;
@@ -3796,7 +3794,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         float: left;
     }
 
-    .dropdown-content li {
+    .drpdown-content li {
         float: none;
     }
 
@@ -4004,11 +4002,11 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
         display: block;
     }
 
-    .dropdown-content {
+    .drpdown-content {
         position: relative;
     }
 
-    .dropdown-content ul {
+    .drpdown-content ul {
         background-color: var(--darkblue);
         margin-block-end: 25px;
     }
