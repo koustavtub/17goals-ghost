@@ -33,11 +33,11 @@
         <a class="post-card-content-link" target="_self" href="{{url}}">
 
             <header class="post-card-header">
-                {{#if primary_tag}}
-                    {{#primary_tag}}
-                        <div class="post-card-primary-tag">{{name}}</div>
-                    {{/primary_tag}}
-                {{/if}}
+                 <div class="post-card-primary-tag">
+                 {{#foreach tags}}
+                    <p class="pill">{{name}}</p>
+                 {{/foreach}}
+                 </div>
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
 
