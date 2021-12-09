@@ -3008,7 +3008,7 @@ body {
     cursor: pointer;
 }
 
-.drpdown:hover .drpdown-content {
+.dropdown:hover .drpdown-content {
     display: block;
 }
 
